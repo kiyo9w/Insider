@@ -1,0 +1,162 @@
+# SSE Events & API Guide
+
+This guide details the Server-Sent Events (SSE) used in the Insider application and how to interact with the chat APIs via `curl`.
+
+## Overview
+
+The application uses a **Unified Endpoint** for all chat modes:
+**Endpoint**: `https://api-dev.trinq.site/api/v1/chat/completions`
+
+## 1. Pro Search (Provider Mode) - Full Event Lifecycle
+
+Based on verified logs, a single Pro Search request emits the following sequence of events.
+
+### Curl Request
+```bash
+curl -N -X POST "https://api-dev.trinq.site/api/v1/chat/completions" \
+-H "Content-Type: application/json" \
+-d '{
+  "messages": [
+    {"role": "user", "content": "Start"}
+  ],
+  "conversation_id": "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa",
+  "thread_id": "bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb",
+  "mode": "provider",
+  "provider": "perplexity"
+}'
+```
+
+### Event Sequence & structures
+
+**1. Query Plan**
+The agent plans its approach.
+```
+event: StreamEvent.AGENT_QUERY_PLAN
+data: {"event": "agent-query-plan", "data": {"event_type": "agent-query-plan", "steps": ["Initiating the process to begin as requested."]}}
+```
+
+**1b. Plan Delta**
+The agent updates or refines the plan.
+```
+event: StreamEvent.AGENT_PLAN_DELTA
+data: {"event": "agent-plan-delta", "data": {"event_type": "agent-plan-delta", "steps": ["Searching for a variety of high-quality images featuring cute kittens and playful cats."]}}
+```
+
+**2. Search Queries**
+The agent generates terms to search.
+```
+event: StreamEvent.AGENT_SEARCH_QUERIES
+data: {"event": "agent-search-queries", "data": {"event_type": "agent-search-queries", "step_number": 0, "queries": ["Donald Trump current president USA", "UTC current date"]}}
+```
+
+**3. Agent Read Results (Internal)**
+The agent processes the raw search results.
+```
+event: StreamEvent.AGENT_READ_RESULTS
+data: {"event": "agent-read-results", "data": {"event_type": "agent-read-results", "step_number": 0, "results": [{"title": "The Trump Administration - The White House", "url": "https://www.whitehouse.gov/administration/", "content": "Learn more about President Donald J. Trump, First Lady Melania Trump, Vice President JD Vance, Second Lady Usha Vance, and The Cabinet."}], "images": ["https://st.perplexity.ai/estatic/0b226c450798410ac541646c86ec31afd840e5beab817a5d84fa821e7db61981ec84c3b4a3f072a7a2e1899c9fb06c6e130102b620af71b92488873be44c5ea9d047bc6dfa767879b2a38f55b10be9b3fbb3b61703ff3973611dd516b712cab4", "https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/a434d024-df02-59b1-a6ab-0b173a95770f/72d191f7-ab72-5843-8407-45674a833b2e.jpg"]}}
+```
+
+**3b. Agent Understand Results**
+The agent analyzes the results (Thinking).
+```
+event: StreamEvent.AGENT_UNDERSTAND_RESULTS
+data: {"event": "agent-understand-results", "data": {"event_type": "agent-understand-results", "step_number": 0, "text": "I found several sources..."}}
+```
+
+**4. Agent Finish**
+The reasoning/searching phase is complete.
+```
+event: StreamEvent.AGENT_FINISH
+data: {"event": "agent-finish", "data": {"event_type": "agent-finish"}}
+```
+
+**5. Search Results (Client-Facing)**
+The final selected sources are sent to the client. Note: This may be sent initially as empty or populated.
+```
+event: StreamEvent.SEARCH_RESULTS
+data: {"event": "search-results", "data": {"event_type": "search-results", "results": [{"title": "The Trump Administration", "url": "...", "content": "..."}], "images": []}}
+```
+
+**6. Begin Stream**
+Signals the start of the final answer generation.
+```
+event: StreamEvent.BEGIN_STREAM
+data: {"event": "begin-stream", "data": {"event_type": "begin-stream", "query": "Start"}}
+```
+
+**7. Text Chunks**
+The answer streams token by token.
+```
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "You"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "'re"}}
+...
+```
+
+**8. Final Response**
+The complete accumulated message.
+```
+event: StreamEvent.FINAL_RESPONSE
+data: {"event": "final-response", "data": {"event_type": "final-response", "message": "You're all set..."}}
+```
+
+**9. Related Queries**
+Suggested follow-ups.
+```
+event: StreamEvent.RELATED_QUERIES
+data: {"event": "related-queries", "data": {"event_type": "related-queries", "related_queries": ["What are the main differences between Perplexity AI and ChatGPT"]}}
+```
+
+**10. Stream End**
+Transaction complete.
+```
+event: StreamEvent.STREAM_END
+data: {"event": "stream-end", "data": {"event_type": "stream-end", "thread_id": "bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb"}}
+```
+
+---
+
+## 2. Full Configuration Payload
+
+The API accepts custom configuration for workflows.
+
+```json
+{
+  "messages": [{"role": "user", "content": "How are you?"}],
+  "mode": "provider",
+  "provider": "perplexity",
+  "workflow_config": {
+    "debug": false,
+    "max_plan_iterations": 1,
+    "max_step_num": 3,
+    "auto_accepted_plan": false,
+    "enable_background_investigation": true,
+    "enable_deep_thinking": false
+  },
+  "report_style": "academic",
+  "intra_info_config": {
+    "enabled": false,
+    "max_results": 5,
+    "resources": []
+  },
+  "extra_info_config": {
+    "enabled": true,
+    "max_results": 5,
+    "resources": []
+  }
+}
+```
+
+## Error Handling
+
+**Common Errors:**
+*   **422 Validation Error**: Missing required fields (`conversation_id`, `thread_id`).
+*   **500 Internal Server Error**: Can occur if `messages` history contains content that the backend parser rejects (e.g., specific markdown or huge contexts).
+
+**Error Event:**
+```
+event: error
+data: {"message": "Description of error"}
+```

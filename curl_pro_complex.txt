@@ -1,0 +1,2070 @@
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   303    0     0  100   303      0    266  0:00:01  0:00:01 --:--:--   266100   303    0     0  100   303      0    141  0:00:02  0:00:02 --:--:--   141100   303    0     0  100   303      0     96  0:00:03  0:00:03 --:--:--    96event: StreamEvent.AGENT_QUERY_PLAN
+data: {"event": "agent-query-plan", "data": {"event_type": "agent-query-plan", "steps": ["Comparing the detailed camera specifications of the iPhone 16 Pro and Pixel 9 Pro."]}}
+
+event: StreamEvent.AGENT_SEARCH_QUERIES
+data: {"event": "agent-search-queries", "data": {"event_type": "agent-search-queries", "step_number": 0, "queries": ["iPhone 16 Pro camera specs", "Pixel 9 Pro camera specifications", "iPhone 16 Pro vs Pixel 9 Pro camera comparison"]}}
+
+event: StreamEvent.AGENT_READ_RESULTS
+data: {"event": "agent-read-results", "data": {"event_type": "agent-read-results", "step_number": 0, "results": [{"title": "iPhone 16 Pro - Tech Specs - Apple Support", "url": "https://support.apple.com/en-us/121031", "content": ""}, {"title": "Google Pixel 9 Pro XL Camera test - DxOMark", "url": "https://www.dxomark.com/google-pixel-9-pro-xl-camera-test/", "content": ""}, {"title": "Google Pixel 9 Pro vs iPhone 16 Pro - NIGHT Camera Test", "url": "https://www.youtube.com/watch?v=_gUoI3e5A4Q", "content": ""}, {"title": "iPhone 16 Pro and 16 Pro Max - Technical Specifications", "url": "https://www.apple.com/am/iphone-16-pro/specs/", "content": ""}, {"title": "Tech Specs of Pixel 9 Pro & Pixel 9 Pro XL", "url": "https://store.google.com/product/pixel_9_pro_specs?hl=en-US", "content": ""}, {"title": "iPhone 16 Pro vs Pixel 9 Pro: Camera Test Comparison!", "url": "https://www.youtube.com/watch?v=uRVIp0ll9aQ", "content": ""}, {"title": "IPHONE 16 PRO CAMERA REVIEW - Wild Eye", "url": "https://wild-eye.com/iphone-16-pro-camera-review/", "content": ""}, {"title": "Google Pixel 9: New camera specs and AI photo features", "url": "https://blog.google/products/pixel/google-pixel-9-ai-camera-features/", "content": ""}, {"title": "Pixel 9 Pro vs iPhone 16 Pro - Big Camera Comparison! Side By Side Review", "url": "https://www.youtube.com/watch?v=FHYOM6cM_KY", "content": ""}, {"title": "The iPhone 16 Pro Camera Review: Control", "url": "https://www.lux.camera/the-iphone-16-pro-camera-review-control/", "content": ""}, {"title": "Google Pixel 9 Pro Review: Smaller screen, same great ...", "url": "https://amateurphotographer.com/review/google-pixel-9-pro-review/", "content": ""}, {"title": "Pixel 9 Pro vs iPhone 16 Pro: Camera Face-Off", "url": "https://www.thefilmalliance.com/blog/pixel-9-pro-vs-iphone-16-pro-a-camera-showdown", "content": ""}, {"title": "iPhone 16 Pro Detailed Camera Review", "url": "https://www.youtube.com/watch?v=sEwEB_5YbL8", "content": ""}, {"title": "Pixel 9 - Wikipedia", "url": "https://en.wikipedia.org/wiki/Pixel_9", "content": ""}, {"title": "Pixel 9 Pro vs. iPhone 16 Pro Long Term Review!", "url": "https://www.youtube.com/watch?v=KqLdR13_QbU", "content": ""}, {"title": "iPhone 16 Pro - Wikipedia", "url": "https://en.wikipedia.org/wiki/IPhone_16_Pro", "content": ""}, {"title": "Google Pixel 9 Pro - Full phone specifications - GSMArena.com", "url": "https://www.gsmarena.com/google_pixel_9_pro-13218.php", "content": ""}, {"title": "Pixel 9 Pro vs iPhone 16 Pro - Which Camera is Better?", "url": "https://www.youtube.com/watch?v=r3IbyYOhc_w", "content": ""}, {"title": "Apple iPhone 16 Pro - Full phone specifications - GSMArena.com", "url": "https://www.gsmarena.com/apple_iphone_16_pro-13315.php", "content": ""}, {"title": "Pixel 9 Pro - Google Store", "url": "https://store.google.com/product/pixel_9_pro?hl=en-US", "content": ""}]}}
+
+100  3722    0  3419  100   303    945     83  0:00:03  0:00:03 --:--:--  1029100  3722    0  3419  100   303    740     65  0:00:04  0:00:04 --:--:--   805100  3722    0  3419  100   303    608     53  0:00:05  0:00:05 --:--:--   761100  3722    0  3419  100   303    515     45  0:00:06  0:00:06 --:--:--   761100  3722    0  3419  100   303    447     39  0:00:07  0:00:07 --:--:--   760100  3722    0  3419  100   303    395     35  0:00:08  0:00:08 --:--:--     0event: StreamEvent.AGENT_PLAN_DELTA
+data: {"event": "agent-plan-delta", "data": {"event_type": "agent-plan-delta", "steps": ["Gathering images of both phones' camera modules to visually compare their lens layouts and front camera designs."]}}
+
+100  3966    0  3663  100   303    387     32  0:00:09  0:00:09 --:--:--    50100  3966    0  3663  100   303    350     28  0:00:10  0:00:10 --:--:--    50100  3966    0  3663  100   303    319     26  0:00:11  0:00:11 --:--:--    50event: StreamEvent.AGENT_FINISH
+data: {"event": "agent-finish", "data": {"event_type": "agent-finish"}}
+
+event: StreamEvent.SEARCH_RESULTS
+data: {"event": "search-results", "data": {"event_type": "search-results", "results": [{"title": "iPhone 16 Pro - Tech Specs - Apple Support", "url": "https://support.apple.com/en-us/121031", "content": "iPhone 16 Pro - Tech Specs"}, {"title": "Google Pixel 9 Pro XL Camera test - DxOMark", "url": "https://www.dxomark.com/google-pixel-9-pro-xl-camera-test/", "content": "Explore the Google Pixel 9 Pro XL, praised for its versatile camera performance and new HDR imaging pipeline, ensuring true-to-life images and sharp details."}, {"title": "Google Pixel 9 Pro vs iPhone 16 Pro - NIGHT Camera Test", "url": "https://www.youtube.com/watch?v=_gUoI3e5A4Q", "content": "Fuji-Inspired Lut iPhone Packs: https://geni.us/JHLlqB5 iPhone 16 Pro: Free conversion LUT - https://geni.us/DLAW6g Smartphone creator? You need this: https://geni.us/dLrpBN7 Pixel 9 Pro vs iPhone 16 Pro (Comprehensive) - https://youtu.be/r3IbyYOhc_w Buy the Google Pixel 9 Pro (affiliates) - https:/..."}, {"title": "iPhone 16 Pro and 16 Pro Max - Technical Specifications", "url": "https://www.apple.com/am/iphone-16-pro/specs/", "content": "View all technical specifications for iPhone 16 Pro and iPhone 16 Pro Max."}, {"title": "Tech Specs of Pixel 9 Pro & Pixel 9 Pro XL", "url": "https://store.google.com/product/pixel_9_pro_specs?hl=en-US", "content": "Explore the technical specs of Pixel 9 Pro & Pixel 9 Pro XL, with its immersive display, pro-level camera, and fastest charging all-day battery."}, {"title": "iPhone 16 Pro vs Pixel 9 Pro: Camera Test Comparison!", "url": "https://www.youtube.com/watch?v=uRVIp0ll9aQ", "content": "Review: Apple iPhone 16 Pro vs Google Pixel 9 Pro - Camera Comparison Test! The new 2024 iPhone 16 Pro and Pixel 9 Pro pack new camera sensors, night mode, 5x telephoto shots, and more. IS the iPhone 16 Pro better than the Pixel 9 Pro? 00:00 - Intro 00:06 - Front Facing Video 00:32 - Main Camera Sen..."}, {"title": "IPHONE 16 PRO CAMERA REVIEW - Wild Eye", "url": "https://wild-eye.com/iphone-16-pro-camera-review/", "content": "iPhone 16 Pro Camera Review for Wildlife Photography. Learn from wildlife photographer Gerry van der Walt about the iPhone 16's camera."}, {"title": "Google Pixel 9: New camera specs and AI photo features", "url": "https://blog.google/products/pixel/google-pixel-9-ai-camera-features/", "content": "Here\u2019s a look at the upgraded cameras and AI photography features on the latest Pixel phones."}, {"title": "Pixel 9 Pro vs iPhone 16 Pro - Big Camera Comparison! Side By Side Review", "url": "https://www.youtube.com/watch?v=FHYOM6cM_KY", "content": "Welcome to my Google Pixel 9 Pro vs iPhone 16 Pro Camera Comparison and Test Video! Get Hohem iSteady M7 from this video: Official Store: https://bit.ly/3Bb334g (Get 10% Off with the Code: YT10) Amazon: https://amzn.to/3Dcfz44 Other Gear Featured in this video: iPhone 16 Pro - https://amzn.to/4f81YY..."}, {"title": "The iPhone 16 Pro Camera Review: Control", "url": "https://www.lux.camera/the-iphone-16-pro-camera-review-control/", "content": "For the first \u201cDesert Titanium\u201d iPhone, we took over 1000 photos and videos in the desert. Take a deep dive into what\u2019s new \u2014 and why it\u2019s close to the last of its kind."}, {"title": "Google Pixel 9 Pro Review: Smaller screen, same great ...", "url": "https://amateurphotographer.com/review/google-pixel-9-pro-review/", "content": "If you want the best camera phone, you have to go big. Not so with the Pixel 9 Pro, which shows good things do come in small packages. Amy Davies reviews"}, {"title": "Pixel 9 Pro vs iPhone 16 Pro: Camera Face-Off", "url": "https://www.thefilmalliance.com/blog/pixel-9-pro-vs-iphone-16-pro-a-camera-showdown", "content": ""}, {"title": "iPhone 16 Pro Detailed Camera Review", "url": "https://www.youtube.com/watch?v=sEwEB_5YbL8", "content": "Here is my detailed camera review of the iPhone 16 Pro. With all 3 new cameras, does this iPhone 16 pro has what it takes to beat other flagship smartphones? Watch the video to find out. It now gets 2 48 megapixel cameras, with a new 5x tetra prism lens. I have over 150 image and video samples in th..."}, {"title": "Pixel 9 - Wikipedia", "url": "https://en.wikipedia.org/wiki/Pixel_9", "content": "A key distinction between the base and Pro models lies in the camera setup, with the higher-end models sporting a 48-megapixel telephoto rear camera in addition to the standard 50- and 48-megapixel wide and ultrawide lenses; the Pro models also include a 42-megapixel ultrawide front camera compared ..."}, {"title": "Pixel 9 Pro vs. iPhone 16 Pro Long Term Review!", "url": "https://www.youtube.com/watch?v=KqLdR13_QbU", "content": ""}, {"title": "iPhone 16 Pro - Wikipedia", "url": "https://en.wikipedia.org/wiki/IPhone_16_Pro", "content": ""}, {"title": "Google Pixel 9 Pro - Full phone specifications - GSMArena.com", "url": "https://www.gsmarena.com/google_pixel_9_pro-13218.php", "content": ""}, {"title": "Pixel 9 Pro vs iPhone 16 Pro - Which Camera is Better?", "url": "https://www.youtube.com/watch?v=r3IbyYOhc_w", "content": "Camera Matchmaker - Let me help you pick your perfect match: https://geni.us/mzHxr Smartphone content creator? You need this: https://geni.us/dLrpBN7 Take my \ud83d\udcf7 FREE CAMERA or LENS QUIZ to see which camera is right for you - https://geni.us/37Efgsx Fuji-Inspired iPhone Luts - https://geni.us/JHLlqB5 ..."}, {"title": "Apple iPhone 16 Pro - Full phone specifications - GSMArena.com", "url": "https://www.gsmarena.com/apple_iphone_16_pro-13315.php", "content": "Apple iPhone 16 Pro smartphone. Announced Sep 2024. Features 6.3\u2033 display, Apple A18 Pro chipset, 3582 mAh battery, 1024 GB storage, 8 GB RAM, Ceramic Shield glass (2024 gen)."}, {"title": "Pixel 9 Pro - Google Store", "url": "https://store.google.com/product/pixel_9_pro?hl=en-US", "content": "Gemini brings a whole new level of AI-mazing features to get inspired or just get it done with Pixel 9 Pro"}], "images": ["https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/7cb5895f-af2d-59a0-b7a1-bb24ed918287/1ca28c7b-658f-5eb2-8a51-729bc0f7d88d.jpg", "https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/70c6e8c4-2d6a-556a-9f93-8f19d9707332/f656f2f9-6a2d-5328-af4c-8ac5a0b937e5.jpg", "https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/e90c97f8-856f-511d-befe-1f8f88ecc80c/9a9fa9aa-60a5-5657-8d06-58da6e244e65.jpg", "https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/5d87b120-5090-5c4f-b316-6733b7256918/5b0f7463-9477-557b-95c2-804abb08a83a.jpg", "https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/24df6664-c011-54bc-a61d-453787515e29/e7e7acc4-3104-5539-b8e1-cf3641802906.jpg", "https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/8306183f-e652-5a86-92d3-c836b62dde27/1df78b94-612a-5686-b375-d5ebe423b3de.jpg", "https://st.perplexity.ai/estatic/0b226c450798410ac541646c86ec31afd840e5beab817a5d84fa821e7db61981ec84c3b4a3f072a7a2e1899c9fb06c6e1b5bf25e508fdd7398d11b71c9f44514bffae13565518a3da4ea036dd951c42fe16ebeaac9b12ddb000b4f80d574f0e0", "https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/95e47ad4-8756-5b6d-93b3-e7b419b51d66/b7814ec2-e1a2-5df5-b75e-438838d9cafd.jpg", "https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/5f115515-3cec-5155-88ff-3e80dc205872/a81c5ba7-6583-571c-9b1f-93d9a1c882c9.jpg", "https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/6bc66f23-83c1-541f-8ba1-8ab8c92af278/9a9fa9aa-60a5-5657-8d06-58da6e244e65.jpg", "https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/0567865f-f838-5417-a838-e6a9372edfed/b9348b34-25a3-52d7-a71c-a56aaed2caa9.jpg", "https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/ed841289-e13a-58de-b893-75cb93a30e60/a81c5ba7-6583-571c-9b1f-93d9a1c882c9.jpg", "https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/66603d12-2712-5199-b574-7ba466b56228/c441d299-fd0c-569c-a9a7-eaea615e6c16.jpg", "https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/06d16c61-1e09-5f09-b061-e7012f261e24/8ff881d1-7565-5ee3-a421-6627e667d5a8.jpg", "https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/3e43f118-1ae8-5529-99ac-f7afa34d156d/9a9fa9aa-60a5-5657-8d06-58da6e244e65.jpg"]}}
+
+event: StreamEvent.BEGIN_STREAM
+data: {"event": "begin-stream", "data": {"event_type": "begin-stream", "query": "Compare the iPhone 16 Pro and Pixel 9 Pro camera specs detailed."}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "The"}}
+
+100 12422    0 12119  100   303    988     24  0:00:12  0:00:12 --:--:--  1882event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": " "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "i"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "Phone"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": " "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "16"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": " "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "Pro"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": " "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "and"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": " "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "Pixel"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": " "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "9"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": " "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "Pro"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": " "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "both"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": " "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "offer"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": " "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "triple"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "\u2011"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "camera"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": " "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "flag"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "ships"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": ","}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": " "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "but"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": " "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "differ"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": " "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "in"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": " "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "sensor"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": " "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "resolutions"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": ","}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": " "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "zoom"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": " "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "implementation"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": ","}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": " "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "and"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": " "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "video"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": " "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "features"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "."}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": " "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "Below"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": " "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "is"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": " "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "a"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": " "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "focused"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": " "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "spec"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "\u2011"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "level"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": " "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "comparison"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": " "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "based"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": " "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "on"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": " "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "manufacturer"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": " "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "data"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": " "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "and"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": " "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "reputable"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": " "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "reviews"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "The "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "iPhone "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "16 "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "Pro "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "and "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "Pixel "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "9 "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "Pro "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "both "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "offer "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "triple\u2011camera "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "flagships, "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "but "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "differ "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "in "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "sensor "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "resolutions, "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "zoom "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "implementation, "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "and "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "video "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "features. "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "Below "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "is "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "a "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "focused "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "spec\u2011level "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "comparison "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "based "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "on "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "manufacturer "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "data "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "and "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "reputable "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "reviews.[1]"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "[4]"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "[11]"}}
+
+100 25683    0 25380  100   303   1893     22  0:00:13  0:00:13 --:--:--  4605event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "[14]"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "[17]"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "[19]"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "\n\n"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "## "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "Rear "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "camera "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "hardware\n\n"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "- "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "**iPhone "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "16 "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "Pro**  \n  "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "- "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "Main: "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "48 "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "MP "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "wide, "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "24 "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "mm "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "equiv, "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "\u0192/1.78, "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "second\u2011gen "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "sensor\u2011shift "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "OIS, "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "100% "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "Focus "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "Pixels.[1]"}}
+
+100 28854    0 28551  100   303   1987     21  0:00:14  0:00:14 --:--:--  5070event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "[4]"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "  \n  "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "- "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "Ultra\u2011wide: "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "48 "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "MP, "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "13 "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "mm "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "equiv, "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "\u0192/2.2, "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "120\u00b0 "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "FOV, "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "Hybrid "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "Focus "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "Pixels, "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "supports "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "48 "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "MP "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "shots "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "and "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "macro.[1]"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "[4]"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "  \n  "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "- "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "Telephoto: "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "12 "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "MP, "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "5x "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "optical "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "(120 "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "mm "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "equiv), "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "\u0192/2.8, "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "3D "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "sensor\u2011shift "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "OIS, "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "tetraprism "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "design.[1]"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "[4]"}}
+
+100 33431    0 33128  100   303   2132     19  0:00:15  0:00:15 --:--:--  5811event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "  \n\n"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "- "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "**Pixel "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "9 "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "Pro**  \n  "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "- "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "Main: "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "50 "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "MP "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "wide, "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "~24 "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "mm "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "equiv, "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "\u0192/1.68, "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "OIS, "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "1/1.31\" "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "sensor.[2]"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "[11]"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "[14]"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "[17]"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "  \n  "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "- "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "Ultra\u2011wide: "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "48 "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "MP, "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "~12 "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "mm "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "equiv, "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "\u0192/1.7, "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "OIS "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "or "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "advanced "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "stabilization, "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "macro "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "AF, "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "1/2.55\" "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "sensor.[2]"}}
+
+100 37768    0 37465  100   303   2223     17  0:00:17  0:00:16  0:00:01  6278event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "[8]"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "[11]"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "[17]"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "  \n  "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "- "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "Telephoto: "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "48 "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "MP, "}}
+
+100 38693    0 38390  100   303   2178     17  0:00:17  0:00:17 --:--:--  4894event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "5x "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "optical "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "(about "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "120 "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "mm "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "equiv), "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "\u0192/2.8, "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "OIS, "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "1/2.55\" "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "sensor; "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "supports "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "high\u2011quality "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "digital "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "\u201cSuper "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "Res "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "Zoom.\u201d[2]"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "[8]"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "[11]"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "[14]"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "[17]"}}
+
+100 41060    0 40757  100   303   2168     16  0:00:18  0:00:18 --:--:--  2853event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "  \n\n"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "## "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "Front "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "camera "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "and "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "selfies\n\n"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "- "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "**iPhone "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "16 "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "Pro**  \n  "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "- "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "12 "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "MP "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "front "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "camera, "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "\u0192/1.9, "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "autofocus "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "with "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "Focus "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "Pixels, "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "supports "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "next\u2011gen "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "portraits, "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "Photonic "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "Engine, "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "and "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "4K "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "Dolby "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "Vision "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "video.[1]"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "[4]"}}
+
+100 44709    0 44406  100   303   2241     15  0:00:20  0:00:19  0:00:01  2911event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "  \n\n"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "- "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "**Pixel "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "9 "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "Pro**  \n  "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "- "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "42 "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "MP "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "front "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "camera, "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "\u0192/2.2, "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "Dual "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "PD "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "autofocus, "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "ultrawide "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "103\u00b0 "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "FOV, "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "outputs "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "binned "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "images "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "around "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "10\u201312 "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "MP "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "for "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "better "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "low "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "light.[5]"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "[8]"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "[11]"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "[14]"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "[17]"}}
+
+100 48339    0 48036  100   303   2328     14  0:00:21  0:00:20  0:00:01  2923event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "  \n\n"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "## "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "Photo "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "features "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "and "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "zoom\n\n"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "- "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "**iPhone "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "16 "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "Pro**  \n  "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "- "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "24 "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "MP "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "default "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "\u201cFusion\u201d "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "output "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "from "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "48 "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "MP "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "main "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "sensor, "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "with "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "48 "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "MP "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "ProRAW "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "for "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "maximum "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "detail.[1]"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "[4]"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "[7]"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "[13]"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "  \n  "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "- "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "Native "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "1x, "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "2x "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "(in\u2011sensor "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "crop), "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "and "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "5x "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "optical; "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "Apple "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "advertises "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "multiple "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "intermediate "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "focal "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "lengths "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "using "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "computational "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "\u201cvirtual\u201d "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "lenses.[4]"}}
+
+100 54341    0 54038  100   303   2508     14  0:00:21  0:00:21 --:--:--  3530event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "[6]"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "[10]"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "  \n  "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "- "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "Smart "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "HDR "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "5, "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "Photonic "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "Engine, "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "Deep "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "Fusion, "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "Night "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "mode, "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "LiDAR\u2011assisted "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "night "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "portraits "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "and "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "faster "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "AF.[1]"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "[4]"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "[7]"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "[10]"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "  \n\n"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "- "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "**Pixel "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "9 "}}
+
+100 57378    0 57075  100   303   2512     13  0:00:23  0:00:22  0:00:01  3671event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "Pro**  \n  "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "- "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "Uses "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "HDR+ "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "pipeline "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "and "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "updated "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "imaging "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "to "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "emphasize "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "dynamic "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "range, "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "skin "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "tones, "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "and "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "detail.[2]"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "[8]"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "[11]"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "  \n  "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "- "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "5x "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "optical "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "plus "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "Super "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "Res "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "Zoom "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "up "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "to "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "around "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "20\u201330x "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "with "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "strong "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "detail "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "retention "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "compared "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "with "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "many "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "rivals.[2]"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "[8]"}}
+
+100 61945    0 61642  100   303   2651     13  0:00:23  0:00:23 --:--:--  4682event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "[11]"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "[17]"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "  \n  "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "- "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "Macro "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "Focus "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "on "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "the "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "ultra\u2011wide "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "for "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "close\u2011up "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "stills "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "and "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "video, "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "along "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "with "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "AI "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "tools "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "like "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "Best "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "Take "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "and "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "Magic "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "Editor "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "(beyond "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "pure "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "optics "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "but "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "affect "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "camera "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "experience).[2]"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "[8]"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "[11]"}}
+
+100 65807    0 65504  100   303   2701     12  0:00:25  0:00:24  0:00:01  4751100 65807    0 65504  100   303   2593     11  0:00:27  0:00:25  0:00:02  3779event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "  \n\n"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "## "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "Video "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "capabilities\n\n"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "- "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "**iPhone "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "16 "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "Pro**  \n  "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "- "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "Rear: "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "4K "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "Dolby "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "Vision "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "recording "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "at "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "24/25/30/60/100/120 "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "fps "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "on "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "supported "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "modes, "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "strong "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "in\u2011sensor "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "and "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "sensor\u2011shift "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "stabilization.[1]"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "[4]"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "[6]"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "[10]"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "  \n  "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "- "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "ProRes "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "and "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "Log "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "options "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "(on "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "higher "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "storage "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "/ "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "via "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "external "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "storage), "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "advanced "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "slow\u2011motion, "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "and "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "spatial "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "video "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "capture "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "on "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "compatible "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "lenses.[1]"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "[4]"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "[10]"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "[13]"}}
+
+100 72061    0 71758  100   303   2697     11  0:00:27  0:00:26  0:00:01  3501event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "  \n\n"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "- "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "**Pixel "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "9 "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "Pro**  \n  "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "- "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "Rear: "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "up "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "to "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "4K "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "60 "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "fps "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "native, "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "with "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "enhanced "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "stabilization "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "and "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "Night "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "Sight "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "video "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "modes "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "focused "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "on "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "low\u2011light "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "detail "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "and "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "noise "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "reduction.[2]"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "[8]"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "[11]"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "  \n  "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "- "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "\u201cVideo "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "Boost\u201d "}}
+
+100 76047    0 75744  100   303   2753     11  0:00:27  0:00:27 --:--:--  3891event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "can "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "process "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "clips "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "in "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "the "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "cloud "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "for "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "improved "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "HDR "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "and "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "even "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "8K\u2011class "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "output "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "via "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "AI "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "upscaling "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "and "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "frame "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "extraction.[2]"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "[8]"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "[11]"}}
+
+100 78504    0 78201  100   303   2727     10  0:00:30  0:00:28  0:00:02  3057event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "  \n\n"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "## "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "Quick "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "takeaway\n\n"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "- "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "Choose "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "**iPhone "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "16 "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "Pro** "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "if "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "you "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "prioritize "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "ProRes/Log, "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "Dolby "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "Vision "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "at "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "many "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "frame "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "rates, "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "tight "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "Apple "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "ecosystem "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "integration, "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "and "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "LiDAR\u2011assisted "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "portraits "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "and "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "AF. "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "Camera "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "hardware "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "leans "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "on "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "a "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "very "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "capable "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "48 "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "MP "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "main "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "and "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "ultra\u2011wide "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "plus "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "a "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "solid "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "but "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "lower\u2011res "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "12 "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "MP "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "5x "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "telephoto.[1]"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "[4]"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "[7]"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "[10]"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "[13]"}}
+
+100 84721    0 84418  100   303   2848     10  0:00:30  0:00:29  0:00:01  3515event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "  \n"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "- "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "Choose "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "**Pixel "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "9 "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "Pro** "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "if "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "you "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "want "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "higher\u2011resolution "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "telephoto "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "and "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "selfie "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "sensors, "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "very "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "strong "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "computational "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "photography, "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "macro "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "from "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "the "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "ultra\u2011wide, "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "and "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "powerful "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "AI "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "zoom/video "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "features, "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "including "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "Super "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "Res "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "Zoom "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "and "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "cloud\u2011assisted "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "Video "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "Boost.[2]"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "[8]"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "[11]"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "[14]"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "[17]"}}
+
+100 89331    0 89028  100   303   2935      9  0:00:33  0:00:30  0:00:03  4634event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "  \n\n"}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "If "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "you "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "tell "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "what "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "you "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "shoot "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "most "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "(people, "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "travel, "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "video, "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "wildlife, "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "etc.), "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "a "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "more "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "usage\u2011specific "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "recommendation "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "can "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "be "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "narrowed "}}
+
+event: StreamEvent.TEXT_CHUNK
+data: {"event": "text-chunk", "data": {"event_type": "text-chunk", "text": "down."}}
+
+event: StreamEvent.FINAL_RESPONSE
+data: {"event": "final-response", "data": {"event_type": "final-response", "message": "The iPhone 16 Pro and Pixel 9 Pro both offer triple\u2011camera flagships, but differ in sensor resolutions, zoom implementation, and video features. Below is a focused spec\u2011level comparison based on manufacturer data and reputable reviewsThe iPhone 16 Pro and Pixel 9 Pro both offer triple\u2011camera flagships, but differ in sensor resolutions, zoom implementation, and video features. Below is a focused spec\u2011level comparison based on manufacturer data and reputable reviews.[1][4][11][14][17][19]\n\n## Rear camera hardware\n\n- **iPhone 16 Pro**  \n  - Main: 48 MP wide, 24 mm equiv, \u0192/1.78, second\u2011gen sensor\u2011shift OIS, 100% Focus Pixels.[1][4]  \n  - Ultra\u2011wide: 48 MP, 13 mm equiv, \u0192/2.2, 120\u00b0 FOV, Hybrid Focus Pixels, supports 48 MP shots and macro.[1][4]  \n  - Telephoto: 12 MP, 5x optical (120 mm equiv), \u0192/2.8, 3D sensor\u2011shift OIS, tetraprism design.[1][4]  \n\n- **Pixel 9 Pro**  \n  - Main: 50 MP wide, ~24 mm equiv, \u0192/1.68, OIS, 1/1.31\" sensor.[2][11][14][17]  \n  - Ultra\u2011wide: 48 MP, ~12 mm equiv, \u0192/1.7, OIS or advanced stabilization, macro AF, 1/2.55\" sensor.[2][8][11][17]  \n  - Telephoto: 48 MP, 5x optical (about 120 mm equiv), \u0192/2.8, OIS, 1/2.55\" sensor; supports high\u2011quality digital \u201cSuper Res Zoom.\u201d[2][8][11][14][17]  \n\n## Front camera and selfies\n\n- **iPhone 16 Pro**  \n  - 12 MP front camera, \u0192/1.9, autofocus with Focus Pixels, supports next\u2011gen portraits, Photonic Engine, and 4K Dolby Vision video.[1][4]  \n\n- **Pixel 9 Pro**  \n  - 42 MP front camera, \u0192/2.2, Dual PD autofocus, ultrawide 103\u00b0 FOV, outputs binned images around 10\u201312 MP for better low light.[5][8][11][14][17]  \n\n## Photo features and zoom\n\n- **iPhone 16 Pro**  \n  - 24 MP default \u201cFusion\u201d output from 48 MP main sensor, with 48 MP ProRAW for maximum detail.[1][4][7][13]  \n  - Native 1x, 2x (in\u2011sensor crop), and 5x optical; Apple advertises multiple intermediate focal lengths using computational \u201cvirtual\u201d lenses.[4][6][10]  \n  - Smart HDR 5, Photonic Engine, Deep Fusion, Night mode, LiDAR\u2011assisted night portraits and faster AF.[1][4][7][10]  \n\n- **Pixel 9 Pro**  \n  - Uses HDR+ pipeline and updated imaging to emphasize dynamic range, skin tones, and detail.[2][8][11]  \n  - 5x optical plus Super Res Zoom up to around 20\u201330x with strong detail retention compared with many rivals.[2][8][11][17]  \n  - Macro Focus on the ultra\u2011wide for close\u2011up stills and video, along with AI tools like Best Take and Magic Editor (beyond pure optics but affect camera experience).[2][8][11]  \n\n## Video capabilities\n\n- **iPhone 16 Pro**  \n  - Rear: 4K Dolby Vision recording at 24/25/30/60/100/120 fps on supported modes, strong in\u2011sensor and sensor\u2011shift stabilization.[1][4][6][10]  \n  - ProRes and Log options (on higher storage / via external storage), advanced slow\u2011motion, and spatial video capture on compatible lenses.[1][4][10][13]  \n\n- **Pixel 9 Pro**  \n  - Rear: up to 4K 60 fps native, with enhanced stabilization and Night Sight video modes focused on low\u2011light detail and noise reduction.[2][8][11]  \n  - \u201cVideo Boost\u201d can process clips in the cloud for improved HDR and even 8K\u2011class output via AI upscaling and frame extraction.[2][8][11]  \n\n## Quick takeaway\n\n- Choose **iPhone 16 Pro** if you prioritize ProRes/Log, Dolby Vision at many frame rates, tight Apple ecosystem integration, and LiDAR\u2011assisted portraits and AF. Camera hardware leans on a very capable 48 MP main and ultra\u2011wide plus a solid but lower\u2011res 12 MP 5x telephoto.[1][4][7][10][13]  \n- Choose **Pixel 9 Pro** if you want higher\u2011resolution telephoto and selfie sensors, very strong computational photography, macro from the ultra\u2011wide, and powerful AI zoom/video features, including Super Res Zoom and cloud\u2011assisted Video Boost.[2][8][11][14][17]  \n\nIf you tell what you shoot most (people, travel, video, wildlife, etc.), a more usage\u2011specific recommendation can be narrowed down."}}
+
+event: StreamEvent.RELATED_QUERIES
+data: {"event": "related-queries", "data": {"event_type": "related-queries", "related_queries": ["Which phone has better low-light performance", "How do the ultra-wide cameras compare", "Which phone offers better video recording capabilities", "What are the differences in portrait mode between the two phones", "How do the telephoto lenses perform in zoom shots"]}}
+
+event: StreamEvent.STREAM_END
+data: {"event": "stream-end", "data": {"event_type": "stream-end", "thread_id": "test_thread_pro_complex"}}
+
+100 96599    0 96296  100   303   3169      9  0:00:33  0:00:30  0:00:03  6489

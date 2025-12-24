@@ -1,0 +1,3024 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "AI Backend API",
+    "description": "API for AI Backend",
+    "version": "0.1.0"
+  },
+  "paths": {
+    "/api/v1/health": {
+      "get": {
+        "tags": [
+          "v1",
+          "Health"
+        ],
+        "summary": "Health Check",
+        "description": "Health check endpoint to verify the API is running.",
+        "operationId": "health_check_api_v1_health_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HealthResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/chat/completions": {
+      "post": {
+        "tags": [
+          "v1",
+          "Chat"
+        ],
+        "summary": "Unified chat completions endpoint supporting multiple workflow modes",
+        "description": "Unified chat completions endpoint that routes to different workflows based on mode.\n\nSupported modes:\n- simple_qa: Fast question answering workflow\n- deep_qa: Deep research and analysis workflow",
+        "operationId": "chat_completions_api_v1_chat_completions_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChatRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/workflow/simple_qa/completions": {
+      "post": {
+        "tags": [
+          "v1",
+          "Workflow"
+        ],
+        "summary": "Stream chat responses from the simple_qa workflow",
+        "description": "Stream chat responses from the simple_qa workflow.",
+        "operationId": "simple_qa_stream_api_v1_workflow_simple_qa_completions_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChatRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/workflow/deep_qa/completions": {
+      "post": {
+        "tags": [
+          "v1",
+          "Workflow"
+        ],
+        "summary": "Stream chat responses from the deep_qa workflow",
+        "description": "Stream chat responses from the deep_qa workflow.",
+        "operationId": "deep_qa_stream_api_v1_workflow_deep_qa_completions_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChatRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/workflow/prompt_enhancer/completions": {
+      "post": {
+        "tags": [
+          "v1",
+          "Workflow"
+        ],
+        "summary": "Enhance a user prompt using AI analysis",
+        "description": "Enhance a user prompt using AI analysis (batch endpoint).",
+        "operationId": "prompt_enhancer_batch_api_v1_workflow_prompt_enhancer_completions_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EnhancePromptRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/config": {
+      "get": {
+        "tags": [
+          "v1",
+          "Config"
+        ],
+        "summary": "Config",
+        "description": "Get the config of the server.",
+        "operationId": "config_api_v1_config_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConfigResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/mcp/server/metadata": {
+      "post": {
+        "tags": [
+          "v1",
+          "MCP"
+        ],
+        "summary": "Mcp Server Metadata",
+        "description": "Get information about an MCP server.",
+        "operationId": "mcp_server_metadata_api_v1_mcp_server_metadata_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MCPServerMetadataRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MCPServerMetadataResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/rag/config": {
+      "get": {
+        "tags": [
+          "v1",
+          "RAG"
+        ],
+        "summary": "Rag Config",
+        "description": "Get the config of the RAG.",
+        "operationId": "rag_config_api_v1_rag_config_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RAGConfigResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/rag/resources": {
+      "get": {
+        "tags": [
+          "v1",
+          "RAG"
+        ],
+        "summary": "Rag Resources",
+        "description": "Get the resources of the RAG.",
+        "operationId": "rag_resources_api_v1_rag_resources_get",
+        "parameters": [
+          {
+            "name": "query",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "The query of the resource need to be searched",
+              "title": "Query"
+            },
+            "description": "The query of the resource need to be searched"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RAGResourcesResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/auth/csrf-token": {
+      "get": {
+        "tags": [
+          "v1",
+          "Authentication"
+        ],
+        "summary": "Get CSRF token",
+        "description": "Get a new CSRF token (can be called without authentication)",
+        "operationId": "get_csrf_token_endpoint_api_v1_auth_csrf_token_get",
+        "responses": {
+          "200": {
+            "description": "CSRF token set in cookie",
+            "content": {
+              "application/json": {
+                "schema": {
+
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/auth/register": {
+      "post": {
+        "tags": [
+          "v1",
+          "Authentication"
+        ],
+        "summary": "Register new user",
+        "description": "Create a new user account with email and password",
+        "operationId": "register_api_v1_auth_register_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegisterRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "User successfully registered",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RegisterResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/auth/login": {
+      "post": {
+        "tags": [
+          "v1",
+          "Authentication"
+        ],
+        "summary": "User login",
+        "description": "Authenticate user with email and password, returns session token",
+        "operationId": "login_api_v1_auth_login_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Login successful, returns user info and session token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LoginResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/auth/logout": {
+      "post": {
+        "tags": [
+          "v1",
+          "Authentication"
+        ],
+        "summary": "User logout",
+        "description": "Invalidate user session and logout",
+        "operationId": "logout_api_v1_auth_logout_post",
+        "responses": {
+          "200": {
+            "description": "Logout successful",
+            "content": {
+              "application/json": {
+                "schema": {
+
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/auth/me": {
+      "get": {
+        "tags": [
+          "v1",
+          "Authentication"
+        ],
+        "summary": "Get current user",
+        "description": "Get information about the currently authenticated user",
+        "operationId": "get_current_user_info_api_v1_auth_me_get",
+        "responses": {
+          "200": {
+            "description": "Current user information",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/auth/verify-email": {
+      "post": {
+        "tags": [
+          "v1",
+          "Authentication"
+        ],
+        "summary": "Verify email address",
+        "description": "Verify user email address using verification token and create session",
+        "operationId": "verify_email_api_v1_auth_verify_email_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/VerifyEmailRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Email verification status with user session",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VerifyEmailResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/auth/resend-verification": {
+      "post": {
+        "tags": [
+          "v1",
+          "Authentication"
+        ],
+        "summary": "Resend verification email",
+        "description": "Resend email verification to user by email address",
+        "operationId": "resend_verification_by_email_api_v1_auth_resend_verification_post",
+        "parameters": [
+          {
+            "name": "email",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Email"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verification email sent status",
+            "content": {
+              "application/json": {
+                "schema": {
+
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/auth/resend-verification-me": {
+      "post": {
+        "tags": [
+          "v1",
+          "Authentication"
+        ],
+        "summary": "Resend verification email to current user",
+        "description": "Resend email verification to currently logged in user",
+        "operationId": "resend_verification_api_v1_auth_resend_verification_me_post",
+        "responses": {
+          "200": {
+            "description": "Verification email sent status",
+            "content": {
+              "application/json": {
+                "schema": {
+
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/profile/me": {
+      "get": {
+        "tags": [
+          "v1",
+          "User profile"
+        ],
+        "summary": "Get current user profile",
+        "description": "Get the current authenticated user's complete profile with all fields",
+        "operationId": "get_my_profile_api_v1_profile_me_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProfileResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "v1",
+          "User profile"
+        ],
+        "summary": "Update user profile",
+        "description": "Update name, username, introduction, or location",
+        "operationId": "update_profile_api_v1_profile_me_put",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateProfileRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProfileResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/profile/avatar": {
+      "post": {
+        "tags": [
+          "v1",
+          "User profile"
+        ],
+        "summary": "Upload avatar",
+        "description": "Upload or update user avatar image",
+        "operationId": "upload_avatar_api_v1_profile_avatar_post",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/Body_upload_avatar_api_v1_profile_avatar_post"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProfileResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "v1",
+          "User profile"
+        ],
+        "summary": "Delete avatar",
+        "description": "Delete user avatar image",
+        "operationId": "delete_avatar_api_v1_profile_avatar_delete",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProfileResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/news": {
+      "get": {
+        "tags": [
+          "v1",
+          "News"
+        ],
+        "summary": "Get news articles",
+        "description": "Retrieve news with flexible filtering - supports search, category, and date-based queries",
+        "operationId": "get_news_articles_api_v1_news_get",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewsArticlesFilterRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NewsListResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/news/categories": {
+      "get": {
+        "tags": [
+          "v1",
+          "News"
+        ],
+        "summary": "Get all news categories",
+        "description": "Retrieve list of all available news categories",
+        "operationId": "get_all_categories_api_v1_news_categories_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CategoriesListResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/news/categories/{category_id}": {
+      "get": {
+        "tags": [
+          "v1",
+          "News"
+        ],
+        "summary": "Get category details",
+        "description": "Retrieve category information with recent articles and top sources",
+        "operationId": "get_category_details_api_v1_news_categories__category_id__get",
+        "parameters": [
+          {
+            "name": "category_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Unique category identifier",
+              "title": "Category Id"
+            },
+            "description": "Unique category identifier",
+            "example": "technology"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CategoryDetailResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/news/{news_id}": {
+      "get": {
+        "tags": [
+          "v1",
+          "News"
+        ],
+        "summary": "Get news article detail",
+        "description": "Retrieve full article content with metadata and similar articles",
+        "operationId": "get_news_article_detail_api_v1_news__news_id__get",
+        "parameters": [
+          {
+            "name": "news_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "description": "Unique news article identifier",
+              "title": "News Id"
+            },
+            "description": "Unique news article identifier",
+            "example": "news_789abc"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NewsArticleDetailResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/storage/files": {
+      "post": {
+        "tags": [
+          "v1",
+          "Storage",
+          "storage"
+        ],
+        "summary": "Upload file",
+        "description": "Upload a file to MinIO storage",
+        "operationId": "upload_file_api_v1_storage_files_post",
+        "parameters": [
+          {
+            "name": "bucket",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "uploads",
+              "title": "Bucket"
+            }
+          },
+          {
+            "name": "folder",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Folder"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/Body_upload_file_api_v1_storage_files_post"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/storage/files/{bucket}/{object_name}": {
+      "delete": {
+        "tags": [
+          "v1",
+          "Storage",
+          "storage"
+        ],
+        "summary": "Delete file",
+        "description": "Delete a file from MinIO storage",
+        "operationId": "delete_file_api_v1_storage_files__bucket___object_name__delete",
+        "parameters": [
+          {
+            "name": "bucket",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Bucket"
+            }
+          },
+          {
+            "name": "object_name",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Object Name"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "v1",
+          "Storage",
+          "storage"
+        ],
+        "summary": "View or download file",
+        "description": "Stream a file directly to view or download in browser",
+        "operationId": "view_file_api_v1_storage_files__bucket___object_name__get",
+        "parameters": [
+          {
+            "name": "bucket",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Bucket"
+            }
+          },
+          {
+            "name": "object_name",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Object Name"
+            }
+          },
+          {
+            "name": "download",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "default": false,
+              "title": "Download"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/storage/files/{bucket}/{object_name}/url": {
+      "get": {
+        "tags": [
+          "v1",
+          "Storage",
+          "storage"
+        ],
+        "summary": "Get presigned URL",
+        "description": "Get a presigned URL for a file",
+        "operationId": "get_file_url_api_v1_storage_files__bucket___object_name__url_get",
+        "parameters": [
+          {
+            "name": "bucket",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Bucket"
+            }
+          },
+          {
+            "name": "object_name",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Object Name"
+            }
+          },
+          {
+            "name": "expires_seconds",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 3600,
+              "title": "Expires Seconds"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/notifications/token": {
+      "post": {
+        "tags": [
+          "v1",
+          "Notifications"
+        ],
+        "summary": "Register Push Token",
+        "description": "Register or update a push notification token for the current user.",
+        "operationId": "register_push_token_api_v1_notifications_token_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TokenRegistration"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "Response Register Push Token Api V1 Notifications Token Post"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/notifications/test-send": {
+      "post": {
+        "tags": [
+          "v1",
+          "Notifications"
+        ],
+        "summary": "Test Send Push",
+        "description": "Send a self-test push notification to the current user (Dev only)",
+        "operationId": "test_send_push_api_v1_notifications_test_send_post",
+        "parameters": [
+          {
+            "name": "title",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "Test Notification",
+              "title": "Title"
+            }
+          },
+          {
+            "name": "body",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "This is a test message",
+              "title": "Body"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "Response Test Send Push Api V1 Notifications Test Send Post"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AgentSearchFullResponse": {
+        "properties": {
+          "steps": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Steps"
+          },
+          "steps_details": {
+            "items": {
+              "$ref": "#/components/schemas/AgentSearchStep"
+            },
+            "type": "array",
+            "title": "Steps Details"
+          }
+        },
+        "type": "object",
+        "title": "AgentSearchFullResponse"
+      },
+      "AgentSearchStep": {
+        "properties": {
+          "step_number": {
+            "type": "integer",
+            "title": "Step Number"
+          },
+          "step": {
+            "type": "string",
+            "title": "Step"
+          },
+          "queries": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Queries"
+          },
+          "results": {
+            "items": {
+              "$ref": "#/components/schemas/SearchResult"
+            },
+            "type": "array",
+            "title": "Results"
+          },
+          "status": {
+            "$ref": "#/components/schemas/AgentSearchStepStatus",
+            "default": "default"
+          }
+        },
+        "type": "object",
+        "required": [
+          "step_number",
+          "step"
+        ],
+        "title": "AgentSearchStep"
+      },
+      "AgentSearchStepStatus": {
+        "type": "string",
+        "enum": [
+          "done",
+          "current",
+          "default"
+        ],
+        "title": "AgentSearchStepStatus"
+      },
+      "Body_upload_avatar_api_v1_profile_avatar_post": {
+        "properties": {
+          "file": {
+            "type": "string",
+            "format": "binary",
+            "title": "File"
+          }
+        },
+        "type": "object",
+        "required": [
+          "file"
+        ],
+        "title": "Body_upload_avatar_api_v1_profile_avatar_post"
+      },
+      "Body_upload_file_api_v1_storage_files_post": {
+        "properties": {
+          "file": {
+            "type": "string",
+            "format": "binary",
+            "title": "File"
+          }
+        },
+        "type": "object",
+        "required": [
+          "file"
+        ],
+        "title": "Body_upload_file_api_v1_storage_files_post"
+      },
+      "CategoriesListData": {
+        "properties": {
+          "total_count": {
+            "type": "integer",
+            "title": "Total Count",
+            "description": "Total number of categories",
+            "example": 8
+          },
+          "categories": {
+            "items": {
+              "$ref": "#/components/schemas/NewsCategory"
+            },
+            "type": "array",
+            "title": "Categories",
+            "description": "List of news categories"
+          }
+        },
+        "type": "object",
+        "required": [
+          "total_count",
+          "categories"
+        ],
+        "title": "CategoriesListData",
+        "description": "Data model for categories list response."
+      },
+      "CategoriesListResponse": {
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "title": "Success",
+            "description": "Indicates if the request was successful",
+            "example": true
+          },
+          "message": {
+            "type": "string",
+            "title": "Message",
+            "description": "Response message",
+            "example": "Operation successful"
+          },
+          "data": {
+            "$ref": "#/components/schemas/CategoriesListData",
+            "description": "Categories list data"
+          }
+        },
+        "type": "object",
+        "required": [
+          "success",
+          "message",
+          "data"
+        ],
+        "title": "CategoriesListResponse",
+        "description": "Response model for categories list endpoint."
+      },
+      "CategoryDetailResponse": {
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "title": "Success",
+            "description": "Indicates if the request was successful",
+            "example": true
+          },
+          "message": {
+            "type": "string",
+            "title": "Message",
+            "description": "Response message",
+            "example": "Operation successful"
+          },
+          "data": {
+            "$ref": "#/components/schemas/NewsCategory",
+            "description": "Category detail data"
+          }
+        },
+        "type": "object",
+        "required": [
+          "success",
+          "message",
+          "data"
+        ],
+        "title": "CategoryDetailResponse",
+        "description": "Response model for category detail endpoint."
+      },
+      "ChatMessage": {
+        "properties": {
+          "content": {
+            "type": "string",
+            "title": "Content"
+          },
+          "role": {
+            "$ref": "#/components/schemas/MessageRole"
+          },
+          "related_queries": {
+            "anyOf": [
+              {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Related Queries"
+          },
+          "sources": {
+            "anyOf": [
+              {
+                "items": {
+                  "$ref": "#/components/schemas/SearchResult"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Sources"
+          },
+          "images": {
+            "anyOf": [
+              {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Images"
+          },
+          "is_error_message": {
+            "type": "boolean",
+            "title": "Is Error Message",
+            "default": false
+          },
+          "agent_response": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/AgentSearchFullResponse"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "type": "object",
+        "required": [
+          "content",
+          "role"
+        ],
+        "title": "ChatMessage"
+      },
+      "ChatRequest": {
+        "properties": {
+          "messages": {
+            "items": {
+              "$ref": "#/components/schemas/ChatMessage"
+            },
+            "type": "array",
+            "title": "Messages",
+            "description": "History of messages between the user and the assistant"
+          },
+          "conversation_id": {
+            "type": "string",
+            "title": "Conversation Id",
+            "description": "An optional conversation identifier"
+          },
+          "thread_id": {
+            "type": "string",
+            "title": "Thread Id",
+            "description": "A specific conversation identifier"
+          },
+          "mode": {
+            "type": "string",
+            "enum": [
+              "simple_qa",
+              "deep_qa"
+            ],
+            "title": "Mode",
+            "description": "Workflow mode to use: 'simple_qa' for simple question answering or 'deep_qa' for deep research",
+            "default": "simple_qa"
+          },
+          "workflow_config": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/WorkflowConfig"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Configuration for the workflow",
+            "default": {
+              "debug": false,
+              "max_plan_iterations": 1,
+              "max_step_num": 3,
+              "auto_accepted_plan": false,
+              "enable_background_investigation": true
+            }
+          },
+          "report_style": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ReportStyle"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "The style of the report",
+            "default": "social_media"
+          },
+          "intra_info_config": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/IntraInfoConfig"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Configuration for intra info (knowledge base) search",
+            "default": {
+              "enabled": false,
+              "max_results": 3,
+              "resources": []
+            }
+          },
+          "extra_info_config": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ExtraInfoConfig"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Configuration for extra info (web) search",
+            "default": {
+              "enabled": true,
+              "max_results": 3,
+              "resources": []
+            }
+          }
+        },
+        "type": "object",
+        "required": [
+          "messages",
+          "conversation_id",
+          "thread_id"
+        ],
+        "title": "ChatRequest"
+      },
+      "ConfigResponse": {
+        "properties": {
+          "rag": {
+            "$ref": "#/components/schemas/RAGConfigResponse",
+            "description": "The config of the RAG"
+          },
+          "models": {
+            "additionalProperties": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "type": "object",
+            "title": "Models",
+            "description": "The configured models"
+          }
+        },
+        "type": "object",
+        "required": [
+          "rag",
+          "models"
+        ],
+        "title": "ConfigResponse",
+        "description": "Response model for server config."
+      },
+      "DeviceType": {
+        "type": "string",
+        "enum": [
+          "android",
+          "ios",
+          "web"
+        ],
+        "title": "DeviceType"
+      },
+      "EnhancePromptRequest": {
+        "properties": {
+          "prompt": {
+            "type": "string",
+            "title": "Prompt",
+            "description": "The original prompt to enhance"
+          },
+          "context": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Context",
+            "description": "Additional context about the intended use",
+            "default": ""
+          },
+          "report_style": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Report Style",
+            "description": "The style of the report",
+            "default": "academic"
+          }
+        },
+        "type": "object",
+        "required": [
+          "prompt"
+        ],
+        "title": "EnhancePromptRequest"
+      },
+      "ExtraInfoConfig": {
+        "properties": {
+          "enabled": {
+            "type": "boolean",
+            "title": "Enabled",
+            "description": "Whether extra info search (web) is enabled",
+            "default": true
+          },
+          "max_results": {
+            "type": "integer",
+            "title": "Max Results",
+            "description": "Maximum number of web search results",
+            "default": 3
+          },
+          "resources": {
+            "items": {
+              "$ref": "#/components/schemas/Resource"
+            },
+            "type": "array",
+            "title": "Resources",
+            "description": "Resources for web search",
+            "default": []
+          }
+        },
+        "type": "object",
+        "title": "ExtraInfoConfig"
+      },
+      "HTTPValidationError": {
+        "properties": {
+          "detail": {
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            },
+            "type": "array",
+            "title": "Detail"
+          }
+        },
+        "type": "object",
+        "title": "HTTPValidationError"
+      },
+      "HealthResponse": {
+        "properties": {
+          "status": {
+            "type": "string",
+            "title": "Status"
+          },
+          "timestamp": {
+            "type": "string",
+            "title": "Timestamp"
+          },
+          "version": {
+            "type": "string",
+            "title": "Version"
+          }
+        },
+        "type": "object",
+        "required": [
+          "status",
+          "timestamp",
+          "version"
+        ],
+        "title": "HealthResponse",
+        "description": "Health check response model."
+      },
+      "IntraInfoConfig": {
+        "properties": {
+          "enabled": {
+            "type": "boolean",
+            "title": "Enabled",
+            "description": "Whether intra info search (knowledge base) is enabled",
+            "default": false
+          },
+          "max_results": {
+            "type": "integer",
+            "title": "Max Results",
+            "description": "Maximum number of intra search results",
+            "default": 3
+          },
+          "resources": {
+            "items": {
+              "$ref": "#/components/schemas/Resource"
+            },
+            "type": "array",
+            "title": "Resources",
+            "description": "Resources for knowledge base search",
+            "default": []
+          }
+        },
+        "type": "object",
+        "title": "IntraInfoConfig"
+      },
+      "LoginRequest": {
+        "properties": {
+          "email": {
+            "type": "string",
+            "format": "email",
+            "title": "Email"
+          },
+          "password": {
+            "type": "string",
+            "title": "Password"
+          }
+        },
+        "type": "object",
+        "required": [
+          "email",
+          "password"
+        ],
+        "title": "LoginRequest",
+        "description": "Schema for login request"
+      },
+      "LoginResponse": {
+        "properties": {
+          "user": {
+            "$ref": "#/components/schemas/UserResponse"
+          },
+          "session": {
+            "$ref": "#/components/schemas/SessionResponse"
+          }
+        },
+        "type": "object",
+        "required": [
+          "user",
+          "session"
+        ],
+        "title": "LoginResponse",
+        "description": "Schema for login response"
+      },
+      "MCPServerMetadataRequest": {
+        "properties": {
+          "transport": {
+            "type": "string",
+            "title": "Transport",
+            "description": "The type of MCP server connection (stdio or sse or streamable_http)"
+          },
+          "command": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Command",
+            "description": "The command to execute (for stdio type)"
+          },
+          "args": {
+            "anyOf": [
+              {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Args",
+            "description": "Command arguments (for stdio type)"
+          },
+          "url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Url",
+            "description": "The URL of the SSE server (for sse type)"
+          },
+          "env": {
+            "anyOf": [
+              {
+                "additionalProperties": {
+                  "type": "string"
+                },
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Env",
+            "description": "Environment variables (for stdio type)"
+          },
+          "headers": {
+            "anyOf": [
+              {
+                "additionalProperties": {
+                  "type": "string"
+                },
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Headers",
+            "description": "HTTP headers (for sse/streamable_http type)"
+          },
+          "timeout_seconds": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Timeout Seconds",
+            "description": "Optional custom timeout in seconds for the operation"
+          }
+        },
+        "type": "object",
+        "required": [
+          "transport"
+        ],
+        "title": "MCPServerMetadataRequest",
+        "description": "Request model for MCP server metadata."
+      },
+      "MCPServerMetadataResponse": {
+        "properties": {
+          "transport": {
+            "type": "string",
+            "title": "Transport",
+            "description": "The type of MCP server connection (stdio or sse or streamable_http)"
+          },
+          "command": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Command",
+            "description": "The command to execute (for stdio type)"
+          },
+          "args": {
+            "anyOf": [
+              {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Args",
+            "description": "Command arguments (for stdio type)"
+          },
+          "url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Url",
+            "description": "The URL of the SSE server (for sse type)"
+          },
+          "env": {
+            "anyOf": [
+              {
+                "additionalProperties": {
+                  "type": "string"
+                },
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Env",
+            "description": "Environment variables (for stdio type)"
+          },
+          "headers": {
+            "anyOf": [
+              {
+                "additionalProperties": {
+                  "type": "string"
+                },
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Headers",
+            "description": "HTTP headers (for sse/streamable_http type)"
+          },
+          "tools": {
+            "items": {
+
+            },
+            "type": "array",
+            "title": "Tools",
+            "description": "Available tools from the MCP server"
+          }
+        },
+        "type": "object",
+        "required": [
+          "transport"
+        ],
+        "title": "MCPServerMetadataResponse",
+        "description": "Response model for MCP server metadata."
+      },
+      "MessageRole": {
+        "type": "string",
+        "enum": [
+          "user",
+          "assistant"
+        ],
+        "title": "MessageRole"
+      },
+      "NewsArticle": {
+        "properties": {
+          "news_id": {
+            "type": "string",
+            "title": "News Id",
+            "description": "Unique news article identifier",
+            "example": "news_789abc"
+          },
+          "title": {
+            "type": "string",
+            "title": "Title",
+            "description": "Article title",
+            "example": "Breakthrough in AI Research Announced"
+          },
+          "summary": {
+            "type": "string",
+            "title": "Summary",
+            "description": "Article summary",
+            "example": "Researchers achieve significant advancement in natural language processing"
+          },
+          "category": {
+            "items": {
+              "$ref": "#/components/schemas/NewsCategory"
+            },
+            "type": "array",
+            "title": "Category",
+            "description": "Article category",
+            "example": [
+              {
+                "category_id": "technology",
+                "description": "Latest news and trends in technology",
+                "name": "Technology"
+              }
+            ]
+          },
+          "published_time": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Published Time",
+            "description": "Publication timestamp",
+            "example": "2024-01-15T10:30:00Z"
+          },
+          "image_url": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 2083,
+                "minLength": 1,
+                "format": "uri"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Image Url",
+            "description": "Article image URL",
+            "example": "https://cdn.example.com/news/images/ai_research_123.jpg"
+          },
+          "table_of_contents": {
+            "anyOf": [
+              {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Table Of Contents",
+            "description": "Article table of contents (if applicable)",
+            "example": [
+              "Introduction",
+              "Research Methodology",
+              "Results",
+              "Conclusion"
+            ]
+          },
+          "sources": {
+            "items": {
+              "type": "string",
+              "maxLength": 2083,
+              "minLength": 1,
+              "format": "uri"
+            },
+            "type": "array",
+            "title": "Sources",
+            "description": "News source URLs",
+            "example": [
+              "https://techcrunch.com"
+            ]
+          },
+          "content": {
+            "type": "string",
+            "title": "Content",
+            "description": "Brief article content snippet",
+            "example": "In a landmark study, researchers from leading universities have announced a major breakthrough in artificial intelligence..."
+          }
+        },
+        "type": "object",
+        "required": [
+          "news_id",
+          "title",
+          "summary",
+          "category",
+          "published_time",
+          "sources",
+          "content"
+        ],
+        "title": "NewsArticle",
+        "description": "News article with essential information."
+      },
+      "NewsArticleDetailResponse": {
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "title": "Success",
+            "description": "Indicates if the request was successful",
+            "example": true
+          },
+          "message": {
+            "type": "string",
+            "title": "Message",
+            "description": "Response message",
+            "example": "Operation successful"
+          },
+          "data": {
+            "$ref": "#/components/schemas/NewsArticle",
+            "description": "News article detail data"
+          }
+        },
+        "type": "object",
+        "required": [
+          "success",
+          "message",
+          "data"
+        ],
+        "title": "NewsArticleDetailResponse",
+        "description": "Response model for news article detail endpoint."
+      },
+      "NewsArticlesFilterRequest": {
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/SupportedNewsArticlesFilter",
+            "description": "Query type (search requires query, category requires category_id)",
+            "default": "search",
+            "example": "search"
+          },
+          "query": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Query",
+            "description": "Search keywords (required when type=search)",
+            "example": "artificial intelligence"
+          },
+          "category_id": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/NewsCategoryID"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Category ID (required when type=category)",
+            "example": "technology"
+          },
+          "user_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "User Id",
+            "description": "User ID for personalized results ranking",
+            "example": "usr_12345"
+          },
+          "start_date": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Start Date",
+            "description": "Start date for news range (YYYY-MM-DD)",
+            "example": "2024-01-10"
+          },
+          "end_date": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "End Date",
+            "description": "End date for news range (YYYY-MM-DD)",
+            "example": "2024-01-15"
+          },
+          "sort_by": {
+            "type": "string",
+            "enum": [
+              "relevance",
+              "published_time",
+              "popularity"
+            ],
+            "title": "Sort By",
+            "description": "Sort criteria",
+            "default": "relevance",
+            "example": "relevance"
+          },
+          "limit": {
+            "type": "integer",
+            "maximum": 100,
+            "minimum": 1,
+            "title": "Limit",
+            "description": "Maximum number of articles to return",
+            "default": 20,
+            "example": 20
+          }
+        },
+        "type": "object",
+        "title": "NewsArticlesFilterRequest",
+        "description": "Request model for getting news articles with flexible filters."
+      },
+      "NewsCategory": {
+        "properties": {
+          "category_id": {
+            "$ref": "#/components/schemas/NewsCategoryID",
+            "description": "Unique category identifier",
+            "example": "technology"
+          },
+          "name": {
+            "type": "string",
+            "title": "Name",
+            "description": "Category name",
+            "example": "Technology"
+          },
+          "description": {
+            "type": "string",
+            "title": "Description",
+            "description": "Category description",
+            "example": "Latest news and trends in technology"
+          }
+        },
+        "type": "object",
+        "required": [
+          "category_id",
+          "name",
+          "description"
+        ],
+        "title": "NewsCategory",
+        "description": "News category information."
+      },
+      "NewsCategoryID": {
+        "type": "string",
+        "enum": [
+          "technology",
+          "economy",
+          "finance",
+          "science",
+          "politics",
+          "laws"
+        ],
+        "title": "NewsCategoryID"
+      },
+      "NewsListData": {
+        "properties": {
+          "type": {
+            "type": "string",
+            "title": "Type",
+            "description": "Query type",
+            "example": "trending"
+          },
+          "query": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Query",
+            "description": "Search query (only for search type)"
+          },
+          "category_id": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/NewsCategoryID"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Category ID (only for category type)"
+          },
+          "total_count": {
+            "type": "integer",
+            "title": "Total Count",
+            "description": "Total number of articles matching the query",
+            "example": 245
+          },
+          "returned_count": {
+            "type": "integer",
+            "title": "Returned Count",
+            "description": "Number of articles returned in this response",
+            "example": 20
+          },
+          "personalized": {
+            "type": "boolean",
+            "title": "Personalized",
+            "description": "Whether results are personalized",
+            "example": true
+          },
+          "news": {
+            "items": {
+              "$ref": "#/components/schemas/NewsArticle"
+            },
+            "type": "array",
+            "title": "News",
+            "description": "List of news articles"
+          }
+        },
+        "type": "object",
+        "required": [
+          "type",
+          "total_count",
+          "returned_count",
+          "personalized",
+          "news"
+        ],
+        "title": "NewsListData",
+        "description": "Data model for news list response."
+      },
+      "NewsListResponse": {
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "title": "Success",
+            "description": "Indicates if the request was successful",
+            "example": true
+          },
+          "message": {
+            "type": "string",
+            "title": "Message",
+            "description": "Response message",
+            "example": "Operation successful"
+          },
+          "data": {
+            "$ref": "#/components/schemas/NewsListData",
+            "description": "News list data"
+          }
+        },
+        "type": "object",
+        "required": [
+          "success",
+          "message",
+          "data"
+        ],
+        "title": "NewsListResponse",
+        "description": "Response model for news list endpoint."
+      },
+      "ProfileResponse": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "email": {
+            "type": "string",
+            "format": "email",
+            "title": "Email"
+          },
+          "username": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Username"
+          },
+          "email_verified": {
+            "type": "boolean",
+            "title": "Email Verified"
+          },
+          "image": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Image"
+          },
+          "image_url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Image Url"
+          },
+          "introduction": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Introduction"
+          },
+          "location": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Location"
+          },
+          "role": {
+            "type": "string",
+            "title": "Role"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Created At"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Updated At"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "email",
+          "email_verified",
+          "role",
+          "created_at",
+          "updated_at"
+        ],
+        "title": "ProfileResponse",
+        "description": "Schema for complete profile response with all user fields"
+      },
+      "RAGConfigResponse": {
+        "properties": {
+          "provider": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Provider",
+            "description": "The provider of the RAG, default is ragflow"
+          }
+        },
+        "type": "object",
+        "title": "RAGConfigResponse",
+        "description": "Response model for RAG config."
+      },
+      "RAGResourcesResponse": {
+        "properties": {
+          "resources": {
+            "items": {
+              "$ref": "#/components/schemas/Resource"
+            },
+            "type": "array",
+            "title": "Resources",
+            "description": "The resources of the RAG"
+          }
+        },
+        "type": "object",
+        "required": [
+          "resources"
+        ],
+        "title": "RAGResourcesResponse",
+        "description": "Response model for RAG resources."
+      },
+      "RegisterRequest": {
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "email": {
+            "type": "string",
+            "format": "email",
+            "title": "Email"
+          },
+          "password": {
+            "type": "string",
+            "minLength": 8,
+            "title": "Password"
+          }
+        },
+        "type": "object",
+        "required": [
+          "name",
+          "email",
+          "password"
+        ],
+        "title": "RegisterRequest",
+        "description": "Schema for registration request"
+      },
+      "RegisterResponse": {
+        "properties": {
+          "user": {
+            "$ref": "#/components/schemas/UserResponse"
+          },
+          "message": {
+            "type": "string",
+            "title": "Message",
+            "default": "Registration successful. Please verify your email."
+          }
+        },
+        "type": "object",
+        "required": [
+          "user"
+        ],
+        "title": "RegisterResponse",
+        "description": "Schema for registration response"
+      },
+      "ReportStyle": {
+        "type": "string",
+        "enum": [
+          "academic",
+          "popular_science",
+          "news",
+          "social_media",
+          "strategic_investment"
+        ],
+        "title": "ReportStyle"
+      },
+      "Resource": {
+        "properties": {
+          "uri": {
+            "type": "string",
+            "title": "Uri",
+            "description": "The URI of the resource"
+          },
+          "title": {
+            "type": "string",
+            "title": "Title",
+            "description": "The title of the resource"
+          },
+          "description": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description",
+            "description": "The description of the resource",
+            "default": ""
+          }
+        },
+        "type": "object",
+        "required": [
+          "uri",
+          "title"
+        ],
+        "title": "Resource",
+        "description": "Resource is a class that represents a resource."
+      },
+      "SearchResult": {
+        "properties": {
+          "title": {
+            "type": "string",
+            "title": "Title"
+          },
+          "url": {
+            "type": "string",
+            "title": "Url"
+          },
+          "content": {
+            "type": "string",
+            "title": "Content"
+          }
+        },
+        "type": "object",
+        "required": [
+          "title",
+          "url",
+          "content"
+        ],
+        "title": "SearchResult"
+      },
+      "SessionResponse": {
+        "properties": {
+          "expires_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Expires At"
+          },
+          "ip_address": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Ip Address"
+          },
+          "user_agent": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "User Agent"
+          },
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "token": {
+            "type": "string",
+            "title": "Token"
+          },
+          "user_id": {
+            "type": "string",
+            "title": "User Id"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Created At"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Updated At"
+          }
+        },
+        "type": "object",
+        "required": [
+          "expires_at",
+          "id",
+          "token",
+          "user_id",
+          "created_at",
+          "updated_at"
+        ],
+        "title": "SessionResponse",
+        "description": "Schema for session response"
+      },
+      "SupportedNewsArticlesFilter": {
+        "type": "string",
+        "enum": [
+          "search",
+          "category",
+          "date_range"
+        ],
+        "title": "SupportedNewsArticlesFilter",
+        "description": "Enumeration for news articles request types.\nCurrently supported types: search, category, date_range."
+      },
+      "TokenRegistration": {
+        "properties": {
+          "token": {
+            "type": "string",
+            "title": "Token"
+          },
+          "device_type": {
+            "$ref": "#/components/schemas/DeviceType"
+          }
+        },
+        "type": "object",
+        "required": [
+          "token",
+          "device_type"
+        ],
+        "title": "TokenRegistration"
+      },
+      "UpdateProfileRequest": {
+        "properties": {
+          "name": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 100,
+                "minLength": 1
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Name",
+            "description": "User's full name",
+            "example": "Jane Doe"
+          },
+          "username": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 50,
+                "minLength": 3,
+                "pattern": "^[a-zA-Z0-9_-]+$"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Username",
+            "description": "User's username (alphanumeric, underscores, and hyphens only)",
+            "example": "jane_doe"
+          },
+          "introduction": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 500
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Introduction",
+            "description": "User's introduction/bio",
+            "example": "I am a passionate developer interested in AI and web technologies."
+          },
+          "location": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 100
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Location",
+            "description": "User's location",
+            "example": "Hanoi, Vietnam"
+          }
+        },
+        "type": "object",
+        "title": "UpdateProfileRequest",
+        "description": "Request model for updating user profile."
+      },
+      "UserResponse": {
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "email": {
+            "type": "string",
+            "format": "email",
+            "title": "Email"
+          },
+          "image": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Image"
+          },
+          "role": {
+            "type": "string",
+            "title": "Role",
+            "default": "user"
+          },
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "email_verified": {
+            "type": "boolean",
+            "title": "Email Verified"
+          },
+          "image_url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Image Url"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Created At"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Updated At"
+          }
+        },
+        "type": "object",
+        "required": [
+          "name",
+          "email",
+          "id",
+          "email_verified",
+          "created_at",
+          "updated_at"
+        ],
+        "title": "UserResponse",
+        "description": "Schema for user response"
+      },
+      "ValidationError": {
+        "properties": {
+          "loc": {
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "type": "array",
+            "title": "Location"
+          },
+          "msg": {
+            "type": "string",
+            "title": "Message"
+          },
+          "type": {
+            "type": "string",
+            "title": "Error Type"
+          }
+        },
+        "type": "object",
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "title": "ValidationError"
+      },
+      "VerifyEmailRequest": {
+        "properties": {
+          "token": {
+            "type": "string",
+            "title": "Token"
+          }
+        },
+        "type": "object",
+        "required": [
+          "token"
+        ],
+        "title": "VerifyEmailRequest",
+        "description": "Schema for email verification request"
+      },
+      "VerifyEmailResponse": {
+        "properties": {
+          "message": {
+            "type": "string",
+            "title": "Message"
+          },
+          "success": {
+            "type": "boolean",
+            "title": "Success"
+          }
+        },
+        "type": "object",
+        "required": [
+          "message",
+          "success"
+        ],
+        "title": "VerifyEmailResponse",
+        "description": "Schema for email verification response"
+      },
+      "WorkflowConfig": {
+        "properties": {
+          "debug": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Debug",
+            "description": "Whether to enable debug logging",
+            "default": false
+          },
+          "max_plan_iterations": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Max Plan Iterations",
+            "description": "The maximum number of plan iterations",
+            "default": 1
+          },
+          "max_step_num": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Max Step Num",
+            "description": "The maximum number of steps in a plan",
+            "default": 3
+          },
+          "auto_accepted_plan": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Auto Accepted Plan",
+            "description": "Whether to automatically accept the plan",
+            "default": false
+          },
+          "enable_background_investigation": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Enable Background Investigation",
+            "description": "Whether to get background investigation before plan",
+            "default": true
+          },
+          "interrupt_feedback": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Interrupt Feedback",
+            "description": "Interrupt feedback from the user on the plan"
+          },
+          "mcp_settings": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Mcp Settings",
+            "description": "MCP settings for the chat request"
+          }
+        },
+        "type": "object",
+        "title": "WorkflowConfig"
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Authentication",
+      "description": "User authentication and session management operations. Register, login, logout endpoints."
+    }
+  ]
+}

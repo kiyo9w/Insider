@@ -2,7 +2,11 @@ import 'package:rest_client/rest_client.dart';
 
 abstract class AuthRepository {
   Future<void> getCsrfToken();
-  Future<RegisterResponse> register(RegisterRequest request);
+  Future<void> register({
+    required String name,
+    required String email,
+    required String password,
+  });
   Future<LoginResponse> login(LoginRequest request);
   Future<ResetPasswordResponse> resetPassword(ResetPasswordRequest request);
   Future<void> logout();

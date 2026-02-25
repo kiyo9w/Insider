@@ -43,8 +43,23 @@ class AuthRepositoryImpl implements AuthRepository {
   }
 
   @override
-  Future<RegisterResponse> register(RegisterRequest request) async {
-    return _authClient.register(request.toJson()).onApiError;
+  Future<void> register({
+    required String name,
+    required String email,
+    required String password,
+  }) async {
+    try {
+      await _dio.post(
+        '/api/v1/auth/register',
+        data: {
+          'name': name,
+          'email': email,
+          'password': password,
+        },
+      );
+    } on DioException catch (e) {
+      throw ApiException.fromDioError(e);
+    }
   }
 
   @override

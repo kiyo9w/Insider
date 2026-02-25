@@ -135,7 +135,10 @@ class AccountScreen extends StatelessWidget {
                     profile?.introduction ?? S.of(context).not_set;
                 final displayLocation =
                     profile?.location ?? S.of(context).not_set;
-                final displayImage = profile?.imageUrl ?? authUser?.image;
+                final displayImage = profile?.imageUrl ??
+                    profile?.image ??
+                    authUser?.imageUrl ??
+                    authUser?.image;
 
                 // Handle 'Not set' check for edit screen logic safety if needed,
                 // but better to pass empty string if it equals localized 'Not set' or just check against null/empty in data.

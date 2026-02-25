@@ -36,7 +36,7 @@ class SettingPage extends StatelessWidget {
                       isDark,
                       isAuthenticated,
                       user?.name,
-                      user?.image,
+                      user?.imageUrl ?? user?.image,
                     ),
                     const SizedBox(height: 24),
                     // _buildToggleSection(context, isDark),

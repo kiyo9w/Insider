@@ -174,6 +174,7 @@ class AuthCubit extends Cubit<AuthState> {
   }
 
   Future<void> register({
+    required String name,
     required String email,
     required String password,
   }) async {
@@ -184,10 +185,9 @@ class AuthCubit extends Cubit<AuthState> {
 
       // First, register the user
       await _authRepository.register(
-        rc.RegisterRequest(
-          email: email,
-          password: password,
-        ),
+        name: name,
+        email: email,
+        password: password,
       );
 
       // Backend likely returns success, now auto-login

@@ -4,11 +4,14 @@ import 'package:insider/core/design_system/design_system.dart';
 import 'package:insider/features/auth/view/email_signin_screen.dart';
 import 'package:insider/features/auth/view/register_screen.dart';
 import 'package:insider/generated/assets.gen.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class AuthBottomSheet extends StatelessWidget {
   const AuthBottomSheet({super.key, this.onLogin});
 
   final VoidCallback? onLogin;
+
+  static final Uri _legalUri = Uri.parse('http://chimai.io');
 
   @override
   Widget build(BuildContext context) {
@@ -79,28 +82,14 @@ class AuthBottomSheet extends StatelessWidget {
                   }
                 },
               ),
-              const SizedBox(height: 24),
-              Text(
-                'Single sign-on (SSO)',
-                style: DesignSystem.bodyMedium.copyWith(
-                  color: isDark
-                      ? DesignSystem.textSecondaryDark
-                      : DesignSystem.textSecondaryLight,
-                  fontSize: 15,
-                ),
-              ),
               const SizedBox(height: 32),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(
-                    'Privacy policy',
-                    style: DesignSystem.caption.copyWith(
-                      color: isDark
-                          ? DesignSystem.textTertiaryDark
-                          : DesignSystem.textTertiaryLight,
-                      fontSize: 12,
-                    ),
+                  _LegalLink(
+                    text: 'Privacy policy',
+                    isDark: isDark,
+                    onTap: () => _openLegalUrl(context),
                   ),
                   Container(
                     width: 1,
@@ -110,14 +99,10 @@ class AuthBottomSheet extends StatelessWidget {
                         ? DesignSystem.textTertiaryDark
                         : DesignSystem.textTertiaryLight,
                   ),
-                  Text(
-                    'Terms of service',
-                    style: DesignSystem.caption.copyWith(
-                      color: isDark
-                          ? DesignSystem.textTertiaryDark
-                          : DesignSystem.textTertiaryLight,
-                      fontSize: 12,
-                    ),
+                  _LegalLink(
+                    text: 'Terms of service',
+                    isDark: isDark,
+                    onTap: () => _openLegalUrl(context),
                   ),
                 ],
               ),
@@ -126,6 +111,18 @@ class AuthBottomSheet extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  Future<void> _openLegalUrl(BuildContext context) async {
+    final opened = await launchUrl(
+      _legalUri,
+      mode: LaunchMode.externalApplication,
+    );
+    if (!opened && context.mounted) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Could not open link')),
+      );
+    }
   }
 }
 
@@ -192,6 +189,37 @@ class _AuthButton extends StatelessWidget {
               ],
             ),
           ),
+        ),
+      ),
+    );
+  }
+}
+
+class _LegalLink extends StatelessWidget {
+  const _LegalLink({
+    required this.text,
+    required this.isDark,
+    required this.onTap,
+  });
+
+  final String text;
+  final bool isDark;
+  final VoidCallback onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () {
+        HapticFeedback.lightImpact();
+        onTap();
+      },
+      child: Text(
+        text,
+        style: DesignSystem.caption.copyWith(
+          color: isDark
+              ? DesignSystem.textTertiaryDark
+              : DesignSystem.textTertiaryLight,
+          fontSize: 12,
         ),
       ),
     );

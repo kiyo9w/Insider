@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:insider/core/design_system/design_system.dart';
-import 'package:insider/router/app_router.dart';
 import 'package:go_router/go_router.dart';
-
+import 'package:insider/core/design_system/design_system.dart';
 import 'package:insider/features/auth/view/email_signin_screen.dart';
 import 'package:insider/features/auth/view/register_screen.dart';
 import 'package:insider/generated/assets.gen.dart';
+import 'package:insider/router/app_router.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class AuthScreen extends StatelessWidget {
   const AuthScreen({super.key});
+
+  static final Uri _legalUri = Uri.parse('http://chimai.io');
 
   @override
   Widget build(BuildContext context) {
@@ -55,7 +57,7 @@ class AuthScreen extends StatelessWidget {
         child: Container(
           width: 32,
           height: 32,
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             color: Colors.transparent,
             shape: BoxShape.circle,
           ),
@@ -102,10 +104,8 @@ class AuthScreen extends StatelessWidget {
           _buildEmailButton(context, isDark),
           const SizedBox(height: 12),
           _buildRegisterButton(context, isDark),
-          const SizedBox(height: 32),
-          _buildSSOButton(isDark),
           const SizedBox(height: 40),
-          _buildFooter(isDark),
+          _buildFooter(context, isDark),
         ],
       ),
     );
@@ -124,18 +124,14 @@ class AuthScreen extends StatelessWidget {
   }
 
   Widget _buildTitle(bool isDark) {
-    return Column(
-      children: [
-        Text(
-          'Create an account for free',
-          style: DesignSystem.bodyMedium.copyWith(
-            color: isDark
-                ? DesignSystem.textSecondaryDark
-                : DesignSystem.textSecondaryLight,
-            fontSize: 15,
-          ),
-        ),
-      ],
+    return Text(
+      'Create an account for free',
+      style: DesignSystem.bodyMedium.copyWith(
+        color: isDark
+            ? DesignSystem.textSecondaryDark
+            : DesignSystem.textSecondaryLight,
+        fontSize: 15,
+      ),
     );
   }
 
@@ -171,31 +167,14 @@ class AuthScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildSSOButton(bool isDark) {
-    return GestureDetector(
-      onTap: () {
-        HapticFeedback.lightImpact();
-      },
-      child: Text(
-        'Single sign-on (SSO)',
-        style: DesignSystem.bodyMedium.copyWith(
-          color: isDark
-              ? DesignSystem.textSecondaryDark
-              : DesignSystem.textSecondaryLight,
-          fontSize: 15,
-        ),
-      ),
-    );
-  }
-
-  Widget _buildFooter(bool isDark) {
+  Widget _buildFooter(BuildContext context, bool isDark) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         _FooterLink(
           text: 'Privacy policy',
           isDark: isDark,
-          onTap: () {},
+          onTap: () => _openLegalUrl(context),
         ),
         Container(
           width: 1,
@@ -208,10 +187,22 @@ class AuthScreen extends StatelessWidget {
         _FooterLink(
           text: 'Terms of service',
           isDark: isDark,
-          onTap: () {},
+          onTap: () => _openLegalUrl(context),
         ),
       ],
     );
+  }
+
+  Future<void> _openLegalUrl(BuildContext context) async {
+    final opened = await launchUrl(
+      _legalUri,
+      mode: LaunchMode.externalApplication,
+    );
+    if (!opened && context.mounted) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Could not open link')),
+      );
+    }
   }
 }
 

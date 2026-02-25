@@ -15,10 +15,12 @@ class RegisterScreen extends StatefulWidget {
 }
 
 class _RegisterScreenState extends State<RegisterScreen> {
+  final TextEditingController _nameController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   final TextEditingController _confirmPasswordController =
       TextEditingController();
+  final FocusNode _nameFocusNode = FocusNode();
   final FocusNode _emailFocusNode = FocusNode();
   final FocusNode _passwordFocusNode = FocusNode();
   final FocusNode _confirmPasswordFocusNode = FocusNode();
@@ -26,6 +28,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
   @override
   void initState() {
     super.initState();
+    _nameController.addListener(() {
+      setState(() {});
+    });
     _emailController.addListener(() {
       setState(() {});
     });
@@ -39,9 +44,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
   @override
   void dispose() {
+    _nameController.dispose();
     _emailController.dispose();
     _passwordController.dispose();
     _confirmPasswordController.dispose();
+    _nameFocusNode.dispose();
     _emailFocusNode.dispose();
     _passwordFocusNode.dispose();
     _confirmPasswordFocusNode.dispose();
@@ -119,6 +126,14 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     child: Column(
                       children: [
                         const SizedBox(height: 24),
+                        _buildInput(
+                          controller: _nameController,
+                          focusNode: _nameFocusNode,
+                          hint: S.current.profile_name,
+                          isDark: isDark,
+                          inputColor: inputColor,
+                        ),
+                        const SizedBox(height: 16),
                         _buildInput(
                           controller: _emailController,
                           focusNode: _emailFocusNode,
@@ -213,11 +228,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
   Widget _buildContinueButton(BuildContext context, bool isDark) {
     return BlocBuilder<AuthCubit, AuthState>(
       builder: (context, state) {
+        final hasName = _nameController.text.trim().isNotEmpty;
         final hasEmail = _emailController.text.trim().isNotEmpty;
         final hasPwd = _passwordController.text.isNotEmpty;
         final hasConfirmPwd = _confirmPasswordController.text.isNotEmpty;
         final isEnabled =
-            hasEmail && hasPwd && hasConfirmPwd && !state.isLoading;
+            hasName && hasEmail && hasPwd && hasConfirmPwd && !state.isLoading;
 
         return SizedBox(
           width: double.infinity,
@@ -292,11 +308,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
   }
 
   void _handleRegister(BuildContext context) {
+    final name = _nameController.text.trim();
     final email = _emailController.text.trim();
     final password = _passwordController.text;
     final confirmPassword = _confirmPasswordController.text;
 
-    if (email.isEmpty || password.isEmpty) return;
+    if (name.isEmpty || email.isEmpty || password.isEmpty) return;
 
     if (password != confirmPassword) {
       ScaffoldMessenger.of(context).showSnackBar(
@@ -309,6 +326,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
     }
 
     HapticFeedback.lightImpact();
-    context.read<AuthCubit>().register(email: email, password: password);
+    context.read<AuthCubit>().register(
+          name: name,
+          email: email,
+          password: password,
+        );
   }
 }

@@ -108,7 +108,10 @@ class _AssistantMessageState extends State<AssistantMessage> {
               count: widget.sourceCount,
               sources: widget.message.sources,
               isDark: widget.isDark,
-              onTap: () {},
+              onTap: () {
+                HapticFeedback.lightImpact();
+                widget.onSourcesTap(null);
+              },
             ),
           const SizedBox(height: 4),
         ],

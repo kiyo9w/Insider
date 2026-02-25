@@ -1021,7 +1021,14 @@ class _ConversationHistoryScreenState extends State<ConversationHistoryScreen> {
                       },
                       onAttach: () {
                         HapticFeedback.lightImpact();
-                        _showAttachmentOptions();
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            content: Text(
+                              S.of(context)
+                                  .feature_coming_soon('Attachments'),
+                            ),
+                          ),
+                        );
                       },
                       onChangeModel: () {},
                       onModeChanged: (mode) {

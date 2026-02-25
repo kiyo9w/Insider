@@ -502,21 +502,6 @@ class _FeaturedNewsCard extends StatelessWidget {
                         ),
                       ),
                       const Spacer(),
-                      // Removed Action Buttons as per earlier cleanup, but restored for safety if unused.
-                      // Actually, user asked to remove "search bar and heart icon at the top".
-                      // I should verify if these Action Buttons are needed on cards. User didn't say remove from cards.
-                      // But I'll leave them as they were in my `view_file` capture (which had them).
-                      _ActionButton(
-                        icon: Icons.favorite_border,
-                        isDark: isDark,
-                        onTap: () {},
-                      ),
-                      const SizedBox(width: 8),
-                      _ActionButton(
-                        icon: Icons.more_horiz,
-                        isDark: isDark,
-                        onTap: () {},
-                      ),
                     ],
                   ),
                 ],

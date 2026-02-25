@@ -424,9 +424,10 @@ class _EmailSignInScreenState extends State<EmailSignInScreen> {
                           ScaffoldMessenger.of(context).showSnackBar(
                             SnackBar(
                               content: Text(
-                                S.current.reset_link_sent,
+                                S.current.feature_coming_soon(
+                                  S.current.forgot_password_title,
+                                ),
                               ),
-                              backgroundColor: DesignSystem.primaryCyan,
                             ),
                           );
                         },

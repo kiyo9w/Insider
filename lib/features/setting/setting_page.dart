@@ -2,16 +2,54 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:insider/configs/app_config.dart';
 import 'package:insider/core/design_system/design_system.dart';
+import 'package:insider/core/keys/app_keys.dart';
 import 'package:insider/features/auth/cubit/auth_cubit.dart';
 import 'package:insider/features/auth/cubit/auth_state.dart';
 import 'package:insider/features/auth/view/auth_bottom_sheet.dart';
-import 'package:insider/router/app_router.dart';
 import 'package:insider/generated/l10n.dart';
-import 'package:insider/configs/app_config.dart';
+import 'package:insider/injector/injector.dart';
+import 'package:insider/router/app_router.dart';
+import 'package:insider/services/local_storage_service/local_storage_service.dart';
 
-class SettingPage extends StatelessWidget {
+class SettingPage extends StatefulWidget {
   const SettingPage({super.key});
+
+  @override
+  State<SettingPage> createState() => _SettingPageState();
+}
+
+class _SettingPageState extends State<SettingPage> {
+  late final LocalStorageService _localStorage;
+  bool _notificationsEnabled = true;
+
+  @override
+  void initState() {
+    super.initState();
+    _localStorage = Injector.instance<LocalStorageService>();
+    _loadNotificationPreference();
+  }
+
+  Future<void> _loadNotificationPreference() async {
+    final stored = await _localStorage.getBool(
+      key: AppKeys.pushNotificationsEnabledKey,
+    );
+    if (!mounted || stored == null) return;
+    setState(() {
+      _notificationsEnabled = stored;
+    });
+  }
+
+  Future<void> _setNotificationPreference(bool enabled) async {
+    setState(() {
+      _notificationsEnabled = enabled;
+    });
+    await _localStorage.setValue(
+      key: AppKeys.pushNotificationsEnabledKey,
+      value: enabled,
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -39,11 +77,9 @@ class SettingPage extends StatelessWidget {
                       user?.imageUrl ?? user?.image,
                     ),
                     const SizedBox(height: 24),
-                    // _buildToggleSection(context, isDark),
                     _buildSettingsSection(context, isDark, isAuthenticated),
                     _buildNotificationToggle(context, isDark),
                     const SizedBox(height: 32),
-                    // _buildFooterLinks(context, isDark),
                     const SizedBox(height: 24),
                     _buildSignOutButton(
                       context,
@@ -124,12 +160,11 @@ class SettingPage extends StatelessWidget {
                         (name != null && name.isNotEmpty)
                     ? Image.network(
                         () {
-                          // If we have a direct image URL passed (which might be the relative 'image' path from UserData)
                           if (imageUrl != null && imageUrl.isNotEmpty) {
                             if (imageUrl.startsWith('http')) return imageUrl;
                             return '${AppConfig.baseUrl}${imageUrl.startsWith('/') ? '' : '/'}$imageUrl';
                           }
-                          return ''; // Should not happen given logic
+                          return '';
                         }(),
                         fit: BoxFit.cover,
                         errorBuilder: (context, error, stackTrace) {
@@ -187,23 +222,6 @@ class SettingPage extends StatelessWidget {
     );
   }
 
-  // Widget _buildToggleSection(BuildContext context, bool isDark) {
-  //   return _SettingsTile(
-  //     icon: Icons.visibility_off_outlined,
-  //     title: 'Incognito Mode',
-  //     isDark: isDark,
-  //     trailing: Switch.adaptive(
-  //       value: false,
-  //       onChanged: (value) {
-  //         HapticFeedback.lightImpact();
-  //       },
-  //       activeColor: isDark
-  //           ? DesignSystem.textPrimaryDark
-  //           : DesignSystem.textPrimaryLight,
-  //     ),
-  //   );
-  // }
-
   Widget _buildSettingsSection(
     BuildContext context,
     bool isDark,
@@ -229,13 +247,6 @@ class SettingPage extends StatelessWidget {
             context.push(AppRouter.languagePath);
           },
         ),
-        // if (isAuthenticated)
-        //   _SettingsTile(
-        //     icon: Icons.tune_outlined,
-        //     title: 'Personalize',
-        //     isDark: isDark,
-        //     onTap: () => HapticFeedback.lightImpact(),
-        //   ),
       ],
     );
   }
@@ -246,9 +257,10 @@ class SettingPage extends StatelessWidget {
       title: S.of(context).push_notifications,
       isDark: isDark,
       trailing: Switch.adaptive(
-        value: true,
-        onChanged: (value) {
+        value: _notificationsEnabled,
+        onChanged: (value) async {
           HapticFeedback.lightImpact();
+          await _setNotificationPreference(value);
         },
         activeColor: isDark
             ? DesignSystem.textPrimaryDark
@@ -256,54 +268,6 @@ class SettingPage extends StatelessWidget {
       ),
     );
   }
-
-  // Widget _buildFooterLinks(BuildContext context, bool isDark) {
-  //   return Column(
-  //     children: [
-  //       _buildSimpleTile(
-  //         title: 'Privacy policy',
-  //         isDark: isDark,
-  //         onTap: () => HapticFeedback.lightImpact(),
-  //       ),
-  //       _buildSimpleTile(
-  //         title: 'Terms of service',
-  //         isDark: isDark,
-  //         onTap: () => HapticFeedback.lightImpact(),
-  //       ),
-  //     ],
-  //   );
-  // }
-
-  // Widget _buildSimpleTile({
-  //   required String title,
-  //   required bool isDark,
-  //   required VoidCallback onTap,
-  // }) {
-  //   return Material(
-  //     color: Colors.transparent,
-  //     child: InkWell(
-  //       onTap: onTap,
-  //       child: Container(
-  //         padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
-  //         child: Row(
-  //           children: [
-  //             Expanded(
-  //               child: Text(
-  //                 title,
-  //                 style: DesignSystem.bodyMedium.copyWith(
-  //                   color: isDark
-  //                       ? DesignSystem.textPrimaryDark
-  //                       : DesignSystem.textPrimaryLight,
-  //                   fontSize: 16,
-  //                 ),
-  //               ),
-  //             ),
-  //           ],
-  //         ),
-  //       ),
-  //     ),
-  //   );
-  // }
 
   Widget _buildSignOutButton(
       BuildContext context, bool isDark, bool isAuthenticated) {

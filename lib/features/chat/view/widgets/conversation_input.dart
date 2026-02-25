@@ -468,19 +468,19 @@ class _ConversationInputState extends State<ConversationInput> {
                               Navigator.pop(context);
                             },
                           ),
-                          _buildModeTile(
-                            icon: Icons.manage_search,
-                            title: S.current.pro_search_mode,
-                            subtitle: S.current.pro_search_mode_subtitle,
-                            isSelected: widget.chatMode == ChatMode.proSearch,
-                            isDark: isDark,
-                            onTap: () {
-                              debugPrint(
-                                  '[ConversationInput] Pro Search tapped');
-                              widget.onModeChanged(ChatMode.proSearch);
-                              Navigator.pop(context);
-                            },
-                          ),
+//                           _buildModeTile(
+//                             icon: Icons.manage_search,
+//                             title: S.current.pro_search_mode,
+//                             subtitle: S.current.pro_search_mode_subtitle,
+//                             isSelected: widget.chatMode == ChatMode.proSearch,
+//                             isDark: isDark,
+//                             onTap: () {
+//                               debugPrint(
+//                                   '[ConversationInput] Pro Search tapped');
+//                               widget.onModeChanged(ChatMode.proSearch);
+//                               Navigator.pop(context);
+//                             },
+//                           ),
                           _buildModeTile(
                             icon: Icons
                                 .saved_search, // Using saved_search for Research as distinct from Pro

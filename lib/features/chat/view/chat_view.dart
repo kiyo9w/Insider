@@ -682,20 +682,20 @@ class _ChatViewState extends State<ChatView> {
                       Navigator.pop(context);
                     },
                   ),
-                  _buildModeTile(
-                    icon: Icons.manage_search,
-                    title: S.current.pro_search_mode,
-                    subtitle: S.current.pro_search_mode_subtitle,
-                    isSelected: _chatMode == ChatMode.proSearch,
-                    isDark: isDark,
-                    onTap: () {
-                      setState(() {
-                        _chatMode = ChatMode.proSearch;
-                        widget.onModeChanged?.call(ChatMode.proSearch);
-                      });
-                      Navigator.pop(context);
-                    },
-                  ),
+//                   _buildModeTile(
+//                     icon: Icons.manage_search,
+//                     title: S.current.pro_search_mode,
+//                     subtitle: S.current.pro_search_mode_subtitle,
+//                     isSelected: _chatMode == ChatMode.proSearch,
+//                     isDark: isDark,
+//                     onTap: () {
+//                       setState(() {
+//                         _chatMode = ChatMode.proSearch;
+//                         widget.onModeChanged?.call(ChatMode.proSearch);
+//                       });
+//                       Navigator.pop(context);
+//                     },
+//                   ),
                   _buildModeTile(
                     icon: Icons.saved_search,
                     title: S.current.research_mode,

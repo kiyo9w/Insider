@@ -8,8 +8,11 @@ import 'package:insider/core/keys/app_keys.dart';
 import 'package:insider/features/auth/cubit/auth_cubit.dart';
 import 'package:insider/features/auth/cubit/auth_state.dart';
 import 'package:insider/features/auth/view/auth_bottom_sheet.dart';
+import 'package:insider/features/profile/cubit/profile_cubit.dart';
+import 'package:insider/features/profile/cubit/profile_state.dart';
 import 'package:insider/generated/l10n.dart';
 import 'package:insider/injector/injector.dart';
+import 'package:insider/data/repositories/profile/profile_repository.dart';
 import 'package:insider/router/app_router.dart';
 import 'package:insider/services/local_storage_service/local_storage_service.dart';
 
@@ -60,42 +63,90 @@ class _SettingPageState extends State<SettingPage> {
           isDark ? DesignSystem.backgroundDark : DesignSystem.backgroundLight,
       body: SafeArea(
         child: BlocBuilder<AuthCubit, AuthState>(
-          builder: (context, state) {
-            final isAuthenticated = state.isAuthenticated;
-            final user = state.user;
+          builder: (context, authState) {
+            final isAuthenticated = authState.isAuthenticated;
+            final user = authState.user;
 
-            return CustomScrollView(
-              slivers: [
-                _buildAppBar(context, isDark),
-                SliverList(
-                  delegate: SliverChildListDelegate([
-                    _buildProfileSection(
-                      context,
-                      isDark,
-                      isAuthenticated,
-                      user?.name,
-                      user?.imageUrl ?? user?.image,
-                    ),
-                    const SizedBox(height: 24),
-                    _buildSettingsSection(context, isDark, isAuthenticated),
-                    _buildNotificationToggle(context, isDark),
-                    const SizedBox(height: 32),
-                    const SizedBox(height: 24),
-                    _buildSignOutButton(
-                      context,
-                      isDark,
-                      isAuthenticated,
-                    ),
-                    const SizedBox(height: 24),
-                    _buildVersionInfo(context, isDark),
-                    const SizedBox(height: 32),
-                  ]),
-                ),
-              ],
+            if (!isAuthenticated) {
+              return _buildSettingsBody(
+                context,
+                isDark,
+                isAuthenticated: false,
+                displayName: user?.name,
+                displayImageUrl: user?.imageUrl ?? user?.image,
+              );
+            }
+
+            return BlocProvider(
+              create: (_) => ProfileCubit(
+                profileRepository: Injector.instance<ProfileRepository>(),
+              )..loadProfile(),
+              child: BlocBuilder<ProfileCubit, ProfileState>(
+                builder: (context, profileState) {
+                  final profile = profileState.profile;
+                  final displayName = profile?.name ?? user?.name;
+                  final displayImageUrl = profile?.imageUrl ??
+                      profile?.image ??
+                      user?.imageUrl ??
+                      user?.image;
+
+                  return _buildSettingsBody(
+                    context,
+                    isDark,
+                    isAuthenticated: true,
+                    displayName: displayName,
+                    displayImageUrl: displayImageUrl,
+                  );
+                },
+              ),
             );
           },
         ),
       ),
+    );
+  }
+
+  Widget _buildSettingsBody(
+    BuildContext context,
+    bool isDark, {
+    required bool isAuthenticated,
+    required String? displayName,
+    required String? displayImageUrl,
+  }) {
+    return CustomScrollView(
+      slivers: [
+        _buildAppBar(context, isDark),
+        SliverList(
+          delegate: SliverChildListDelegate([
+            _buildProfileSection(
+              context,
+              isDark,
+              isAuthenticated,
+              displayName,
+              displayImageUrl,
+            ),
+            const SizedBox(height: 24),
+            _buildSettingsSection(context, isDark, isAuthenticated),
+            _buildNotificationToggle(context, isDark),
+          ]),
+        ),
+        SliverFillRemaining(
+          hasScrollBody: false,
+          child: Column(
+            children: [
+              const Spacer(),
+              _buildSignOutButton(
+                context,
+                isDark,
+                isAuthenticated,
+              ),
+              const SizedBox(height: 24),
+              _buildVersionInfo(context, isDark),
+              const SizedBox(height: 24),
+            ],
+          ),
+        ),
+      ],
     );
   }
 
@@ -156,30 +207,26 @@ class _SettingPageState extends State<SettingPage> {
               ],
             ),
             child: ClipOval(
-                child: (imageUrl != null && imageUrl.isNotEmpty) ||
-                        (name != null && name.isNotEmpty)
-                    ? Image.network(
-                        () {
-                          if (imageUrl != null && imageUrl.isNotEmpty) {
-                            if (imageUrl.startsWith('http')) return imageUrl;
-                            return '${AppConfig.baseUrl}${imageUrl.startsWith('/') ? '' : '/'}$imageUrl';
-                          }
-                          return '';
-                        }(),
-                        fit: BoxFit.cover,
-                        errorBuilder: (context, error, stackTrace) {
-                          return const Icon(
-                            Icons.person_rounded,
-                            color: Colors.white,
-                            size: 28,
-                          );
-                        },
-                      )
-                    : const Icon(
-                        Icons.person_rounded,
-                        color: Colors.white,
-                        size: 28,
-                      )),
+              child: imageUrl != null && imageUrl.isNotEmpty
+                  ? Image.network(
+                      imageUrl.startsWith('http')
+                          ? imageUrl
+                          : '${AppConfig.baseUrl}${imageUrl.startsWith('/') ? '' : '/'}$imageUrl',
+                      fit: BoxFit.cover,
+                      errorBuilder: (context, error, stackTrace) {
+                        return const Icon(
+                          Icons.person_rounded,
+                          color: Colors.white,
+                          size: 28,
+                        );
+                      },
+                    )
+                  : const Icon(
+                      Icons.person_rounded,
+                      color: Colors.white,
+                      size: 28,
+                    ),
+            ),
           ),
           const SizedBox(width: 16),
           Expanded(
@@ -197,10 +244,14 @@ class _SettingPageState extends State<SettingPage> {
                 ),
                 const SizedBox(height: 4),
                 GestureDetector(
-                  onTap: () {
+                  onTap: () async {
                     HapticFeedback.lightImpact();
                     if (isAuthenticated) {
-                      context.push(AppRouter.accountPath);
+                      await context.push(AppRouter.accountPath);
+                      if (!context.mounted) return;
+                      if (context.read<AuthCubit>().state.isAuthenticated) {
+                        await context.read<ProfileCubit>().loadProfile();
+                      }
                     } else {
                       _showAuthSheet(context);
                     }

@@ -67,14 +67,9 @@ class ProfileCubit extends Cubit<ProfileState> {
         isLoaded: true,
       ));
     } on ApiException catch (e) {
-      if (e.statusCode == 404 || e.statusCode == 401 || e.statusCode == 403) {
-        // Profile not found or not authenticated - this is ok
-        emit(state.copyWith(isLoading: false, error: null));
-        return;
-      }
       emit(state.copyWith(
         isLoading: false,
-        error: e.message,
+        error: e.message ?? 'Failed to update profile',
       ));
     } catch (e) {
       emit(state.copyWith(

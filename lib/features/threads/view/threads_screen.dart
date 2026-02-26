@@ -9,7 +9,6 @@ import 'package:insider/features/auth/cubit/auth_state.dart';
 import 'package:insider/features/threads/view/threads_list.dart';
 import 'package:insider/features/auth/view/auth_bottom_sheet.dart';
 import 'package:insider/features/threads/cubit/threads_cubit.dart';
-import 'package:insider/features/chat/view/conversation_history_screen.dart';
 import 'package:insider/generated/l10n.dart';
 
 /// Threads Screen - Displays conversation history
@@ -39,14 +38,10 @@ class _ThreadsScreenState extends State<ThreadsScreen> {
           onThreadTap: (threadMap) async {
             final id = threadMap['id'];
             final title = threadMap['title'];
-            if (id != null) {
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (context) => ConversationHistoryScreen(
-                    historyId: id,
-                    title: title,
-                  ),
-                ),
+            if (id != null && id.isNotEmpty) {
+              context.push(
+                AppRouter.conversationRoute(id),
+                extra: {'title': title},
               );
             }
           },

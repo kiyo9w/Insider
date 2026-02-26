@@ -17,7 +17,9 @@ class ProfileRepositoryImpl implements ProfileRepository {
 
   @override
   Future<ProfileData> updateProfile(UpdateProfileRequest request) async {
-    return _profileClient.updateProfile(request.toJson()).onApiError;
+    final payload = Map<String, dynamic>.from(request.toJson())
+      ..removeWhere((_, value) => value == null);
+    return _profileClient.updateProfile(payload).onApiError;
   }
 
   @override

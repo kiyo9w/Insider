@@ -41,15 +41,19 @@ class FcmNotificationService implements NotificationService {
     final settings = await _fcm.requestPermission();
     _log.i('Notification permission status: ${settings.authorizationStatus}');
 
+    if (!kIsWeb && defaultTargetPlatform == TargetPlatform.iOS) {
+      await _fcm.setForegroundNotificationPresentationOptions(
+        alert: true,
+        badge: true,
+        sound: true,
+      );
+    }
+
     final token = await getToken();
     await _registerTokenIfPossible(token, reason: 'initialization');
 
     // Listen for token refreshes
     _fcm.onTokenRefresh.listen((token) {
-      if (!kIsWeb && defaultTargetPlatform == TargetPlatform.iOS) {
-        _log.i('Ignoring FCM token refresh on iOS');
-        return;
-      }
       _log.i('FCM Token Refreshed: $token');
       unawaited(
         _registerTokenIfPossible(
@@ -79,11 +83,6 @@ class FcmNotificationService implements NotificationService {
 
   @override
   Future<String?> getToken() async {
-    if (!kIsWeb && defaultTargetPlatform == TargetPlatform.iOS) {
-      _log.i('Skipping FCM token fetch on iOS');
-      return null;
-    }
-
     try {
       final token = await _fcm.getToken(
         vapidKey: kIsWeb && AppConfig.firebaseWebVapidKey.isNotEmpty
@@ -100,10 +99,11 @@ class FcmNotificationService implements NotificationService {
 
   @override
   Future<void> registerTokenWithServer({String? token}) async {
-    // Backend endpoint is currently unavailable; skip registration to avoid 404 spam.
-    _log.w(
-        'Skip FCM registration: backend endpoint /api/v1/notifications/token not available');
-    return;
+    final resolvedToken = token ?? await getToken();
+    await _registerTokenIfPossible(
+      resolvedToken,
+      reason: 'manual registration',
+    );
   }
 
   Future<void> _registerTokenIfPossible(

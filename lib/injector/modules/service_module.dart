@@ -42,9 +42,6 @@ class ServiceModule {
         );
       })
       ..registerSingletonAsync<NotificationService>(() async {
-        if (Platform.isIOS) {
-          return NoOpNotificationService();
-        }
         final storage = await injector.getAsync<LocalStorageService>();
         return FcmNotificationService(
           logService: injector(),

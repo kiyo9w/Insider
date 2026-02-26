@@ -13,8 +13,8 @@ Future<void> showAppToast(
   final resolvedType = isError ? AppToastType.error : type;
   final rootContext = Navigator.of(context, rootNavigator: true).context;
   final mediaQuery = MediaQuery.of(rootContext);
-  final bottomInset = mediaQuery.viewInsets.bottom;
   final safeBottom = mediaQuery.padding.bottom;
+  final isDark = Theme.of(rootContext).brightness == Brightness.dark;
   final screenWidth = mediaQuery.size.width;
   final baseToastWidth = (screenWidth - 32).clamp(260.0, screenWidth);
   final targetToastWidth = baseToastWidth * 0.85;
@@ -27,8 +27,15 @@ Future<void> showAppToast(
 
   final accentColor =
       isSuccess ? const Color(0xFF07B11D) : const Color(0xFFE5484D);
-  final trackColor =
-      isSuccess ? const Color(0xFF113D18) : const Color(0xFF4B1E22);
+
+  final backgroundColor =
+      isDark ? const Color(0xFF070A0E) : const Color(0xFFF1F1F1);
+  final textColor = isDark ? Colors.white : const Color(0xFF5E5E5E);
+  final closeColor = isDark ? const Color(0xFFB7B7B7) : const Color(0xFFA8A8A8);
+
+  final trackColor = isSuccess
+      ? (isDark ? const Color(0xFF113D18) : const Color(0xFFDCEEDC))
+      : (isDark ? const Color(0xFF4B1E22) : const Color(0xFFF5D7DA));
 
   late Flushbar<void> flushbar;
 
@@ -39,71 +46,86 @@ Future<void> showAppToast(
       horizontalMargin,
       0,
       horizontalMargin,
-      (bottomInset > 0 ? bottomInset : safeBottom) + 12,
+      safeBottom + 12,
     ),
     borderRadius: BorderRadius.circular(14),
     duration: toastDuration,
     animationDuration: const Duration(milliseconds: 220),
     forwardAnimationCurve: Curves.easeOutCubic,
     reverseAnimationCurve: Curves.easeInCubic,
-    backgroundColor: const Color(0xFF070A0E),
+    backgroundColor: Colors.transparent,
     padding: EdgeInsets.zero,
     messageText: SizedBox(
       width: double.infinity,
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Padding(
-            padding: const EdgeInsets.fromLTRB(14, 10, 10, 10),
-            child: Row(
-              children: [
-                Container(
-                  width: 34,
-                  height: 34,
-                  decoration: BoxDecoration(
-                    color: accentColor,
-                    shape: BoxShape.circle,
-                  ),
-                  child: Icon(
-                    isSuccess ? Icons.check_rounded : Icons.close_rounded,
-                    size: 22,
-                    color: Colors.white,
-                  ),
-                ),
-                const SizedBox(width: 12),
-                Expanded(
-                  child: Text(
-                    message,
-                    style: DesignSystem.bodyLarge.copyWith(
-                      color: Colors.white,
-                      fontWeight: DesignSystem.medium,
-                      fontSize: 16,
+          Container(
+            decoration: BoxDecoration(
+              color: backgroundColor,
+              borderRadius: const BorderRadius.only(
+                topLeft: Radius.circular(14),
+                topRight: Radius.circular(14),
+              ),
+            ),
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(14, 10, 10, 10),
+              child: Row(
+                children: [
+                  Container(
+                    width: 34,
+                    height: 34,
+                    decoration: BoxDecoration(
+                      color: accentColor,
+                      shape: BoxShape.circle,
                     ),
-                  ),
-                ),
-                const SizedBox(width: 4),
-                GestureDetector(
-                  onTap: () => flushbar.dismiss(),
-                  child: const Padding(
-                    padding: EdgeInsets.all(2),
                     child: Icon(
-                      Icons.close_rounded,
-                      color: Color(0xFFB7B7B7),
-                      size: 28,
+                      isSuccess ? Icons.check_rounded : Icons.close_rounded,
+                      size: 22,
+                      color: Colors.white,
                     ),
                   ),
-                ),
-              ],
+                  const SizedBox(width: 12),
+                  Expanded(
+                    child: Text(
+                      message,
+                      style: DesignSystem.bodyLarge.copyWith(
+                        color: textColor,
+                        fontWeight: DesignSystem.medium,
+                        fontSize: 16,
+                      ),
+                    ),
+                  ),
+                  const SizedBox(width: 4),
+                  GestureDetector(
+                    onTap: () => flushbar.dismiss(),
+                    child: Padding(
+                      padding: const EdgeInsets.all(2),
+                      child: Icon(
+                        Icons.close_rounded,
+                        color: closeColor,
+                        size: 28,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
-          ClipRRect(
-            borderRadius: const BorderRadius.only(
-              bottomLeft: Radius.circular(14),
-              bottomRight: Radius.circular(14),
-            ),
-            child: Container(
-              height: 4,
+          Container(
+            decoration: BoxDecoration(
               color: trackColor,
+              borderRadius: const BorderRadius.only(
+                bottomLeft: Radius.circular(14),
+                bottomRight: Radius.circular(14),
+              ),
+            ),
+            height: 4,
+            child: ClipRRect(
+              borderRadius: const BorderRadius.only(
+                bottomLeft: Radius.circular(14),
+                bottomRight: Radius.circular(14),
+              ),
               child: TweenAnimationBuilder<double>(
                 tween: Tween<double>(begin: 1, end: 0),
                 duration: toastDuration,

@@ -17,8 +17,30 @@ import 'package:insider/generated/l10n.dart';
 import 'package:insider/injector/injector.dart';
 import 'package:insider/widgets/app_toast.dart';
 
-class AccountScreen extends StatelessWidget {
+class AccountScreen extends StatefulWidget {
   const AccountScreen({super.key});
+
+  @override
+  State<AccountScreen> createState() => _AccountScreenState();
+}
+
+class _AccountScreenState extends State<AccountScreen> {
+  late final ProfileCubit _profileCubit;
+  bool _profileRequested = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _profileCubit = ProfileCubit(
+      profileRepository: Injector.instance<ProfileRepository>(),
+    );
+  }
+
+  @override
+  void dispose() {
+    _profileCubit.close();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -29,6 +51,7 @@ class AccountScreen extends StatelessWidget {
       builder: (context, authState) {
         // If not authenticated, show login prompt
         if (!authState.isAuthenticated) {
+          _profileRequested = false;
           return Scaffold(
             backgroundColor: isDark
                 ? DesignSystem.backgroundDark
@@ -111,10 +134,13 @@ class AccountScreen extends StatelessWidget {
         }
 
         // If authenticated, show profile
-        return BlocProvider<ProfileCubit>(
-          create: (_) => ProfileCubit(
-            profileRepository: Injector.instance<ProfileRepository>(),
-          )..loadProfile(),
+        if (!_profileRequested) {
+          _profileRequested = true;
+          _profileCubit.loadProfile();
+        }
+
+        return BlocProvider<ProfileCubit>.value(
+          value: _profileCubit,
           child: Scaffold(
             backgroundColor: isDark
                 ? DesignSystem.backgroundDark

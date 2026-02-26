@@ -28,14 +28,15 @@ Future<void> showAppToast(
   final accentColor =
       isSuccess ? const Color(0xFF07B11D) : const Color(0xFFE5484D);
 
-  final backgroundColor =
-      isDark ? const Color(0xFF070A0E) : const Color(0xFFF1F1F1);
-  final textColor = isDark ? Colors.white : const Color(0xFF5E5E5E);
-  final closeColor = isDark ? const Color(0xFFB7B7B7) : const Color(0xFFA8A8A8);
+  final backgroundColor = isDark
+      ? const Color(0xFF070A0E)
+      : (isSuccess ? const Color(0xFFEAF8ED) : const Color(0xFFFCECEE));
+  final textColor = isDark ? Colors.white : const Color(0xFF232323);
+  final closeColor = isDark ? const Color(0xFFB7B7B7) : const Color(0xFF676767);
 
   final trackColor = isSuccess
-      ? (isDark ? const Color(0xFF113D18) : const Color(0xFFDCEEDC))
-      : (isDark ? const Color(0xFF4B1E22) : const Color(0xFFF5D7DA));
+      ? (isDark ? const Color(0xFF113D18) : const Color(0xFFCBEBD1))
+      : (isDark ? const Color(0xFF4B1E22) : const Color(0xFFF6CCD0));
 
   late Flushbar<void> flushbar;
 

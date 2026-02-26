@@ -176,7 +176,6 @@ class _SettingPageState extends State<SettingPage> {
             const SizedBox(height: 24),
             _buildSettingsSection(context, isDark, isAuthenticated),
             _buildNotificationToggle(context, isDark),
-            const SizedBox(height: 16),
             _buildFeedbackCard(context, isDark),
           ]),
         ),
@@ -371,83 +370,11 @@ class _SettingPageState extends State<SettingPage> {
   }
 
   Widget _buildFeedbackCard(BuildContext context, bool isDark) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 24),
-      child: Material(
-        color: Colors.transparent,
-        child: Ink(
-          decoration: BoxDecoration(
-            color: isDark
-                ? DesignSystem.backgroundDarkElevated
-                : DesignSystem.backgroundLightElevated,
-            borderRadius: DesignSystem.borderRadiusLarge,
-            border: Border.all(
-              color:
-                  isDark ? DesignSystem.borderDark : DesignSystem.borderLight,
-            ),
-          ),
-          child: InkWell(
-            borderRadius: DesignSystem.borderRadiusLarge,
-            onTap: () => _openFeedbackForm(context),
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
-              child: Row(
-                children: [
-                  Container(
-                    width: 36,
-                    height: 36,
-                    decoration: BoxDecoration(
-                      color: isDark
-                          ? DesignSystem.backgroundDarkCard
-                          : DesignSystem.backgroundLightCard,
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: Icon(
-                      Icons.rate_review_outlined,
-                      size: 20,
-                      color: isDark
-                          ? DesignSystem.iconDark
-                          : DesignSystem.iconLight,
-                    ),
-                  ),
-                  const SizedBox(width: 12),
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Send feedback',
-                          style: DesignSystem.bodyMedium.copyWith(
-                            color: isDark
-                                ? DesignSystem.textPrimaryDark
-                                : DesignSystem.textPrimaryLight,
-                            fontWeight: DesignSystem.semiBold,
-                          ),
-                        ),
-                        const SizedBox(height: 2),
-                        Text(
-                          'Tell us what to improve',
-                          style: DesignSystem.caption.copyWith(
-                            color: isDark
-                                ? DesignSystem.textSecondaryDark
-                                : DesignSystem.textSecondaryLight,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Icon(
-                    Icons.arrow_outward_rounded,
-                    size: 18,
-                    color:
-                        isDark ? DesignSystem.iconDark : DesignSystem.iconLight,
-                  ),
-                ],
-              ),
-            ),
-          ),
-        ),
-      ),
+    return _SettingsTile(
+      icon: Icons.send_outlined,
+      title: 'Send feedback',
+      isDark: isDark,
+      onTap: () => _openFeedbackForm(context),
     );
   }
 

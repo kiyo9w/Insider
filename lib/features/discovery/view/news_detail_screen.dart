@@ -7,6 +7,7 @@ import 'package:rest_client/rest_client.dart';
 import 'package:insider/features/chat/view/widgets/markdown_text.dart';
 import 'package:insider/features/chat/view/widgets/sources_bottom_sheet.dart';
 import 'package:insider/generated/l10n.dart';
+import 'package:go_router/go_router.dart';
 
 class NewsDetailScreen extends StatefulWidget {
   const NewsDetailScreen({super.key, required this.newsId, this.article});
@@ -68,7 +69,7 @@ class _NewsDetailScreenState extends State<NewsDetailScreen> {
             size: 20,
             color: isDark ? DesignSystem.iconDark : DesignSystem.iconLight,
           ),
-          onPressed: () => Navigator.of(context).pop(),
+          onPressed: () => context.pop(),
         ),
         title: Text(
           S.of(context).article_title,

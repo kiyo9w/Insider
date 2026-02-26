@@ -92,6 +92,34 @@ class AppRouter {
     );
   }
 
+  static CustomTransitionPage<void> _buildDetailTransitionPage(
+    GoRouterState state,
+    Widget child,
+  ) {
+    return CustomTransitionPage<void>(
+      key: state.pageKey,
+      child: child,
+      transitionDuration: const Duration(milliseconds: 280),
+      reverseTransitionDuration: const Duration(milliseconds: 220),
+      transitionsBuilder: (context, animation, secondaryAnimation, child) {
+        final offsetAnimation = Tween<Offset>(
+          begin: const Offset(1, 0),
+          end: Offset.zero,
+        ).animate(
+          CurvedAnimation(
+            parent: animation,
+            curve: Curves.easeOutCubic,
+          ),
+        );
+
+        return SlideTransition(
+          position: offsetAnimation,
+          child: child,
+        );
+      },
+    );
+  }
+
   static GoRouter get router => _router;
   static final _router = GoRouter(
     routes: <GoRoute>[
@@ -200,12 +228,18 @@ class AppRouter {
       ),
       GoRoute(
         path: '/news/detail',
-        builder: (context, state) {
+        pageBuilder: (context, state) {
           final article = state.extra as ArticleListItem?;
           if (article == null) {
-            return ErrorPage(content: 'Article not found');
+            return _buildDetailTransitionPage(
+              state,
+              ErrorPage(content: 'Article not found'),
+            );
           }
-          return NewsDetailScreen(newsId: article.id, article: article);
+          return _buildDetailTransitionPage(
+            state,
+            NewsDetailScreen(newsId: article.id, article: article),
+          );
         },
       ),
     ],

@@ -6,6 +6,7 @@ import 'package:insider/core/design_system/design_system.dart';
 import 'package:insider/features/profile/cubit/profile_cubit.dart';
 import 'package:insider/features/profile/cubit/profile_state.dart';
 import 'package:insider/generated/l10n.dart';
+import 'package:insider/widgets/app_toast.dart';
 
 enum EditProfileType { name, username, introduction, location }
 
@@ -89,18 +90,15 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
       listener: (context, state) {
         if (!state.isLoading && state.error == null && _hasChanges) {
           context.pop();
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
-              content: Text(S.of(context).update_success(_getTitle(context))),
-              backgroundColor: Colors.green,
-            ),
+          showAppToast(
+            context,
+            message: S.of(context).update_success(_getTitle(context)),
           );
         } else if (state.error != null && state.error!.isNotEmpty) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
-              content: Text(state.error!),
-              backgroundColor: DesignSystem.error,
-            ),
+          showAppToast(
+            context,
+            message: state.error!,
+            isError: true,
           );
         }
       },
@@ -285,7 +283,6 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
       ),
     );
   }
-
 
   String _getTitle(BuildContext context) {
     switch (widget.type) {

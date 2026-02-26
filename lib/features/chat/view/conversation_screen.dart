@@ -13,6 +13,7 @@ import 'package:insider/features/chat/view/conversation_message.dart';
 import 'package:insider/features/chat/view/widgets/assistant_message.dart';
 import 'package:insider/features/chat/view/widgets/conversation_input.dart';
 import 'package:insider/generated/l10n.dart';
+import 'package:insider/widgets/app_toast.dart';
 import 'package:insider/features/chat/view/widgets/source_selector_sheet.dart';
 import 'package:insider/features/chat/view/widgets/sources_bottom_sheet.dart';
 import 'package:insider/features/chat/view/widgets/user_message.dart';
@@ -951,13 +952,10 @@ class _ConversationScreenState extends State<ConversationScreen> {
                       },
                       onAttach: () {
                         HapticFeedback.lightImpact();
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(
-                            content: Text(
-                              S.of(context)
-                                  .feature_coming_soon('Attachments'),
-                            ),
-                          ),
+                        showAppToast(
+                          context,
+                          message:
+                              S.of(context).feature_coming_soon('Attachments'),
                         );
                       },
                       onChangeModel: () {},
@@ -1078,8 +1076,9 @@ class _ConversationScreenState extends State<ConversationScreen> {
       onTap: () {
         Navigator.pop(context);
         onTap();
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text(S.of(context).feature_coming_soon(label))),
+        showAppToast(
+          context,
+          message: S.of(context).feature_coming_soon(label),
         );
       },
       child: Column(

@@ -18,6 +18,7 @@ import 'package:insider/data/repositories/chat/chat_repository.dart';
 import 'package:insider/injector/injector.dart';
 import 'package:uuid/uuid.dart';
 import 'package:insider/generated/l10n.dart';
+import 'package:insider/widgets/app_toast.dart';
 
 class ConversationHistoryScreen extends StatefulWidget {
   final String historyId;
@@ -1021,13 +1022,10 @@ class _ConversationHistoryScreenState extends State<ConversationHistoryScreen> {
                       },
                       onAttach: () {
                         HapticFeedback.lightImpact();
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(
-                            content: Text(
-                              S.of(context)
-                                  .feature_coming_soon('Attachments'),
-                            ),
-                          ),
+                        showAppToast(
+                          context,
+                          message:
+                              S.of(context).feature_coming_soon('Attachments'),
                         );
                       },
                       onChangeModel: () {},
@@ -1146,8 +1144,9 @@ class _ConversationHistoryScreenState extends State<ConversationHistoryScreen> {
       onTap: () {
         Navigator.pop(context);
         onTap();
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text(S.of(context).feature_coming_soon(label))),
+        showAppToast(
+          context,
+          message: S.of(context).feature_coming_soon(label),
         );
       },
       child: Column(

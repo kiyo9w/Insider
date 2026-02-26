@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:insider/core/design_system/design_system.dart';
 import 'package:insider/features/chat/view/conversation_message.dart';
 import 'package:insider/generated/l10n.dart';
+import 'package:insider/widgets/app_toast.dart';
 
 class UserMessage extends StatelessWidget {
   final ConversationMessage message;
@@ -132,20 +133,9 @@ class UserMessage extends StatelessWidget {
     if (selected == 'copy') {
       Clipboard.setData(ClipboardData(text: message.content));
       if (context.mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text(
-              S.current.copied_to_clipboard,
-              style: TextStyle(color: isDark ? Colors.black : Colors.white),
-            ),
-            backgroundColor: isDark ? Colors.white : Colors.black,
-            duration: const Duration(seconds: 1),
-            behavior: SnackBarBehavior.floating,
-            width: 180,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(20),
-            ),
-          ),
+        showAppToast(
+          context,
+          message: S.current.copied_to_clipboard,
         );
       }
     } else if (selected == 'edit') {

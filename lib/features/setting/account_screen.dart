@@ -15,6 +15,7 @@ import 'package:insider/features/profile/cubit/profile_state.dart';
 import 'package:insider/features/setting/edit_profile_screen.dart';
 import 'package:insider/generated/l10n.dart';
 import 'package:insider/injector/injector.dart';
+import 'package:insider/widgets/app_toast.dart';
 
 class AccountScreen extends StatelessWidget {
   const AccountScreen({super.key});
@@ -484,11 +485,10 @@ class AccountScreen extends StatelessWidget {
       }
     } catch (e) {
       if (context.mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text(S.of(context).failed_to_pick_image(e.toString())),
-            backgroundColor: DesignSystem.error,
-          ),
+        showAppToast(
+          context,
+          message: S.of(context).failed_to_pick_image(e.toString()),
+          isError: true,
         );
       }
     }

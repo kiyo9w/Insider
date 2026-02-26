@@ -12,72 +12,109 @@ Future<void> showAppToast(
 }) {
   final resolvedType = isError ? AppToastType.error : type;
   final rootContext = Navigator.of(context, rootNavigator: true).context;
-  final isDark = Theme.of(rootContext).brightness == Brightness.dark;
-  final topInset = MediaQuery.of(rootContext).padding.top;
-
+  final mediaQuery = MediaQuery.of(rootContext);
+  final bottomInset = mediaQuery.viewInsets.bottom;
+  final safeBottom = mediaQuery.padding.bottom;
   final isSuccess = resolvedType == AppToastType.success;
 
-  final backgroundColor =
-      isDark ? const Color(0xFF070A0E) : const Color(0xFFF1F1F1);
-
-  final textColor = isDark ? Colors.white : const Color(0xFF696969);
+  const toastDuration = Duration(milliseconds: 2800);
 
   final accentColor =
       isSuccess ? const Color(0xFF07B11D) : const Color(0xFFE5484D);
-
-  final progressBgColor = isSuccess
-      ? (isDark ? const Color(0xFF123F1A) : const Color(0xFFD8F2DB))
-      : (isDark ? const Color(0xFF4B1E22) : const Color(0xFFF8D7D9));
+  final trackColor =
+      isSuccess ? const Color(0xFF113D18) : const Color(0xFF4B1E22);
 
   late Flushbar<void> flushbar;
 
   flushbar = Flushbar<void>(
-    flushbarPosition: FlushbarPosition.TOP,
+    flushbarPosition: FlushbarPosition.BOTTOM,
     flushbarStyle: FlushbarStyle.FLOATING,
-    margin: EdgeInsets.fromLTRB(16, topInset + 10, 16, 0),
-    borderRadius: BorderRadius.circular(14),
-    duration: const Duration(milliseconds: 2800),
-    backgroundColor: backgroundColor,
-    boxShadows: const [
-      BoxShadow(
-        color: Color(0x29000000),
-        blurRadius: 20,
-        offset: Offset(0, 8),
-      ),
-    ],
-    showProgressIndicator: true,
-    progressIndicatorBackgroundColor: progressBgColor,
-    progressIndicatorValueColor: AlwaysStoppedAnimation<Color>(accentColor),
-    icon: Container(
-      width: 44,
-      height: 44,
-      decoration: BoxDecoration(
-        color: accentColor,
-        shape: BoxShape.circle,
-      ),
-      child: Icon(
-        isSuccess ? Icons.check_rounded : Icons.close_rounded,
-        size: 26,
-        color: Colors.white,
-      ),
+    margin: EdgeInsets.fromLTRB(
+      16,
+      0,
+      16,
+      (bottomInset > 0 ? bottomInset : safeBottom) + 12,
     ),
-    mainButton: IconButton(
-      splashRadius: 18,
-      iconSize: 24,
-      padding: EdgeInsets.zero,
-      constraints: const BoxConstraints(minHeight: 28, minWidth: 28),
-      onPressed: () => flushbar.dismiss(),
-      icon: Icon(
-        Icons.close_rounded,
-        color: isDark ? const Color(0xFFD5D5D5) : const Color(0xFFA2A2A2),
-      ),
-    ),
-    messageText: Text(
-      message,
-      style: DesignSystem.bodyLarge.copyWith(
-        color: textColor,
-        fontWeight: DesignSystem.medium,
-        fontSize: 18,
+    borderRadius: BorderRadius.circular(16),
+    duration: toastDuration,
+    animationDuration: const Duration(milliseconds: 220),
+    forwardAnimationCurve: Curves.easeOutCubic,
+    reverseAnimationCurve: Curves.easeInCubic,
+    backgroundColor: const Color(0xFF070A0E),
+    padding: EdgeInsets.zero,
+    messageText: SizedBox(
+      width: double.infinity,
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Padding(
+            padding: const EdgeInsets.fromLTRB(18, 16, 14, 16),
+            child: Row(
+              children: [
+                Container(
+                  width: 44,
+                  height: 44,
+                  decoration: BoxDecoration(
+                    color: accentColor,
+                    shape: BoxShape.circle,
+                  ),
+                  child: Icon(
+                    isSuccess ? Icons.check_rounded : Icons.close_rounded,
+                    size: 28,
+                    color: Colors.white,
+                  ),
+                ),
+                const SizedBox(width: 16),
+                Expanded(
+                  child: Text(
+                    message,
+                    style: DesignSystem.bodyLarge.copyWith(
+                      color: Colors.white,
+                      fontWeight: DesignSystem.medium,
+                      fontSize: 18,
+                    ),
+                  ),
+                ),
+                const SizedBox(width: 8),
+                GestureDetector(
+                  onTap: () => flushbar.dismiss(),
+                  child: const Padding(
+                    padding: EdgeInsets.all(2),
+                    child: Icon(
+                      Icons.close_rounded,
+                      color: Color(0xFFB7B7B7),
+                      size: 34,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          ClipRRect(
+            borderRadius: const BorderRadius.only(
+              bottomLeft: Radius.circular(16),
+              bottomRight: Radius.circular(16),
+            ),
+            child: Container(
+              height: 8,
+              color: trackColor,
+              child: TweenAnimationBuilder<double>(
+                tween: Tween<double>(begin: 1, end: 0),
+                duration: toastDuration,
+                curve: Curves.linear,
+                builder: (context, value, _) {
+                  return Align(
+                    alignment: Alignment.centerLeft,
+                    child: FractionallySizedBox(
+                      widthFactor: value,
+                      child: Container(color: accentColor),
+                    ),
+                  );
+                },
+              ),
+            ),
+          ),
+        ],
       ),
     ),
   );

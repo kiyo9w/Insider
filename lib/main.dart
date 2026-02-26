@@ -10,6 +10,7 @@ Future<void> main() async {
         await Firebase.initializeApp();
       } catch (e, s) {
         debugPrint('Firebase initializeApp failed: $e\n$s');
+        rethrow;
       }
     },
     flavorConfiguration: () async {

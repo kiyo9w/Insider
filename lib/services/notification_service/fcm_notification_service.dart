@@ -30,6 +30,7 @@ class FcmNotificationService implements NotificationService {
   final LocalStorageService _localStorageService;
   final FirebaseMessaging _fcm = FirebaseMessaging.instance;
   final _foregroundMessageController = BehaviorSubject<RemoteMessage>();
+  bool _isInitialized = false;
 
   @override
   Stream<RemoteMessage> get foregroundMessageStream =>
@@ -37,47 +38,54 @@ class FcmNotificationService implements NotificationService {
 
   @override
   Future<void> init() async {
+    if (_isInitialized) return;
+
     _log.i('Initializing NotificationService...');
-    final settings = await _fcm.requestPermission();
-    _log.i('Notification permission status: ${settings.authorizationStatus}');
+    try {
+      final settings = await _fcm.requestPermission();
+      _log.i('Notification permission status: ${settings.authorizationStatus}');
 
-    if (!kIsWeb && defaultTargetPlatform == TargetPlatform.iOS) {
-      await _fcm.setForegroundNotificationPresentationOptions(
-        alert: true,
-        badge: true,
-        sound: true,
-      );
-    }
-
-    final token = await getToken();
-    await _registerTokenIfPossible(token, reason: 'initialization');
-
-    // Listen for token refreshes
-    _fcm.onTokenRefresh.listen((token) {
-      _log.i('FCM Token Refreshed: $token');
-      unawaited(
-        _registerTokenIfPossible(
-          token,
-          reason: 'token refresh',
-        ),
-      );
-    });
-
-    FirebaseMessaging.onMessage.listen((RemoteMessage message) {
-      _log.i('Got a message whilst in the foreground!');
-      _log.i('Message data: ${message.data}');
-      if (message.notification != null) {
-        _log.i('Message also contained a notification: '
-            '${message.notification}');
+      if (!kIsWeb && defaultTargetPlatform == TargetPlatform.iOS) {
+        await _fcm.setForegroundNotificationPresentationOptions(
+          alert: true,
+          badge: true,
+          sound: true,
+        );
       }
 
-      _foregroundMessageController.add(message);
-    });
+      final token = await getToken();
+      await _registerTokenIfPossible(token, reason: 'initialization');
 
-    if (!kIsWeb) {
-      FirebaseMessaging.onBackgroundMessage(
-        _firebaseMessagingBackgroundHandler,
-      );
+      _fcm.onTokenRefresh.listen((token) {
+        _log.i('FCM Token Refreshed: $token');
+        unawaited(
+          _registerTokenIfPossible(
+            token,
+            reason: 'token refresh',
+          ),
+        );
+      });
+
+      FirebaseMessaging.onMessage.listen((RemoteMessage message) {
+        _log.i('Got a message whilst in the foreground!');
+        _log.i('Message data: ${message.data}');
+        if (message.notification != null) {
+          _log.i('Message also contained a notification: '
+              '${message.notification}');
+        }
+
+        _foregroundMessageController.add(message);
+      });
+
+      if (!kIsWeb) {
+        FirebaseMessaging.onBackgroundMessage(
+          _firebaseMessagingBackgroundHandler,
+        );
+      }
+
+      _isInitialized = true;
+    } catch (e, s) {
+      _log.e('Failed to initialize notification service', e, s);
     }
   }
 

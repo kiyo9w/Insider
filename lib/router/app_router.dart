@@ -61,7 +61,8 @@ class AppRouter {
   static const String conversationNamed = 'conversation';
   static const String conversationPath = '/main/conversation/:id';
 
-  static String conversationRoute(String id) => '/main/conversation/$id';
+  static String conversationRoute(String id) =>
+      '/main/conversation/${Uri.encodeComponent(id)}';
 
   static GoRouter get router => _router;
   static final _router = GoRouter(

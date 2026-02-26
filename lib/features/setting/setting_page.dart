@@ -15,6 +15,7 @@ import 'package:insider/injector/injector.dart';
 import 'package:insider/data/repositories/profile/profile_repository.dart';
 import 'package:insider/router/app_router.dart';
 import 'package:insider/services/local_storage_service/local_storage_service.dart';
+import 'package:insider/services/notification_service/notification_service.dart';
 
 class SettingPage extends StatefulWidget {
   const SettingPage({super.key});
@@ -25,13 +26,26 @@ class SettingPage extends StatefulWidget {
 
 class _SettingPageState extends State<SettingPage> {
   late final LocalStorageService _localStorage;
+  late final NotificationService _notificationService;
+  late final ProfileCubit _profileCubit;
   bool _notificationsEnabled = true;
+  bool _profileRequested = false;
 
   @override
   void initState() {
     super.initState();
     _localStorage = Injector.instance<LocalStorageService>();
+    _notificationService = Injector.instance<NotificationService>();
+    _profileCubit = ProfileCubit(
+      profileRepository: Injector.instance<ProfileRepository>(),
+    );
     _loadNotificationPreference();
+  }
+
+  @override
+  void dispose() {
+    _profileCubit.close();
+    super.dispose();
   }
 
   Future<void> _loadNotificationPreference() async {
@@ -45,13 +59,35 @@ class _SettingPageState extends State<SettingPage> {
   }
 
   Future<void> _setNotificationPreference(bool enabled) async {
+    final previousValue = _notificationsEnabled;
+
     setState(() {
       _notificationsEnabled = enabled;
     });
+
     await _localStorage.setValue(
       key: AppKeys.pushNotificationsEnabledKey,
       value: enabled,
     );
+
+    if (!enabled) return;
+
+    try {
+      await _notificationService.init();
+      await _notificationService.registerTokenWithServer();
+    } catch (e) {
+      if (!mounted) return;
+      setState(() {
+        _notificationsEnabled = previousValue;
+      });
+      await _localStorage.setValue(
+        key: AppKeys.pushNotificationsEnabledKey,
+        value: previousValue,
+      );
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(e.toString())),
+      );
+    }
   }
 
   @override
@@ -68,6 +104,7 @@ class _SettingPageState extends State<SettingPage> {
             final user = authState.user;
 
             if (!isAuthenticated) {
+              _profileRequested = false;
               return _buildSettingsBody(
                 context,
                 isDark,
@@ -77,10 +114,13 @@ class _SettingPageState extends State<SettingPage> {
               );
             }
 
-            return BlocProvider(
-              create: (_) => ProfileCubit(
-                profileRepository: Injector.instance<ProfileRepository>(),
-              )..loadProfile(),
+            if (!_profileRequested) {
+              _profileRequested = true;
+              _profileCubit.loadProfile();
+            }
+
+            return BlocProvider.value(
+              value: _profileCubit,
               child: BlocBuilder<ProfileCubit, ProfileState>(
                 builder: (context, profileState) {
                   final profile = profileState.profile;

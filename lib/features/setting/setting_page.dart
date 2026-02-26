@@ -16,6 +16,8 @@ import 'package:insider/data/repositories/profile/profile_repository.dart';
 import 'package:insider/router/app_router.dart';
 import 'package:insider/services/local_storage_service/local_storage_service.dart';
 import 'package:insider/services/notification_service/notification_service.dart';
+import 'package:insider/widgets/app_toast.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class SettingPage extends StatefulWidget {
   const SettingPage({super.key});
@@ -30,6 +32,10 @@ class _SettingPageState extends State<SettingPage> {
   late final ProfileCubit _profileCubit;
   bool _notificationsEnabled = true;
   bool _profileRequested = false;
+
+  static final Uri _feedbackUri = Uri.parse(
+    'https://docs.google.com/forms/d/e/1FAIpQLSfqM6VsVuw2mE6V6p2ZoBCllyZL3H2IvBfBk249gB-mBD_YQQ/closedform',
+  );
 
   @override
   void initState() {
@@ -84,8 +90,10 @@ class _SettingPageState extends State<SettingPage> {
         key: AppKeys.pushNotificationsEnabledKey,
         value: previousValue,
       );
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text(e.toString())),
+      showAppToast(
+        context,
+        message: e.toString(),
+        isError: true,
       );
     }
   }
@@ -168,6 +176,8 @@ class _SettingPageState extends State<SettingPage> {
             const SizedBox(height: 24),
             _buildSettingsSection(context, isDark, isAuthenticated),
             _buildNotificationToggle(context, isDark),
+            const SizedBox(height: 16),
+            _buildFeedbackCard(context, isDark),
           ]),
         ),
         SliverFillRemaining(
@@ -358,6 +368,103 @@ class _SettingPageState extends State<SettingPage> {
             : DesignSystem.textPrimaryLight,
       ),
     );
+  }
+
+  Widget _buildFeedbackCard(BuildContext context, bool isDark) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 24),
+      child: Material(
+        color: Colors.transparent,
+        child: Ink(
+          decoration: BoxDecoration(
+            color: isDark
+                ? DesignSystem.backgroundDarkElevated
+                : DesignSystem.backgroundLightElevated,
+            borderRadius: DesignSystem.borderRadiusLarge,
+            border: Border.all(
+              color:
+                  isDark ? DesignSystem.borderDark : DesignSystem.borderLight,
+            ),
+          ),
+          child: InkWell(
+            borderRadius: DesignSystem.borderRadiusLarge,
+            onTap: () => _openFeedbackForm(context),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+              child: Row(
+                children: [
+                  Container(
+                    width: 36,
+                    height: 36,
+                    decoration: BoxDecoration(
+                      color: isDark
+                          ? DesignSystem.backgroundDarkCard
+                          : DesignSystem.backgroundLightCard,
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Icon(
+                      Icons.rate_review_outlined,
+                      size: 20,
+                      color: isDark
+                          ? DesignSystem.iconDark
+                          : DesignSystem.iconLight,
+                    ),
+                  ),
+                  const SizedBox(width: 12),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Send feedback',
+                          style: DesignSystem.bodyMedium.copyWith(
+                            color: isDark
+                                ? DesignSystem.textPrimaryDark
+                                : DesignSystem.textPrimaryLight,
+                            fontWeight: DesignSystem.semiBold,
+                          ),
+                        ),
+                        const SizedBox(height: 2),
+                        Text(
+                          'Tell us what to improve',
+                          style: DesignSystem.caption.copyWith(
+                            color: isDark
+                                ? DesignSystem.textSecondaryDark
+                                : DesignSystem.textSecondaryLight,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Icon(
+                    Icons.arrow_outward_rounded,
+                    size: 18,
+                    color:
+                        isDark ? DesignSystem.iconDark : DesignSystem.iconLight,
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  Future<void> _openFeedbackForm(BuildContext context) async {
+    HapticFeedback.lightImpact();
+    final opened = await launchUrl(
+      _feedbackUri,
+      mode: LaunchMode.externalApplication,
+    );
+
+    if (!opened && context.mounted) {
+      showAppToast(
+        context,
+        message: 'Could not open feedback form',
+        isError: true,
+      );
+    }
   }
 
   Widget _buildSignOutButton(

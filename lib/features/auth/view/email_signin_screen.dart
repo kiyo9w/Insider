@@ -6,6 +6,7 @@ import 'package:insider/features/auth/cubit/auth_cubit.dart';
 import 'package:insider/features/auth/cubit/auth_state.dart';
 import 'package:insider/features/auth/view/register_screen.dart';
 import 'package:insider/generated/l10n.dart';
+import 'package:insider/widgets/app_toast.dart';
 
 class EmailSignInScreen extends StatefulWidget {
   const EmailSignInScreen({super.key});
@@ -62,11 +63,10 @@ class _EmailSignInScreenState extends State<EmailSignInScreen> {
             Navigator.pop(context);
           }
         } else if (state.error != null && state.error!.isNotEmpty) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
-              content: Text(state.error!),
-              backgroundColor: DesignSystem.error,
-            ),
+          showAppToast(
+            context,
+            message: state.error!,
+            isError: true,
           );
         }
       },
@@ -232,10 +232,9 @@ class _EmailSignInScreenState extends State<EmailSignInScreen> {
           child: ElevatedButton(
             onPressed: isEnabled ? () => _handleContinue(context) : null,
             style: ElevatedButton.styleFrom(
-              backgroundColor: DesignSystem.primaryCyan,
-              disabledBackgroundColor: isDark
-                  ? DesignSystem.backgroundDarkElevated
-                  : DesignSystem.backgroundLightElevated,
+              backgroundColor: isDark ? const Color(0xFF333333) : Colors.black,
+              disabledBackgroundColor:
+                  isDark ? const Color(0xFF222222) : Colors.grey[300],
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(30),
               ),
@@ -421,13 +420,10 @@ class _EmailSignInScreenState extends State<EmailSignInScreen> {
                         onPressed: () {
                           HapticFeedback.mediumImpact();
                           Navigator.pop(context);
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            SnackBar(
-                              content: Text(
-                                S.current.feature_coming_soon(
-                                  S.current.forgot_password_title,
-                                ),
-                              ),
+                          showAppToast(
+                            context,
+                            message: S.current.feature_coming_soon(
+                              S.current.forgot_password_title,
                             ),
                           );
                         },

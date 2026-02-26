@@ -6,6 +6,7 @@ import 'package:insider/features/auth/cubit/auth_cubit.dart';
 import 'package:insider/features/auth/cubit/auth_state.dart';
 import 'package:insider/features/auth/view/email_signin_screen.dart';
 import 'package:insider/generated/l10n.dart';
+import 'package:insider/widgets/app_toast.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});
@@ -73,11 +74,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
             Navigator.pop(context);
           }
         } else if (state.error != null && state.error!.isNotEmpty) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
-              content: Text(state.error!),
-              backgroundColor: DesignSystem.error,
-            ),
+          showAppToast(
+            context,
+            message: state.error!,
+            isError: true,
           );
         }
       },
@@ -316,11 +316,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
     if (name.isEmpty || email.isEmpty || password.isEmpty) return;
 
     if (password != confirmPassword) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text(S.current.passwords_do_not_match),
-          backgroundColor: DesignSystem.error,
-        ),
+      showAppToast(
+        context,
+        message: S.current.passwords_do_not_match,
+        isError: true,
       );
       return;
     }

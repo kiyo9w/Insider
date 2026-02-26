@@ -279,6 +279,8 @@ class _ThreadsViewState extends State<ThreadsView> {
             onPressed: () {
               if (widget.onNewChat != null) {
                 widget.onNewChat!();
+              } else if (context.canPop()) {
+                context.pop();
               } else {
                 context.go(AppRouter.homePath);
               }
@@ -354,6 +356,8 @@ class _ThreadsViewState extends State<ThreadsView> {
         onTap: () {
           if (widget.onNewChat != null) {
             widget.onNewChat!();
+          } else if (context.canPop()) {
+            context.pop();
           } else {
             context.go(AppRouter.homePath);
           }

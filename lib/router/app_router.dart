@@ -64,6 +64,34 @@ class AppRouter {
   static String conversationRoute(String id) =>
       '/main/conversation/${Uri.encodeComponent(id)}';
 
+  static CustomTransitionPage<void> _buildSidebarTransitionPage(
+    GoRouterState state,
+    Widget child,
+  ) {
+    return CustomTransitionPage<void>(
+      key: state.pageKey,
+      child: child,
+      transitionDuration: const Duration(milliseconds: 280),
+      reverseTransitionDuration: const Duration(milliseconds: 220),
+      transitionsBuilder: (context, animation, secondaryAnimation, child) {
+        final offsetAnimation = Tween<Offset>(
+          begin: const Offset(-1, 0),
+          end: Offset.zero,
+        ).animate(
+          CurvedAnimation(
+            parent: animation,
+            curve: Curves.easeOutCubic,
+          ),
+        );
+
+        return SlideTransition(
+          position: offsetAnimation,
+          child: child,
+        );
+      },
+    );
+  }
+
   static GoRouter get router => _router;
   static final _router = GoRouter(
     routes: <GoRoute>[
@@ -125,10 +153,13 @@ class AppRouter {
       GoRoute(
         name: threadsNamed,
         path: threadsPath,
-        builder: (context, state) => MainShell(
-          child: BlocProvider(
-            create: (context) => Injector.instance<ThreadsCubit>(),
-            child: const ThreadsScreen(),
+        pageBuilder: (context, state) => _buildSidebarTransitionPage(
+          state,
+          MainShell(
+            child: BlocProvider(
+              create: (context) => Injector.instance<ThreadsCubit>(),
+              child: const ThreadsScreen(),
+            ),
           ),
         ),
       ),
@@ -142,21 +173,27 @@ class AppRouter {
       GoRoute(
         name: conversationNamed,
         path: conversationPath,
-        builder: (context, state) {
+        pageBuilder: (context, state) {
           final id = state.pathParameters['id'];
           final extras = state.extra as Map<String, dynamic>?;
           final title = extras?['title'] as String?;
 
           if (id == null) {
-            return MainShell(
-              child: ErrorPage(content: 'Conversation ID is missing'),
+            return _buildSidebarTransitionPage(
+              state,
+              MainShell(
+                child: ErrorPage(content: 'Conversation ID is missing'),
+              ),
             );
           }
 
-          return MainShell(
-            child: ConversationHistoryScreen(
-              historyId: id,
-              title: title,
+          return _buildSidebarTransitionPage(
+            state,
+            MainShell(
+              child: ConversationHistoryScreen(
+                historyId: id,
+                title: title,
+              ),
             ),
           );
         },

@@ -58,7 +58,7 @@ class _ChatScreenState extends State<ChatScreen> {
         children: [
           GestureDetector(
             onTap: () {
-              context.go(AppRouter.threadsPath);
+              context.push(AppRouter.threadsPath);
             },
             child: Container(
               width: 40,

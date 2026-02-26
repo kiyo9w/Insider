@@ -4,6 +4,7 @@ import 'package:insider/core/design_system/design_system.dart';
 import 'package:insider/features/auth/view/email_signin_screen.dart';
 import 'package:insider/features/auth/view/register_screen.dart';
 import 'package:insider/generated/assets.gen.dart';
+import 'package:insider/widgets/app_toast.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class AuthBottomSheet extends StatelessWidget {
@@ -119,8 +120,10 @@ class AuthBottomSheet extends StatelessWidget {
       mode: LaunchMode.externalApplication,
     );
     if (!opened && context.mounted) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Could not open link')),
+      showAppToast(
+        context,
+        message: 'Could not open link',
+        isError: true,
       );
     }
   }

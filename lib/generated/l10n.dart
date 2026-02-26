@@ -74,9 +74,9 @@ class S {
     return Intl.message('Load image', name: 'load_image', desc: '', args: []);
   }
 
-  /// `Trang chủ`
+  /// `Home`
   String get home {
-    return Intl.message('Trang chủ', name: 'home', desc: '', args: []);
+    return Intl.message('Home', name: 'home', desc: '', args: []);
   }
 
   /// `Press button`

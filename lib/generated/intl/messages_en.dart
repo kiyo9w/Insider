@@ -128,7 +128,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "guest_get_started": MessageLookupByLibrary.simpleMessage("Get started"),
     "guest_user": MessageLookupByLibrary.simpleMessage("Guest"),
-    "home": MessageLookupByLibrary.simpleMessage("Trang chủ"),
+    "home": MessageLookupByLibrary.simpleMessage("Home"),
     "image": MessageLookupByLibrary.simpleMessage("Image"),
     "image_from_db": MessageLookupByLibrary.simpleMessage("Image from DB"),
     "images_tab": MessageLookupByLibrary.simpleMessage("Images"),

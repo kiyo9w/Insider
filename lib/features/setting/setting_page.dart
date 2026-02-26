@@ -455,7 +455,7 @@ class _SettingPageState extends State<SettingPage> {
   Widget _buildVersionInfo(BuildContext context, bool isDark) {
     return Center(
       child: Text(
-        'Insider v2.251030.0 • Build 17068',
+        'Insider',
         style: DesignSystem.caption.copyWith(
           color: isDark
               ? DesignSystem.textTertiaryDark

@@ -8,11 +8,11 @@ import 'package:insider/core/keys/app_keys.dart';
 import 'package:insider/features/auth/cubit/auth_cubit.dart';
 import 'package:insider/features/auth/cubit/auth_state.dart';
 import 'package:insider/features/auth/view/auth_bottom_sheet.dart';
+import 'package:insider/features/auth/view/change_password_screen.dart';
 import 'package:insider/features/profile/cubit/profile_cubit.dart';
 import 'package:insider/features/profile/cubit/profile_state.dart';
 import 'package:insider/generated/l10n.dart';
 import 'package:insider/injector/injector.dart';
-import 'package:insider/data/repositories/profile/profile_repository.dart';
 import 'package:insider/router/app_router.dart';
 import 'package:insider/services/local_storage_service/local_storage_service.dart';
 import 'package:insider/services/notification_service/notification_service.dart';
@@ -42,16 +42,8 @@ class _SettingPageState extends State<SettingPage> {
     super.initState();
     _localStorage = Injector.instance<LocalStorageService>();
     _notificationService = Injector.instance<NotificationService>();
-    _profileCubit = ProfileCubit(
-      profileRepository: Injector.instance<ProfileRepository>(),
-    );
+    _profileCubit = Injector.instance<ProfileCubit>();
     _loadNotificationPreference();
-  }
-
-  @override
-  void dispose() {
-    _profileCubit.close();
-    super.dispose();
   }
 
   Future<void> _loadNotificationPreference() async {
@@ -164,6 +156,7 @@ class _SettingPageState extends State<SettingPage> {
     return CustomScrollView(
       slivers: [
         _buildAppBar(context, isDark),
+        const SliverToBoxAdapter(child: SizedBox(height: 8)),
         SliverList(
           delegate: SliverChildListDelegate([
             _buildProfileSection(
@@ -176,7 +169,6 @@ class _SettingPageState extends State<SettingPage> {
             const SizedBox(height: 24),
             _buildSettingsSection(context, isDark, isAuthenticated),
             _buildNotificationToggle(context, isDark),
-            _buildFeedbackCard(context, isDark),
           ]),
         ),
         SliverFillRemaining(
@@ -189,6 +181,8 @@ class _SettingPageState extends State<SettingPage> {
                 isDark,
                 isAuthenticated,
               ),
+              const SizedBox(height: 8),
+              _buildFeedbackCard(context, isDark),
               const SizedBox(height: 24),
               _buildVersionInfo(context, isDark),
               const SizedBox(height: 24),
@@ -262,6 +256,7 @@ class _SettingPageState extends State<SettingPage> {
                           ? imageUrl
                           : '${AppConfig.baseUrl}${imageUrl.startsWith('/') ? '' : '/'}$imageUrl',
                       fit: BoxFit.cover,
+                      gaplessPlayback: true,
                       errorBuilder: (context, error, stackTrace) {
                         return const Icon(
                           Icons.person_rounded,
@@ -323,10 +318,7 @@ class _SettingPageState extends State<SettingPage> {
   }
 
   Widget _buildSettingsSection(
-    BuildContext context,
-    bool isDark,
-    bool isAuthenticated,
-  ) {
+      BuildContext context, bool isDark, bool isAuthenticated) {
     return Column(
       children: [
         _SettingsTile(
@@ -347,6 +339,21 @@ class _SettingPageState extends State<SettingPage> {
             context.push(AppRouter.languagePath);
           },
         ),
+        if (isAuthenticated)
+          _SettingsTile(
+            icon: Icons.lock_outline_rounded,
+            title: S.of(context).change_password_title,
+            isDark: isDark,
+            onTap: () {
+              HapticFeedback.lightImpact();
+              showModalBottomSheet(
+                context: context,
+                isScrollControlled: true,
+                backgroundColor: Colors.transparent,
+                builder: (context) => const ChangePasswordScreen(),
+              );
+            },
+          ),
       ],
     );
   }
@@ -370,11 +377,59 @@ class _SettingPageState extends State<SettingPage> {
   }
 
   Widget _buildFeedbackCard(BuildContext context, bool isDark) {
-    return _SettingsTile(
-      icon: Icons.send_outlined,
-      title: 'Send feedback',
-      isDark: isDark,
-      onTap: () => _openFeedbackForm(context),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 24),
+      child: Material(
+        color: Colors.transparent,
+        child: InkWell(
+          onTap: () => _openFeedbackForm(context),
+          borderRadius: DesignSystem.borderRadiusLarge,
+          child: DottedBorderPainter(
+            color: isDark
+                ? DesignSystem.textTertiaryDark
+                : DesignSystem.textTertiaryLight,
+            borderRadius: 16,
+            dashLength: 6,
+            dashGap: 5,
+            strokeWidth: 1.2,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(
+                horizontal: 20,
+                vertical: 18,
+              ),
+              child: Row(
+                children: [
+                  Text(
+                    S.of(context).enjoying_insider,
+                    style: DesignSystem.bodyMedium.copyWith(
+                      color: isDark
+                          ? DesignSystem.textSecondaryDark
+                          : DesignSystem.textSecondaryLight,
+                    ),
+                  ),
+                  const Spacer(),
+                  Text(
+                    S.of(context).send_feedback,
+                    style: DesignSystem.label.copyWith(
+                      color: isDark
+                          ? DesignSystem.textPrimaryDark
+                          : DesignSystem.textPrimaryLight,
+                    ),
+                  ),
+                  const SizedBox(width: 6),
+                  Icon(
+                    Icons.arrow_outward_rounded,
+                    size: 16,
+                    color: isDark
+                        ? DesignSystem.textPrimaryDark
+                        : DesignSystem.textPrimaryLight,
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ),
     );
   }
 
@@ -388,7 +443,7 @@ class _SettingPageState extends State<SettingPage> {
     if (!opened && context.mounted) {
       showAppToast(
         context,
-        message: 'Could not open feedback form',
+        message: S.of(context).feedback_form_error,
         isError: true,
       );
     }
@@ -578,9 +633,13 @@ class _SettingPageState extends State<SettingPage> {
   }
 
   Widget _buildVersionInfo(BuildContext context, bool isDark) {
+    final versionText = AppConfig.version.isNotEmpty
+        ? 'Insider v${AppConfig.version} Build ${AppConfig.buildNumber} • © 2026 Horse AI JSC'
+        : 'Insider © 2026 Horse AI JSC';
+
     return Center(
       child: Text(
-        'Insider',
+        versionText,
         style: DesignSystem.caption.copyWith(
           color: isDark
               ? DesignSystem.textTertiaryDark
@@ -667,4 +726,85 @@ class _SettingsTile extends StatelessWidget {
       ),
     );
   }
+}
+
+class DottedBorderPainter extends StatelessWidget {
+  const DottedBorderPainter({
+    super.key,
+    required this.child,
+    required this.color,
+    this.borderRadius = 0,
+    this.dashLength = 5,
+    this.dashGap = 4,
+    this.strokeWidth = 1,
+  });
+
+  final Widget child;
+  final Color color;
+  final double borderRadius;
+  final double dashLength;
+  final double dashGap;
+  final double strokeWidth;
+
+  @override
+  Widget build(BuildContext context) {
+    return CustomPaint(
+      painter: _DottedPainter(
+        color: color,
+        borderRadius: borderRadius,
+        dashLength: dashLength,
+        dashGap: dashGap,
+        strokeWidth: strokeWidth,
+      ),
+      child: child,
+    );
+  }
+}
+
+class _DottedPainter extends CustomPainter {
+  _DottedPainter({
+    required this.color,
+    required this.borderRadius,
+    required this.dashLength,
+    required this.dashGap,
+    required this.strokeWidth,
+  });
+
+  final Color color;
+  final double borderRadius;
+  final double dashLength;
+  final double dashGap;
+  final double strokeWidth;
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final paint = Paint()
+      ..color = color
+      ..strokeWidth = strokeWidth
+      ..style = PaintingStyle.stroke;
+
+    final rrect = RRect.fromRectAndRadius(
+      Rect.fromLTWH(0, 0, size.width, size.height),
+      Radius.circular(borderRadius),
+    );
+
+    final path = Path()..addRRect(rrect);
+    final metrics = path.computeMetrics();
+
+    for (final metric in metrics) {
+      double distance = 0;
+      while (distance < metric.length) {
+        final end = (distance + dashLength).clamp(0.0, metric.length);
+        final segment = metric.extractPath(distance, end);
+        canvas.drawPath(segment, paint);
+        distance += dashLength + dashGap;
+      }
+    }
+  }
+
+  @override
+  bool shouldRepaint(covariant _DottedPainter oldDelegate) =>
+      color != oldDelegate.color ||
+      borderRadius != oldDelegate.borderRadius ||
+      strokeWidth != oldDelegate.strokeWidth;
 }

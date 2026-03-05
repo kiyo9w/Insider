@@ -24,10 +24,23 @@ class _TabletMainScreenState extends State<TabletMainScreen> {
   String? _activeConversationQuery;
   ChatMode _activeChatMode = ChatMode.simpleQa; // Store the selected mode
   bool _isSidebarExpanded = true; // controls collapsed/expanded state
+  late final ThreadsCubit _threadsCubit;
   bool _showThreadsFullScreen =
       false; // controls full screen threads in portrait
   String? _activeHistoryId;
   String? _activeHistoryTitle;
+
+  @override
+  void initState() {
+    super.initState();
+    _threadsCubit = Injector.instance<ThreadsCubit>()..getThreads();
+  }
+
+  @override
+  void dispose() {
+    _threadsCubit.close();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -35,8 +48,8 @@ class _TabletMainScreenState extends State<TabletMainScreen> {
     final isPortrait =
         MediaQuery.of(context).orientation == Orientation.portrait;
 
-    return BlocProvider(
-      create: (context) => Injector.instance<ThreadsCubit>()..getThreads(),
+    return BlocProvider.value(
+      value: _threadsCubit,
       child: Scaffold(
         backgroundColor:
             isDark ? DesignSystem.backgroundDark : DesignSystem.backgroundLight,
@@ -154,13 +167,13 @@ class _TabletMainScreenState extends State<TabletMainScreen> {
           setState(() {
             _showThreadsFullScreen = true;
           });
-          context.read<ThreadsCubit>().getThreads();
+          _threadsCubit.getThreads();
         } else {
           setState(() {
             _isSidebarExpanded = !_isSidebarExpanded;
           });
           if (_isSidebarExpanded) {
-            context.read<ThreadsCubit>().getThreads();
+            _threadsCubit.getThreads();
           }
         }
       },
@@ -168,6 +181,8 @@ class _TabletMainScreenState extends State<TabletMainScreen> {
         setState(() {
           _selectedIndex = 0; // Switch to Home/Threads tab
           _activeConversationQuery = null; // Reset to new chat
+          _activeHistoryId = null; // Clear active history
+          _activeHistoryTitle = null;
           _activeChatMode = ChatMode.simpleQa; // Reset mode
           if (isPortrait) {
             _showThreadsFullScreen = false; // Hide threads list in portrait
@@ -184,7 +199,7 @@ class _TabletMainScreenState extends State<TabletMainScreen> {
           }
         });
         if (_selectedIndex == 0) {
-          context.read<ThreadsCubit>().getThreads();
+          _threadsCubit.getThreads();
         }
       },
       onDiscoverTap: () {

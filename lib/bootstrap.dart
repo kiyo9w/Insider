@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:insider/configs/app_config.dart';
 import 'package:insider/core/bloc_core/bloc_observer.dart';
 import 'package:insider/features/app/view/app.dart';
 import 'package:flutter/foundation.dart';
@@ -19,6 +20,7 @@ Future<void> bootstrap({
     await firebaseInitialization?.call();
     Logger.level = Level.verbose;
     await flavorConfiguration?.call();
+    await AppConfig.initPackageInfo();
 
     Injector.init();
 

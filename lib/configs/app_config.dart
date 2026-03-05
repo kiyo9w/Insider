@@ -1,5 +1,9 @@
+import 'package:package_info_plus/package_info_plus.dart';
+
 class AppConfig {
   static String baseUrl = '';
+  static String version = '';
+  static String buildNumber = '';
 
   static const String defaultLocale = 'en';
   static const String firebaseWebVapidKey =
@@ -16,6 +20,12 @@ class AppConfig {
     } else {
       configProduction();
     }
+  }
+
+  static Future<void> initPackageInfo() async {
+    final info = await PackageInfo.fromPlatform();
+    version = info.version;
+    buildNumber = info.buildNumber;
   }
 
   static void configStaging() {

@@ -16,7 +16,7 @@ Future<void> showAppToast(
   final safeBottom = mediaQuery.padding.bottom;
   final isDark = Theme.of(rootContext).brightness == Brightness.dark;
   final screenWidth = mediaQuery.size.width;
-  final baseToastWidth = (screenWidth - 32).clamp(260.0, screenWidth);
+  final baseToastWidth = (screenWidth - 16).clamp(280.0, screenWidth);
   final targetToastWidth = baseToastWidth * 0.85;
   final horizontalMargin = ((screenWidth - targetToastWidth) / 2)
       .clamp(16.0, screenWidth / 3)

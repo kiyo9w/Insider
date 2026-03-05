@@ -14,9 +14,15 @@ class ProfileCubit extends Cubit<ProfileState> {
   final ProfileRepository _profileRepository;
 
   Future<void> loadProfile() async {
-    emit(state.copyWith(isLoading: true, error: null));
+    if (state.profile == null) {
+      emit(state.copyWith(isLoading: true, error: null));
+    }
     try {
       final profile = await _profileRepository.getProfile();
+      if (profile == state.profile) {
+        emit(state.copyWith(isLoading: false, isLoaded: true));
+        return;
+      }
       emit(state.copyWith(
         profile: profile,
         isLoading: false,

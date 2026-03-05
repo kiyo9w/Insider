@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "975043259412",
+    "project_id": "insider-76374",
+    "storage_bucket": "insider-76374.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:975043259412:android:0b2d7ff54b34a72438cb01",
+        "android_client_info": {
+          "package_name": "com.insider.horseai"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB5LxTtDOy3NbVUH7UAX8YEF9dzoExuFEs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

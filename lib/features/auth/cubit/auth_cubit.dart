@@ -26,7 +26,7 @@ class AuthCubit extends Cubit<AuthState> {
 
   Future<void> checkAuthStatus() async {
     print('AuthCubit: checkAuthStatus started');
-    
+
     try {
       final token =
           await _localStorageService.getString(key: AppKeys.accessTokenKey);
@@ -37,7 +37,8 @@ class AuthCubit extends Cubit<AuthState> {
       }
 
       // Properly await the user data read
-      final userJson = await _localStorageService.getString(key: AppKeys.userKey);
+      final userJson =
+          await _localStorageService.getString(key: AppKeys.userKey);
       final cachedUser = _decodeUser(userJson);
       print('AuthCubit: Cached user found: ${cachedUser != null}');
 
@@ -103,7 +104,8 @@ class AuthCubit extends Cubit<AuthState> {
       }
     } on PlatformException catch (e) {
       // Handle secure storage exceptions (like BadPaddingException on Android)
-      print('AuthCubit: Platform exception during checkAuthStatus: ${e.message}');
+      print(
+          'AuthCubit: Platform exception during checkAuthStatus: ${e.message}');
       if (e.message?.contains('BadPaddingException') ?? false) {
         // Storage is corrupted, clear everything
         await _clearSession();
@@ -145,9 +147,10 @@ class AuthCubit extends Cubit<AuthState> {
         key: AppKeys.refreshTokenKey,
         value: sessionToken, // Using session token for both
       );
-      
+
       // Verify token was saved
-      final savedToken = await _localStorageService.getString(key: AppKeys.accessTokenKey);
+      final savedToken =
+          await _localStorageService.getString(key: AppKeys.accessTokenKey);
       print('AuthCubit: Verified saved token: $savedToken');
 
       await _notificationService.registerTokenWithServer();
@@ -256,6 +259,38 @@ class AuthCubit extends Cubit<AuthState> {
     } catch (e) {
       print('AuthCubit: Error clearing session: $e');
       // Continue anyway to ensure state is cleared
+    }
+  }
+
+  Future<bool> changePassword({
+    required String email,
+    required String currentPassword,
+    required String newPassword,
+  }) async {
+    emit(state.copyWith(isLoading: true, error: null));
+    try {
+      final response = await _authRepository.changePassword(
+        rc.ChangePasswordRequest(
+          email: email,
+          currentPassword: currentPassword,
+          newPassword: newPassword,
+        ),
+      );
+
+      if (response.success) {
+        emit(state.copyWith(isLoading: false, error: null));
+        return true;
+      } else {
+        emit(state.copyWith(isLoading: false, error: response.message));
+        return false;
+      }
+    } catch (e) {
+      String message = e.toString();
+      if (e is ApiException) {
+        message = e.message ?? message;
+      }
+      emit(state.copyWith(isLoading: false, error: message));
+      return false;
     }
   }
 

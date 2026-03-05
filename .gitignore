@@ -12,6 +12,8 @@
 .swiftpm/
 migrate_working_dir/
 
+*.md
+
 # IntelliJ related
 *.iml
 *.ipr
@@ -57,6 +59,8 @@ ios/build/ios/XCBuildData/PIFCache/target/
 ios/Podfile.lock
 ios/build/ios/XCBuildData/PIFCache/workspace/
 pubspec.lock
+
+/lib/generated
 
 .cursorrules
 .zshrc

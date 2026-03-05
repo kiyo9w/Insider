@@ -70,7 +70,13 @@ class AuthRepositoryImpl implements AuthRepository {
   @override
   Future<ResetPasswordResponse> resetPassword(
       ResetPasswordRequest request) async {
-    return _authClient.resetPassword(request.toJson()).onApiError;
+    return _authClient.resetPassword(request).onApiError;
+  }
+
+  @override
+  Future<ChangePasswordResponse> changePassword(
+      ChangePasswordRequest request) async {
+    return _authClient.changePassword(request).onApiError;
   }
 
   @override

@@ -27,10 +27,13 @@
   "forgot_password_question": "Quên mật khẩu?",
   "dont_have_account": "Bạn chưa có tài khoản? ",
   "sign_up_action": "Đăng ký",
-  "forgot_password_title": "Quên mật khẩu",
-  "forgot_password_instruction": "Nhập email để nhận hướng dẫn đặt lại mật khẩu.",
-  "reset_link_sent": "Nếu tài khoản tồn tại, chúng tôi sẽ gửi liên kết đặt lại mật khẩu tới email của bạn.",
-  "send_reset_link_button": "Gửi liên kết đặt lại",
+  "change_password_question": "Đổi mật khẩu?",
+  "change_password_title": "Đổi mật khẩu",
+  "change_password_instruction": "Nhập mật khẩu hiện tại và mật khẩu mới để cập nhật thông tin đăng nhập.",
+  "current_password_hint": "Mật khẩu hiện tại",
+  "new_password_hint": "Mật khẩu mới",
+  "change_password_action": "Đổi mật khẩu",
+  "change_password_success": "Đổi mật khẩu thành công",
   "connection_failed": "Kết nối thất bại. Vui lòng kiểm tra mạng của bạn.",
   "conversation_id_missing": "Thiếu ID cuộc trò chuyện",
   "input_placeholder": "Hỏi bất cứ điều gì...",
@@ -139,5 +142,8 @@
   "time_days_ago": "{count} ngày trước",
   "time_hours_ago": "{count} giờ trước",
   "time_minutes_ago": "{count} phút trước",
-  "feature_coming_soon": "{feature} sẽ sớm ra mắt"
+  "feature_coming_soon": "{feature} sẽ sớm ra mắt",
+  "enjoying_insider": "Bạn thích Insider?",
+  "send_feedback": "Gửi phản hồi",
+  "feedback_form_error": "Không thể mở biểu mẫu phản hồi"
 }

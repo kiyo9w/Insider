@@ -51,7 +51,8 @@ class _ProfileClient implements ProfileClient {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final _data = request;
+    final _data = <String, dynamic>{};
+    _data.addAll(request);
     final _options = _setStreamType<ProfileData>(
       Options(method: 'PUT', headers: _headers, extra: _extra)
           .compose(
@@ -93,6 +94,7 @@ class _ProfileClient implements ProfileClient {
             method: 'POST',
             headers: _headers,
             extra: _extra,
+            contentType: 'multipart/form-data',
           )
           .compose(
             _dio.options,
@@ -174,7 +176,8 @@ class _ProfileClient implements ProfileClient {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final _data = request;
+    final _data = <String, dynamic>{};
+    _data.addAll(request);
     final _options = _setStreamType<PersonalizationData>(
       Options(method: 'PUT', headers: _headers, extra: _extra)
           .compose(

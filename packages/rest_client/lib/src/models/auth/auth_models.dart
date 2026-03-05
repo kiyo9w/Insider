@@ -108,6 +108,29 @@ abstract class ResetPasswordRequest with _$ResetPasswordRequest {
 }
 
 @freezed
+abstract class ChangePasswordRequest with _$ChangePasswordRequest {
+  const factory ChangePasswordRequest({
+    required String email,
+    @JsonKey(name: 'current_password') required String currentPassword,
+    @JsonKey(name: 'new_password') required String newPassword,
+  }) = _ChangePasswordRequest;
+
+  factory ChangePasswordRequest.fromJson(Map<String, dynamic> json) =>
+      _$ChangePasswordRequestFromJson(json);
+}
+
+@freezed
+abstract class ChangePasswordResponse with _$ChangePasswordResponse {
+  const factory ChangePasswordResponse({
+    required bool success,
+    required String message,
+  }) = _ChangePasswordResponse;
+
+  factory ChangePasswordResponse.fromJson(Map<String, dynamic> json) =>
+      _$ChangePasswordResponseFromJson(json);
+}
+
+@freezed
 abstract class ResetPasswordResponse with _$ResetPasswordResponse {
   const factory ResetPasswordResponse({
     required bool success,

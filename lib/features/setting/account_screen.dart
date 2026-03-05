@@ -6,7 +6,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:insider/core/design_system/design_system.dart';
-import 'package:insider/data/repositories/profile/profile_repository.dart';
 import 'package:insider/features/auth/cubit/auth_cubit.dart';
 import 'package:insider/features/auth/cubit/auth_state.dart';
 import 'package:insider/features/auth/view/auth_bottom_sheet.dart';
@@ -26,20 +25,12 @@ class AccountScreen extends StatefulWidget {
 
 class _AccountScreenState extends State<AccountScreen> {
   late final ProfileCubit _profileCubit;
-  bool _profileRequested = false;
 
   @override
   void initState() {
     super.initState();
-    _profileCubit = ProfileCubit(
-      profileRepository: Injector.instance<ProfileRepository>(),
-    );
-  }
-
-  @override
-  void dispose() {
-    _profileCubit.close();
-    super.dispose();
+    _profileCubit = Injector.instance<ProfileCubit>();
+    _profileCubit.loadProfile();
   }
 
   @override
@@ -51,7 +42,6 @@ class _AccountScreenState extends State<AccountScreen> {
       builder: (context, authState) {
         // If not authenticated, show login prompt
         if (!authState.isAuthenticated) {
-          _profileRequested = false;
           return Scaffold(
             backgroundColor: isDark
                 ? DesignSystem.backgroundDark
@@ -134,11 +124,6 @@ class _AccountScreenState extends State<AccountScreen> {
         }
 
         // If authenticated, show profile
-        if (!_profileRequested) {
-          _profileRequested = true;
-          _profileCubit.loadProfile();
-        }
-
         return BlocProvider<ProfileCubit>.value(
           value: _profileCubit,
           child: Scaffold(
@@ -355,6 +340,7 @@ class _AccountScreenState extends State<AccountScreen> {
                         return '${AppConfig.baseUrl}${imageUrl.startsWith('/') ? '' : '/'}$imageUrl';
                       }(),
                       fit: BoxFit.cover,
+                      gaplessPlayback: true,
                       errorBuilder: (context, error, stackTrace) {
                         return Icon(
                           Icons.person,

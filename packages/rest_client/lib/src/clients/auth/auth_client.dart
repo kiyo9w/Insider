@@ -19,6 +19,14 @@ abstract class AuthClient {
 
   @POST('/api/v1/auth/reset-password')
   Future<ResetPasswordResponse> resetPassword(
-    @Body() Map<String, dynamic> request,
+    @Body() ResetPasswordRequest request,
   );
+
+  @POST('/api/v1/auth/change-password')
+  Future<ChangePasswordResponse> changePassword(
+    @Body() ChangePasswordRequest request,
+  );
+
+  @GET('/api/v1/auth/me')
+  Future<dynamic> getMe();
 }

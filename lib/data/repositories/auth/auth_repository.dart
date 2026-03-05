@@ -9,6 +9,7 @@ abstract class AuthRepository {
   });
   Future<LoginResponse> login(LoginRequest request);
   Future<ResetPasswordResponse> resetPassword(ResetPasswordRequest request);
+  Future<ChangePasswordResponse> changePassword(ChangePasswordRequest request);
   Future<void> logout();
   Future<UserData> me();
   Future<void> verifyEmail({required String token});

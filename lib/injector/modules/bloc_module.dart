@@ -3,6 +3,7 @@ import 'package:insider/features/app/bloc/app_bloc.dart';
 import 'package:insider/features/auth/cubit/auth_cubit.dart';
 import 'package:insider/features/demo/bloc/demo_bloc.dart';
 import 'package:insider/features/dog_image_random/bloc/dog_image_random_bloc.dart';
+import 'package:insider/features/profile/cubit/profile_cubit.dart';
 import 'package:insider/features/threads/cubit/threads_cubit.dart';
 import 'package:insider/injector/injector.dart';
 
@@ -41,6 +42,11 @@ class BlocModule {
       )
       ..registerFactory<ThreadsCubit>(
         () => ThreadsCubit(injector()),
+      )
+      ..registerLazySingleton<ProfileCubit>(
+        () => ProfileCubit(
+          profileRepository: injector(),
+        ),
       );
   }
 }

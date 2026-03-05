@@ -27,10 +27,13 @@
   "forgot_password_question": "Forgot password?",
   "dont_have_account": "Don't have an account? ",
   "sign_up_action": "Sign up",
-  "forgot_password_title": "Forgot password",
-  "forgot_password_instruction": "Enter your email to receive reset instructions.",
-  "reset_link_sent": "If an account exists for that email, a reset link will be sent.",
-  "send_reset_link_button": "Send reset link",
+  "change_password_question": "Change password?",
+  "change_password_title": "Change password",
+  "change_password_instruction": "Enter your current and new password to update your account access.",
+  "current_password_hint": "Current Password",
+  "new_password_hint": "New Password",
+  "change_password_action": "Change Password",
+  "change_password_success": "Password changed successfully",
   "connection_failed": "Connection failed. Please check your internet connection.",
   "conversation_id_missing": "Conversation ID is missing",
   "input_placeholder": "Ask anything...",
@@ -153,5 +156,8 @@
   "time_days_ago": "{count}d ago",
   "time_hours_ago": "{count}h ago",
   "time_minutes_ago": "{count}m ago",
-  "feature_coming_soon": "{feature} coming soon"
+  "feature_coming_soon": "{feature} coming soon",
+  "enjoying_insider": "Enjoying Insider?",
+  "send_feedback": "Send feedback",
+  "feedback_form_error": "Could not open feedback form"
 }

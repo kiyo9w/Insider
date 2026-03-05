@@ -4,24 +4,28 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:insider/core/design_system/design_system.dart';
 import 'package:insider/features/auth/cubit/auth_cubit.dart';
 import 'package:insider/features/auth/cubit/auth_state.dart';
-import 'package:insider/features/auth/view/register_screen.dart';
-import 'package:insider/features/auth/view/change_password_screen.dart';
 import 'package:insider/generated/l10n.dart';
 import 'package:insider/widgets/app_toast.dart';
 
-class EmailSignInScreen extends StatefulWidget {
-  const EmailSignInScreen({super.key});
+class ChangePasswordScreen extends StatefulWidget {
+  const ChangePasswordScreen({super.key});
 
   @override
-  State<EmailSignInScreen> createState() => _EmailSignInScreenState();
+  State<ChangePasswordScreen> createState() => _ChangePasswordScreenState();
 }
 
-class _EmailSignInScreenState extends State<EmailSignInScreen> {
+class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
   final TextEditingController _emailController = TextEditingController();
-  final TextEditingController _passwordController = TextEditingController();
-  final TextEditingController _forgotEmailController = TextEditingController();
+  final TextEditingController _currentPasswordController =
+      TextEditingController();
+  final TextEditingController _newPasswordController = TextEditingController();
+  final TextEditingController _confirmPasswordController =
+      TextEditingController();
+
   final FocusNode _emailFocusNode = FocusNode();
-  final FocusNode _passwordFocusNode = FocusNode();
+  final FocusNode _currentPasswordFocusNode = FocusNode();
+  final FocusNode _newPasswordFocusNode = FocusNode();
+  final FocusNode _confirmPasswordFocusNode = FocusNode();
 
   @override
   void initState() {
@@ -29,7 +33,13 @@ class _EmailSignInScreenState extends State<EmailSignInScreen> {
     _emailController.addListener(() {
       setState(() {});
     });
-    _passwordController.addListener(() {
+    _currentPasswordController.addListener(() {
+      setState(() {});
+    });
+    _newPasswordController.addListener(() {
+      setState(() {});
+    });
+    _confirmPasswordController.addListener(() {
       setState(() {});
     });
   }
@@ -37,33 +47,28 @@ class _EmailSignInScreenState extends State<EmailSignInScreen> {
   @override
   void dispose() {
     _emailController.dispose();
-    _passwordController.dispose();
-    _forgotEmailController.dispose();
+    _currentPasswordController.dispose();
+    _newPasswordController.dispose();
+    _confirmPasswordController.dispose();
     _emailFocusNode.dispose();
-    _passwordFocusNode.dispose();
+    _currentPasswordFocusNode.dispose();
+    _newPasswordFocusNode.dispose();
+    _confirmPasswordFocusNode.dispose();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final backgroundColor =
-        isDark ? DesignSystem.backgroundDark : DesignSystem.backgroundLight;
-    final inputColor = isDark
-        ? DesignSystem.backgroundDarkElevated
-        : DesignSystem.backgroundLightElevated;
+    final backgroundColor = isDark ? const Color(0xFF1C1C1E) : Colors.white;
+    final inputColor =
+        isDark ? const Color(0xFF2C2C2E) : const Color(0xFFF2F2F7);
     final screenHeight = MediaQuery.of(context).size.height;
 
     return BlocListener<AuthCubit, AuthState>(
-      listenWhen: (prev, curr) =>
-          prev.isAuthenticated != curr.isAuthenticated ||
-          prev.error != curr.error,
+      listenWhen: (prev, curr) => prev.error != curr.error,
       listener: (context, state) {
-        if (state.isAuthenticated) {
-          if (Navigator.canPop(context)) {
-            Navigator.pop(context);
-          }
-        } else if (state.error != null && state.error!.isNotEmpty) {
+        if (state.error != null && state.error!.isNotEmpty) {
           showAppToast(
             context,
             message: state.error!,
@@ -97,7 +102,7 @@ class _EmailSignInScreenState extends State<EmailSignInScreen> {
                       ),
                       Expanded(
                         child: Text(
-                          S.current.sign_in_email_title,
+                          S.current.change_password_title,
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             color: isDark ? Colors.white : Colors.black,
@@ -106,7 +111,7 @@ class _EmailSignInScreenState extends State<EmailSignInScreen> {
                           ),
                         ),
                       ),
-                      const SizedBox(width: 48), // Balance close button
+                      const SizedBox(width: 48),
                     ],
                   ),
                 ),
@@ -114,7 +119,18 @@ class _EmailSignInScreenState extends State<EmailSignInScreen> {
                   child: SingleChildScrollView(
                     padding: const EdgeInsets.symmetric(horizontal: 24),
                     child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
+                        const SizedBox(height: 12),
+                        Text(
+                          S.current.change_password_instruction,
+                          style: DesignSystem.bodyMedium.copyWith(
+                            color: isDark
+                                ? DesignSystem.textSecondaryDark
+                                : DesignSystem.textSecondaryLight,
+                            fontSize: 14,
+                          ),
+                        ),
                         const SizedBox(height: 24),
                         _buildInput(
                           controller: _emailController,
@@ -126,31 +142,31 @@ class _EmailSignInScreenState extends State<EmailSignInScreen> {
                         ),
                         const SizedBox(height: 16),
                         _buildInput(
-                          controller: _passwordController,
-                          focusNode: _passwordFocusNode,
-                          hint: S.current.password_hint,
+                          controller: _currentPasswordController,
+                          focusNode: _currentPasswordFocusNode,
+                          hint: S.current.current_password_hint,
+                          isDark: isDark,
+                          inputColor: inputColor,
+                          obscureText: true,
+                        ),
+                        const SizedBox(height: 16),
+                        _buildInput(
+                          controller: _newPasswordController,
+                          focusNode: _newPasswordFocusNode,
+                          hint: S.current.new_password_hint,
+                          isDark: isDark,
+                          inputColor: inputColor,
+                          obscureText: true,
+                        ),
+                        const SizedBox(height: 16),
+                        _buildInput(
+                          controller: _confirmPasswordController,
+                          focusNode: _confirmPasswordFocusNode,
+                          hint: S.current.confirm_password_hint,
                           isDark: isDark,
                           inputColor: inputColor,
                           obscureText: true,
                           isLast: true,
-                        ),
-                        const SizedBox(height: 12),
-                        Align(
-                          alignment: Alignment.centerRight,
-                          child: TextButton(
-                            onPressed: _showForgotPasswordSheet,
-                            style: TextButton.styleFrom(
-                              foregroundColor: DesignSystem.primaryCyan,
-                              padding: EdgeInsets.zero,
-                            ),
-                            child: Text(
-                              S.current.change_password_question,
-                              style: TextStyle(
-                                fontSize: 14,
-                                fontWeight: FontWeight.w600,
-                              ),
-                            ),
-                          ),
                         ),
                       ],
                     ),
@@ -161,8 +177,6 @@ class _EmailSignInScreenState extends State<EmailSignInScreen> {
                   child: Column(
                     children: [
                       _buildContinueButton(context, isDark),
-                      const SizedBox(height: 16),
-                      _buildFooterText(isDark),
                     ],
                   ),
                 ),
@@ -195,17 +209,13 @@ class _EmailSignInScreenState extends State<EmailSignInScreen> {
         keyboardType: keyboardType,
         obscureText: obscureText,
         style: TextStyle(
-          color: isDark
-              ? DesignSystem.textPrimaryDark
-              : DesignSystem.textPrimaryLight,
+          color: isDark ? Colors.white : Colors.black,
           fontSize: 16,
         ),
         decoration: InputDecoration(
           hintText: hint,
           hintStyle: TextStyle(
-            color: isDark
-                ? DesignSystem.textSecondaryDark
-                : DesignSystem.textSecondaryLight,
+            color: isDark ? Colors.grey[600] : Colors.grey[500],
             fontSize: 16,
           ),
           border: InputBorder.none,
@@ -214,7 +224,7 @@ class _EmailSignInScreenState extends State<EmailSignInScreen> {
             vertical: 16,
           ),
         ),
-        onSubmitted: (_) => isLast ? _handleContinue(context) : null,
+        onSubmitted: (_) => isLast ? _handleChangePassword(context) : null,
         textInputAction: isLast ? TextInputAction.done : TextInputAction.next,
       ),
     );
@@ -224,16 +234,22 @@ class _EmailSignInScreenState extends State<EmailSignInScreen> {
     return BlocBuilder<AuthCubit, AuthState>(
       builder: (context, state) {
         final hasEmail = _emailController.text.trim().isNotEmpty;
-        final hasPwd = _passwordController.text.isNotEmpty;
-        final isEnabled = hasEmail && hasPwd && !state.isLoading;
+        final hasCurrentPwd = _currentPasswordController.text.isNotEmpty;
+        final hasNewPwd = _newPasswordController.text.isNotEmpty;
+        final hasConfirmPwd = _confirmPasswordController.text.isNotEmpty;
+        final isEnabled = hasEmail &&
+            hasCurrentPwd &&
+            hasNewPwd &&
+            hasConfirmPwd &&
+            !state.isLoading;
 
         return SizedBox(
           width: double.infinity,
           height: 56,
           child: ElevatedButton(
-            onPressed: isEnabled ? () => _handleContinue(context) : null,
+            onPressed: isEnabled ? () => _handleChangePassword(context) : null,
             style: ElevatedButton.styleFrom(
-              backgroundColor: isDark ? const Color(0xFF333333) : Colors.black,
+              backgroundColor: DesignSystem.primaryCyan,
               disabledBackgroundColor:
                   isDark ? const Color(0xFF222222) : Colors.grey[300],
               shape: RoundedRectangleBorder(
@@ -251,13 +267,11 @@ class _EmailSignInScreenState extends State<EmailSignInScreen> {
                     ),
                   )
                 : Text(
-                    S.current.continue_button,
+                    S.current.change_password_action,
                     style: TextStyle(
                       color: isEnabled
                           ? Colors.white
-                          : (isDark
-                              ? DesignSystem.textTertiaryDark
-                              : DesignSystem.textTertiaryLight),
+                          : (isDark ? Colors.grey[600] : Colors.grey[500]),
                       fontSize: 16,
                       fontWeight: FontWeight.w600,
                     ),
@@ -268,57 +282,41 @@ class _EmailSignInScreenState extends State<EmailSignInScreen> {
     );
   }
 
-  Widget _buildFooterText(bool isDark) {
-    return GestureDetector(
-      onTap: () {
-        Navigator.pop(context);
-        showModalBottomSheet(
-          context: context,
-          isScrollControlled: true,
-          backgroundColor: Colors.transparent,
-          builder: (context) => const RegisterScreen(),
-        );
-      },
-      child: RichText(
-        text: TextSpan(
-          text: S.current.dont_have_account,
-          style: TextStyle(
-            color: isDark
-                ? DesignSystem.textSecondaryDark
-                : DesignSystem.textSecondaryLight,
-            fontSize: 14,
-          ),
-          children: [
-            TextSpan(
-              text: S.current.sign_up_action,
-              style: TextStyle(
-                color: DesignSystem.primaryCyan,
-                fontWeight: FontWeight.w600,
-                fontSize: 14,
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-
-  void _handleContinue(BuildContext context) {
+  Future<void> _handleChangePassword(BuildContext context) async {
     final email = _emailController.text.trim();
-    final password = _passwordController.text;
-    if (email.isEmpty || password.isEmpty) return;
+    final currentPassword = _currentPasswordController.text;
+    final newPassword = _newPasswordController.text;
+    final confirmPassword = _confirmPasswordController.text;
+
+    if (email.isEmpty ||
+        currentPassword.isEmpty ||
+        newPassword.isEmpty ||
+        confirmPassword.isEmpty) {
+      return;
+    }
+
+    if (newPassword != confirmPassword) {
+      showAppToast(
+        context,
+        message: S.current.passwords_do_not_match,
+        isError: true,
+      );
+      return;
+    }
 
     HapticFeedback.lightImpact();
-    context.read<AuthCubit>().login(email: email, password: password);
-  }
+    final success = await context.read<AuthCubit>().changePassword(
+          email: email,
+          currentPassword: currentPassword,
+          newPassword: newPassword,
+        );
 
-  void _showForgotPasswordSheet() {
-    HapticFeedback.lightImpact();
-    showModalBottomSheet(
-      context: context,
-      isScrollControlled: true,
-      backgroundColor: Colors.transparent,
-      builder: (context) => const ChangePasswordScreen(),
-    );
+    if (success && context.mounted) {
+      Navigator.pop(context);
+      showAppToast(
+        context,
+        message: S.current.change_password_success,
+      );
+    }
   }
 }

@@ -124,6 +124,36 @@ Map<String, dynamic> _$ResetPasswordRequestToJson(
   'confirm_password': instance.confirmPassword,
 };
 
+_ChangePasswordRequest _$ChangePasswordRequestFromJson(
+  Map<String, dynamic> json,
+) => _ChangePasswordRequest(
+  email: json['email'] as String,
+  currentPassword: json['current_password'] as String,
+  newPassword: json['new_password'] as String,
+);
+
+Map<String, dynamic> _$ChangePasswordRequestToJson(
+  _ChangePasswordRequest instance,
+) => <String, dynamic>{
+  'email': instance.email,
+  'current_password': instance.currentPassword,
+  'new_password': instance.newPassword,
+};
+
+_ChangePasswordResponse _$ChangePasswordResponseFromJson(
+  Map<String, dynamic> json,
+) => _ChangePasswordResponse(
+  success: json['success'] as bool,
+  message: json['message'] as String,
+);
+
+Map<String, dynamic> _$ChangePasswordResponseToJson(
+  _ChangePasswordResponse instance,
+) => <String, dynamic>{
+  'success': instance.success,
+  'message': instance.message,
+};
+
 _ResetPasswordResponse _$ResetPasswordResponseFromJson(
   Map<String, dynamic> json,
 ) => _ResetPasswordResponse(

@@ -100,10 +100,7 @@ class _ThreadsViewState extends State<ThreadsView> {
             children: [
               Column(
                 children: [
-                  if (widget.showHeader)
-                    _buildHeader(context, isDark)
-                  else
-                    const SizedBox(height: 30), // Padding when header is hidden
+                  if (widget.showHeader) _buildHeader(context, isDark),
                   if (isLoggedIn) ...[
                     _buildSearchBar(context, isDark),
                     Expanded(
@@ -237,7 +234,7 @@ class _ThreadsViewState extends State<ThreadsView> {
     return Container(
       padding: const EdgeInsets.symmetric(
         horizontal: DesignSystem.spacing20,
-        vertical: DesignSystem.spacing16,
+        vertical: DesignSystem.spacing8,
       ),
       // Divider removed as requested
       child: Row(
@@ -293,9 +290,10 @@ class _ThreadsViewState extends State<ThreadsView> {
 
   Widget _buildSearchBar(BuildContext context, bool isDark) {
     return Padding(
-      padding: const EdgeInsets.symmetric(
-        horizontal: DesignSystem.spacing20,
-        vertical: DesignSystem.spacing8,
+      padding: const EdgeInsets.only(
+        left: DesignSystem.spacing20,
+        right: DesignSystem.spacing20,
+        bottom: DesignSystem.spacing8,
       ),
       child: Container(
         decoration: BoxDecoration(

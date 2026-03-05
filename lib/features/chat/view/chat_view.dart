@@ -78,22 +78,25 @@ class _ChatViewState extends State<ChatView> {
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
-    return Column(
-      children: [
-        Expanded(
-          child: Stack(
-            children: [
-              _buildChatContent(context, isDark),
-              Positioned(
-                left: 0,
-                right: 0,
-                bottom: 0,
-                child: _buildInputArea(context, isDark),
-              ),
-            ],
+    return GestureDetector(
+      onTap: () => FocusScope.of(context).unfocus(),
+      child: Column(
+        children: [
+          Expanded(
+            child: Stack(
+              children: [
+                _buildChatContent(context, isDark),
+                Positioned(
+                  left: 0,
+                  right: 0,
+                  bottom: 0,
+                  child: _buildInputArea(context, isDark),
+                ),
+              ],
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 

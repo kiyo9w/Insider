@@ -59,6 +59,21 @@ class MessageLookup extends MessageLookupByLibrary {
     "article_title": MessageLookupByLibrary.simpleMessage("Article"),
     "assets": MessageLookupByLibrary.simpleMessage("Assets gen"),
     "camera": MessageLookupByLibrary.simpleMessage("Camera"),
+    "change_password_action": MessageLookupByLibrary.simpleMessage(
+      "Change Password",
+    ),
+    "change_password_instruction": MessageLookupByLibrary.simpleMessage(
+      "Enter your current and new password to update your account access.",
+    ),
+    "change_password_question": MessageLookupByLibrary.simpleMessage(
+      "Change password?",
+    ),
+    "change_password_success": MessageLookupByLibrary.simpleMessage(
+      "Password changed successfully",
+    ),
+    "change_password_title": MessageLookupByLibrary.simpleMessage(
+      "Change password",
+    ),
     "choose_from_gallery": MessageLookupByLibrary.simpleMessage(
       "Choose from gallery",
     ),
@@ -84,6 +99,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "create_account_title": MessageLookupByLibrary.simpleMessage(
       "Create an account",
     ),
+    "current_password_hint": MessageLookupByLibrary.simpleMessage(
+      "Current Password",
+    ),
     "dark_mode": MessageLookupByLibrary.simpleMessage("Dark mode"),
     "delete_failed": MessageLookupByLibrary.simpleMessage("Delete failed"),
     "delete_success": MessageLookupByLibrary.simpleMessage("Delete success"),
@@ -99,6 +117,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "edit": MessageLookupByLibrary.simpleMessage("Edit"),
     "email_hint": MessageLookupByLibrary.simpleMessage("Email"),
     "english": MessageLookupByLibrary.simpleMessage("English"),
+    "enjoying_insider": MessageLookupByLibrary.simpleMessage(
+      "Enjoying Insider?",
+    ),
     "failed_to_load_history": MessageLookupByLibrary.simpleMessage(
       "Failed to load conversation history. Please try again.",
     ),
@@ -110,15 +131,12 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "failed_to_pick_image": m1,
     "feature_coming_soon": m2,
-    "file": MessageLookupByLibrary.simpleMessage("File"),
-    "forgot_password_instruction": MessageLookupByLibrary.simpleMessage(
-      "Enter your email to receive reset instructions.",
+    "feedback_form_error": MessageLookupByLibrary.simpleMessage(
+      "Could not open feedback form",
     ),
+    "file": MessageLookupByLibrary.simpleMessage("File"),
     "forgot_password_question": MessageLookupByLibrary.simpleMessage(
       "Forgot password?",
-    ),
-    "forgot_password_title": MessageLookupByLibrary.simpleMessage(
-      "Forgot password",
     ),
     "guest_create_thread_button": MessageLookupByLibrary.simpleMessage(
       "Create a thread",
@@ -157,6 +175,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Log in to Insider",
     ),
     "manage_account": MessageLookupByLibrary.simpleMessage("Manage Account"),
+    "new_password_hint": MessageLookupByLibrary.simpleMessage("New Password"),
     "no_articles_available": MessageLookupByLibrary.simpleMessage(
       "No articles available",
     ),
@@ -203,9 +222,6 @@ class MessageLookup extends MessageLookupByLibrary {
     "research_mode_subtitle": MessageLookupByLibrary.simpleMessage(
       "Conduct in-depth research with comprehensive responses.",
     ),
-    "reset_link_sent": MessageLookupByLibrary.simpleMessage(
-      "If an account exists for that email, a reset link will be sent.",
-    ),
     "response_exception": MessageLookupByLibrary.simpleMessage(
       "Response Exception",
     ),
@@ -228,9 +244,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "searching_label": MessageLookupByLibrary.simpleMessage("SEARCHING"),
     "select_all": MessageLookupByLibrary.simpleMessage("Select All"),
-    "send_reset_link_button": MessageLookupByLibrary.simpleMessage(
-      "Send reset link",
-    ),
+    "send_feedback": MessageLookupByLibrary.simpleMessage("Send feedback"),
     "server_busy": MessageLookupByLibrary.simpleMessage(
       "Server was busy, please try again!",
     ),

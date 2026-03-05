@@ -59,6 +59,21 @@ class MessageLookup extends MessageLookupByLibrary {
     "article_title": MessageLookupByLibrary.simpleMessage("Bài viết"),
     "assets": MessageLookupByLibrary.simpleMessage("Tài sản"),
     "camera": MessageLookupByLibrary.simpleMessage("Máy ảnh"),
+    "change_password_action": MessageLookupByLibrary.simpleMessage(
+      "Đổi mật khẩu",
+    ),
+    "change_password_instruction": MessageLookupByLibrary.simpleMessage(
+      "Nhập mật khẩu hiện tại và mật khẩu mới để cập nhật thông tin đăng nhập.",
+    ),
+    "change_password_question": MessageLookupByLibrary.simpleMessage(
+      "Đổi mật khẩu?",
+    ),
+    "change_password_success": MessageLookupByLibrary.simpleMessage(
+      "Đổi mật khẩu thành công",
+    ),
+    "change_password_title": MessageLookupByLibrary.simpleMessage(
+      "Đổi mật khẩu",
+    ),
     "choose_from_gallery": MessageLookupByLibrary.simpleMessage(
       "Chọn từ thư viện",
     ),
@@ -82,6 +97,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "create_account_title": MessageLookupByLibrary.simpleMessage(
       "Tạo tài khoản",
     ),
+    "current_password_hint": MessageLookupByLibrary.simpleMessage(
+      "Mật khẩu hiện tại",
+    ),
     "dark_mode": MessageLookupByLibrary.simpleMessage("Chế độ tối"),
     "delete_failed": MessageLookupByLibrary.simpleMessage("Xóa thất bại"),
     "delete_success": MessageLookupByLibrary.simpleMessage("Đã xóa thành công"),
@@ -97,6 +115,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "edit": MessageLookupByLibrary.simpleMessage("Chỉnh sửa"),
     "email_hint": MessageLookupByLibrary.simpleMessage("Email"),
     "english": MessageLookupByLibrary.simpleMessage("Tiếng Anh"),
+    "enjoying_insider": MessageLookupByLibrary.simpleMessage(
+      "Bạn thích Insider?",
+    ),
     "failed_to_load_history": MessageLookupByLibrary.simpleMessage(
       "Không tải được lịch sử trò chuyện. Vui lòng thử lại.",
     ),
@@ -108,15 +129,12 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "failed_to_pick_image": m1,
     "feature_coming_soon": m2,
-    "file": MessageLookupByLibrary.simpleMessage("Tệp tin"),
-    "forgot_password_instruction": MessageLookupByLibrary.simpleMessage(
-      "Nhập email để nhận hướng dẫn đặt lại mật khẩu.",
+    "feedback_form_error": MessageLookupByLibrary.simpleMessage(
+      "Không thể mở biểu mẫu phản hồi",
     ),
+    "file": MessageLookupByLibrary.simpleMessage("Tệp tin"),
     "forgot_password_question": MessageLookupByLibrary.simpleMessage(
       "Quên mật khẩu?",
-    ),
-    "forgot_password_title": MessageLookupByLibrary.simpleMessage(
-      "Quên mật khẩu",
     ),
     "guest_create_thread_button": MessageLookupByLibrary.simpleMessage(
       "Tạo cuộc trò chuyện",
@@ -155,6 +173,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Đăng nhập vào Insider",
     ),
     "manage_account": MessageLookupByLibrary.simpleMessage("Quản lý tài khoản"),
+    "new_password_hint": MessageLookupByLibrary.simpleMessage("Mật khẩu mới"),
     "no_articles_available": MessageLookupByLibrary.simpleMessage(
       "Không có bài viết nào",
     ),
@@ -201,9 +220,6 @@ class MessageLookup extends MessageLookupByLibrary {
     "research_mode_subtitle": MessageLookupByLibrary.simpleMessage(
       "Nghiên cứu sâu với phản hồi toàn diện.",
     ),
-    "reset_link_sent": MessageLookupByLibrary.simpleMessage(
-      "Nếu tài khoản tồn tại, chúng tôi sẽ gửi liên kết đặt lại mật khẩu tới email của bạn.",
-    ),
     "response_exception": MessageLookupByLibrary.simpleMessage("Lỗi phản hồi"),
     "results": MessageLookupByLibrary.simpleMessage("Kết quả"),
     "results_label": MessageLookupByLibrary.simpleMessage("KẾT QUẢ"),
@@ -224,9 +240,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "searching_label": MessageLookupByLibrary.simpleMessage("ĐANG TÌM KIẾM"),
     "select_all": MessageLookupByLibrary.simpleMessage("Chọn tất cả"),
-    "send_reset_link_button": MessageLookupByLibrary.simpleMessage(
-      "Gửi liên kết đặt lại",
-    ),
+    "send_feedback": MessageLookupByLibrary.simpleMessage("Gửi phản hồi"),
     "server_busy": MessageLookupByLibrary.simpleMessage(
       "Máy chủ đang bận, vui lòng thử lại sau!",
     ),

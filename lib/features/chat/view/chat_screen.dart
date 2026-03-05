@@ -22,27 +22,30 @@ class _ChatScreenState extends State<ChatScreen> {
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
-    return Scaffold(
-      backgroundColor:
-          isDark ? DesignSystem.backgroundDark : DesignSystem.backgroundLight,
-      body: SafeArea(
-        child: Column(
-          children: [
-            _buildAppBar(context, isDark),
-            Expanded(
-              child: ChatView(
-                chatMode: _chatMode,
-                onModeChanged: (mode) {
-                  setState(() {
-                    _chatMode = mode;
-                  });
-                },
-                onSend: (message, mode) {
-                  _handleSend(message, mode);
-                },
+    return GestureDetector(
+      onTap: () => FocusScope.of(context).unfocus(),
+      child: Scaffold(
+        backgroundColor:
+            isDark ? DesignSystem.backgroundDark : DesignSystem.backgroundLight,
+        body: SafeArea(
+          child: Column(
+            children: [
+              _buildAppBar(context, isDark),
+              Expanded(
+                child: ChatView(
+                  chatMode: _chatMode,
+                  onModeChanged: (mode) {
+                    setState(() {
+                      _chatMode = mode;
+                    });
+                  },
+                  onSend: (message, mode) {
+                    _handleSend(message, mode);
+                  },
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

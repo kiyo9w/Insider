@@ -274,41 +274,71 @@ class S {
     return Intl.message('Sign up', name: 'sign_up_action', desc: '', args: []);
   }
 
-  /// `Forgot password`
-  String get forgot_password_title {
+  /// `Change password?`
+  String get change_password_question {
     return Intl.message(
-      'Forgot password',
-      name: 'forgot_password_title',
+      'Change password?',
+      name: 'change_password_question',
       desc: '',
       args: [],
     );
   }
 
-  /// `Enter your email to receive reset instructions.`
-  String get forgot_password_instruction {
+  /// `Change password`
+  String get change_password_title {
     return Intl.message(
-      'Enter your email to receive reset instructions.',
-      name: 'forgot_password_instruction',
+      'Change password',
+      name: 'change_password_title',
       desc: '',
       args: [],
     );
   }
 
-  /// `If an account exists for that email, a reset link will be sent.`
-  String get reset_link_sent {
+  /// `Enter your current and new password to update your account access.`
+  String get change_password_instruction {
     return Intl.message(
-      'If an account exists for that email, a reset link will be sent.',
-      name: 'reset_link_sent',
+      'Enter your current and new password to update your account access.',
+      name: 'change_password_instruction',
       desc: '',
       args: [],
     );
   }
 
-  /// `Send reset link`
-  String get send_reset_link_button {
+  /// `Current Password`
+  String get current_password_hint {
     return Intl.message(
-      'Send reset link',
-      name: 'send_reset_link_button',
+      'Current Password',
+      name: 'current_password_hint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `New Password`
+  String get new_password_hint {
+    return Intl.message(
+      'New Password',
+      name: 'new_password_hint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Change Password`
+  String get change_password_action {
+    return Intl.message(
+      'Change Password',
+      name: 'change_password_action',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password changed successfully`
+  String get change_password_success {
+    return Intl.message(
+      'Password changed successfully',
+      name: 'change_password_success',
       desc: '',
       args: [],
     );
@@ -1186,6 +1216,36 @@ class S {
       name: 'feature_coming_soon',
       desc: '',
       args: [feature],
+    );
+  }
+
+  /// `Enjoying Insider?`
+  String get enjoying_insider {
+    return Intl.message(
+      'Enjoying Insider?',
+      name: 'enjoying_insider',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Send feedback`
+  String get send_feedback {
+    return Intl.message(
+      'Send feedback',
+      name: 'send_feedback',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Could not open feedback form`
+  String get feedback_form_error {
+    return Intl.message(
+      'Could not open feedback form',
+      name: 'feedback_form_error',
+      desc: '',
+      args: [],
     );
   }
 }

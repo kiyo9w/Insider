@@ -76,111 +76,114 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
           );
         }
       },
-      child: Container(
-        height: screenHeight * 0.8,
-        decoration: BoxDecoration(
-          color: backgroundColor,
-          borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
-        ),
-        child: SafeArea(
-          child: Padding(
-            padding: EdgeInsets.only(
-                bottom: MediaQuery.of(context).viewInsets.bottom),
-            child: Column(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(16),
-                  child: Row(
-                    children: [
-                      IconButton(
-                        icon: Icon(
-                          Icons.close,
-                          color: isDark ? Colors.white : Colors.black,
-                          size: 24,
-                        ),
-                        onPressed: () => Navigator.pop(context),
-                      ),
-                      Expanded(
-                        child: Text(
-                          S.current.change_password_title,
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            color: isDark ? Colors.white : Colors.black,
-                            fontSize: 18,
-                            fontWeight: FontWeight.w600,
-                          ),
-                        ),
-                      ),
-                      const SizedBox(width: 48),
-                    ],
-                  ),
-                ),
-                Expanded(
-                  child: SingleChildScrollView(
-                    padding: const EdgeInsets.symmetric(horizontal: 24),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
+      child: GestureDetector(
+        onTap: () => FocusScope.of(context).unfocus(),
+        child: Container(
+          height: screenHeight * 0.8,
+          decoration: BoxDecoration(
+            color: backgroundColor,
+            borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
+          ),
+          child: SafeArea(
+            child: Padding(
+              padding: EdgeInsets.only(
+                  bottom: MediaQuery.of(context).viewInsets.bottom),
+              child: Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(16),
+                    child: Row(
                       children: [
-                        const SizedBox(height: 12),
-                        Text(
-                          S.current.change_password_instruction,
-                          style: DesignSystem.bodyMedium.copyWith(
-                            color: isDark
-                                ? DesignSystem.textSecondaryDark
-                                : DesignSystem.textSecondaryLight,
-                            fontSize: 14,
+                        IconButton(
+                          icon: Icon(
+                            Icons.close,
+                            color: isDark ? Colors.white : Colors.black,
+                            size: 24,
+                          ),
+                          onPressed: () => Navigator.pop(context),
+                        ),
+                        Expanded(
+                          child: Text(
+                            S.current.change_password_title,
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              color: isDark ? Colors.white : Colors.black,
+                              fontSize: 18,
+                              fontWeight: FontWeight.w600,
+                            ),
                           ),
                         ),
-                        const SizedBox(height: 24),
-                        _buildInput(
-                          controller: _emailController,
-                          focusNode: _emailFocusNode,
-                          hint: S.current.email_hint,
-                          isDark: isDark,
-                          inputColor: inputColor,
-                          keyboardType: TextInputType.emailAddress,
-                        ),
-                        const SizedBox(height: 16),
-                        _buildInput(
-                          controller: _currentPasswordController,
-                          focusNode: _currentPasswordFocusNode,
-                          hint: S.current.current_password_hint,
-                          isDark: isDark,
-                          inputColor: inputColor,
-                          obscureText: true,
-                        ),
-                        const SizedBox(height: 16),
-                        _buildInput(
-                          controller: _newPasswordController,
-                          focusNode: _newPasswordFocusNode,
-                          hint: S.current.new_password_hint,
-                          isDark: isDark,
-                          inputColor: inputColor,
-                          obscureText: true,
-                        ),
-                        const SizedBox(height: 16),
-                        _buildInput(
-                          controller: _confirmPasswordController,
-                          focusNode: _confirmPasswordFocusNode,
-                          hint: S.current.confirm_password_hint,
-                          isDark: isDark,
-                          inputColor: inputColor,
-                          obscureText: true,
-                          isLast: true,
-                        ),
+                        const SizedBox(width: 48),
                       ],
                     ),
                   ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(24),
-                  child: Column(
-                    children: [
-                      _buildContinueButton(context, isDark),
-                    ],
+                  Expanded(
+                    child: SingleChildScrollView(
+                      padding: const EdgeInsets.symmetric(horizontal: 24),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const SizedBox(height: 12),
+                          Text(
+                            S.current.change_password_instruction,
+                            style: DesignSystem.bodyMedium.copyWith(
+                              color: isDark
+                                  ? DesignSystem.textSecondaryDark
+                                  : DesignSystem.textSecondaryLight,
+                              fontSize: 14,
+                            ),
+                          ),
+                          const SizedBox(height: 24),
+                          _buildInput(
+                            controller: _emailController,
+                            focusNode: _emailFocusNode,
+                            hint: S.current.email_hint,
+                            isDark: isDark,
+                            inputColor: inputColor,
+                            keyboardType: TextInputType.emailAddress,
+                          ),
+                          const SizedBox(height: 16),
+                          _buildInput(
+                            controller: _currentPasswordController,
+                            focusNode: _currentPasswordFocusNode,
+                            hint: S.current.current_password_hint,
+                            isDark: isDark,
+                            inputColor: inputColor,
+                            obscureText: true,
+                          ),
+                          const SizedBox(height: 16),
+                          _buildInput(
+                            controller: _newPasswordController,
+                            focusNode: _newPasswordFocusNode,
+                            hint: S.current.new_password_hint,
+                            isDark: isDark,
+                            inputColor: inputColor,
+                            obscureText: true,
+                          ),
+                          const SizedBox(height: 16),
+                          _buildInput(
+                            controller: _confirmPasswordController,
+                            focusNode: _confirmPasswordFocusNode,
+                            hint: S.current.confirm_password_hint,
+                            isDark: isDark,
+                            inputColor: inputColor,
+                            obscureText: true,
+                            isLast: true,
+                          ),
+                        ],
+                      ),
+                    ),
                   ),
-                ),
-              ],
+                  Padding(
+                    padding: const EdgeInsets.all(24),
+                    child: Column(
+                      children: [
+                        _buildContinueButton(context, isDark),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         ),
@@ -283,6 +286,8 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
   }
 
   Future<void> _handleChangePassword(BuildContext context) async {
+    FocusScope.of(context).unfocus();
+
     final email = _emailController.text.trim();
     final currentPassword = _currentPasswordController.text;
     final newPassword = _newPasswordController.text;

@@ -71,102 +71,105 @@ class _EmailSignInScreenState extends State<EmailSignInScreen> {
           );
         }
       },
-      child: Container(
-        height: screenHeight * 0.8,
-        decoration: BoxDecoration(
-          color: backgroundColor,
-          borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
-        ),
-        child: SafeArea(
-          child: Padding(
-            padding: EdgeInsets.only(
-                bottom: MediaQuery.of(context).viewInsets.bottom),
-            child: Column(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(16),
-                  child: Row(
-                    children: [
-                      IconButton(
-                        icon: Icon(
-                          Icons.close,
-                          color: isDark ? Colors.white : Colors.black,
-                          size: 24,
-                        ),
-                        onPressed: () => Navigator.pop(context),
-                      ),
-                      Expanded(
-                        child: Text(
-                          S.current.sign_in_email_title,
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            color: isDark ? Colors.white : Colors.black,
-                            fontSize: 18,
-                            fontWeight: FontWeight.w600,
-                          ),
-                        ),
-                      ),
-                      const SizedBox(width: 48), // Balance close button
-                    ],
-                  ),
-                ),
-                Expanded(
-                  child: SingleChildScrollView(
-                    padding: const EdgeInsets.symmetric(horizontal: 24),
-                    child: Column(
+      child: GestureDetector(
+        onTap: () => FocusScope.of(context).unfocus(),
+        child: Container(
+          height: screenHeight * 0.8,
+          decoration: BoxDecoration(
+            color: backgroundColor,
+            borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
+          ),
+          child: SafeArea(
+            child: Padding(
+              padding: EdgeInsets.only(
+                  bottom: MediaQuery.of(context).viewInsets.bottom),
+              child: Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(16),
+                    child: Row(
                       children: [
-                        const SizedBox(height: 24),
-                        _buildInput(
-                          controller: _emailController,
-                          focusNode: _emailFocusNode,
-                          hint: S.current.email_hint,
-                          isDark: isDark,
-                          inputColor: inputColor,
-                          keyboardType: TextInputType.emailAddress,
+                        IconButton(
+                          icon: Icon(
+                            Icons.close,
+                            color: isDark ? Colors.white : Colors.black,
+                            size: 24,
+                          ),
+                          onPressed: () => Navigator.pop(context),
                         ),
-                        const SizedBox(height: 16),
-                        _buildInput(
-                          controller: _passwordController,
-                          focusNode: _passwordFocusNode,
-                          hint: S.current.password_hint,
-                          isDark: isDark,
-                          inputColor: inputColor,
-                          obscureText: true,
-                          isLast: true,
-                        ),
-                        const SizedBox(height: 12),
-                        Align(
-                          alignment: Alignment.centerRight,
-                          child: TextButton(
-                            onPressed: _showForgotPasswordSheet,
-                            style: TextButton.styleFrom(
-                              foregroundColor: DesignSystem.primaryCyan,
-                              padding: EdgeInsets.zero,
-                            ),
-                            child: Text(
-                              S.current.change_password_question,
-                              style: TextStyle(
-                                fontSize: 14,
-                                fontWeight: FontWeight.w600,
-                              ),
+                        Expanded(
+                          child: Text(
+                            S.current.sign_in_email_title,
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              color: isDark ? Colors.white : Colors.black,
+                              fontSize: 18,
+                              fontWeight: FontWeight.w600,
                             ),
                           ),
                         ),
+                        const SizedBox(width: 48), // Balance close button
                       ],
                     ),
                   ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(24),
-                  child: Column(
-                    children: [
-                      _buildContinueButton(context, isDark),
-                      const SizedBox(height: 16),
-                      _buildFooterText(isDark),
-                    ],
+                  Expanded(
+                    child: SingleChildScrollView(
+                      padding: const EdgeInsets.symmetric(horizontal: 24),
+                      child: Column(
+                        children: [
+                          const SizedBox(height: 24),
+                          _buildInput(
+                            controller: _emailController,
+                            focusNode: _emailFocusNode,
+                            hint: S.current.email_hint,
+                            isDark: isDark,
+                            inputColor: inputColor,
+                            keyboardType: TextInputType.emailAddress,
+                          ),
+                          const SizedBox(height: 16),
+                          _buildInput(
+                            controller: _passwordController,
+                            focusNode: _passwordFocusNode,
+                            hint: S.current.password_hint,
+                            isDark: isDark,
+                            inputColor: inputColor,
+                            obscureText: true,
+                            isLast: true,
+                          ),
+                          const SizedBox(height: 12),
+                          Align(
+                            alignment: Alignment.centerRight,
+                            child: TextButton(
+                              onPressed: _showForgotPasswordSheet,
+                              style: TextButton.styleFrom(
+                                foregroundColor: DesignSystem.primaryCyan,
+                                padding: EdgeInsets.zero,
+                              ),
+                              child: Text(
+                                S.current.change_password_question,
+                                style: TextStyle(
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
                   ),
-                ),
-              ],
+                  Padding(
+                    padding: const EdgeInsets.all(24),
+                    child: Column(
+                      children: [
+                        _buildContinueButton(context, isDark),
+                        const SizedBox(height: 16),
+                        _buildFooterText(isDark),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         ),
@@ -304,6 +307,7 @@ class _EmailSignInScreenState extends State<EmailSignInScreen> {
   }
 
   void _handleContinue(BuildContext context) {
+    FocusScope.of(context).unfocus();
     final email = _emailController.text.trim();
     final password = _passwordController.text;
     if (email.isEmpty || password.isEmpty) return;
